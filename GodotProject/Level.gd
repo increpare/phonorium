@@ -44,3 +44,7 @@ func onsolve(b:Node):
 			if flame.GroupName==group:
 				flame.visible=false
 	return groupsolved
+
+func _process(d):
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
