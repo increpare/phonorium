@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retroflex_flap_0.mp3-e7ff43e38f41758b486377f7492f360b.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ROLLED/Retroflex_flap_0.mp3"
+dest_files=[ "res://.import/Retroflex_flap_0.mp3-e7ff43e38f41758b486377f7492f360b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

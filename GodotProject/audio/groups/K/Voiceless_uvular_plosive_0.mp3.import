@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_uvular_plosive_0.mp3-6cb66b68c9345bc4bef5d9f3267c712c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/K/Voiceless_uvular_plosive_0.mp3"
+dest_files=[ "res://.import/Voiceless_uvular_plosive_0.mp3-6cb66b68c9345bc4bef5d9f3267c712c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

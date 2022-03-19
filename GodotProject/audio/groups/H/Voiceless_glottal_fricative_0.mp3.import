@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_glottal_fricative_0.mp3-ee24530fec69be08543eba468044f85c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiceless_glottal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_glottal_fricative_0.mp3-ee24530fec69be08543eba468044f85c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_palatal_plosive_0.mp3-90a08ff3f115711d0dff5e78fb74b835.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/K/Voiced_palatal_plosive_0.mp3"
+dest_files=[ "res://.import/Voiced_palatal_plosive_0.mp3-90a08ff3f115711d0dff5e78fb74b835.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

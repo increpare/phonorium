@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_labio-velar_approximant_0.mp3-5f2708881961bc98adaf978e46e990dc.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/VW/Voiced_labio-velar_approximant_0.mp3"
+dest_files=[ "res://.import/Voiced_labio-velar_approximant_0.mp3-5f2708881961bc98adaf978e46e990dc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

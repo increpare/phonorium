@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retroflex_approximant_0.mp3-fd84e1b221c357c3b6a7f1409258b566.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/RL/Retroflex_approximant_0.mp3"
+dest_files=[ "res://.import/Retroflex_approximant_0.mp3-fd84e1b221c357c3b6a7f1409258b566.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

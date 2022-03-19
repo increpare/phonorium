@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retroflex_nasal_0.mp3-b31f6497cd3f14e1b87f5560de2a12fa.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/MN/Retroflex_nasal_0.mp3"
+dest_files=[ "res://.import/Retroflex_nasal_0.mp3-b31f6497cd3f14e1b87f5560de2a12fa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

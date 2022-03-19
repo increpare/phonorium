@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Close-mid_back_rounded_vowel_0.mp3-a8aab0ce21e2f46d9fa6319b7784cbfc.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/VOWEL/Close-mid_back_rounded_vowel_0.mp3"
+dest_files=[ "res://.import/Close-mid_back_rounded_vowel_0.mp3-a8aab0ce21e2f46d9fa6319b7784cbfc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

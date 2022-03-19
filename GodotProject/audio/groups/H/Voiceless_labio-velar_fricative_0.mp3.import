@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_labio-velar_fricative_0.mp3-833b88a897b935943c14f4ede99013aa.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiceless_labio-velar_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_labio-velar_fricative_0.mp3-833b88a897b935943c14f4ede99013aa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

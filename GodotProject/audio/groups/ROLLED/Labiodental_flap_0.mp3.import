@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labiodental_flap_0.mp3-35d53f91c3d847bdbbc9190bb8b90e13.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ROLLED/Labiodental_flap_0.mp3"
+dest_files=[ "res://.import/Labiodental_flap_0.mp3-35d53f91c3d847bdbbc9190bb8b90e13.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

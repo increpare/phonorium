@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_bilabial_fricative_0.mp3-b6838ca7880e9d2ffc85bce8517ec512.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/TH/Voiceless_bilabial_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_bilabial_fricative_0.mp3-b6838ca7880e9d2ffc85bce8517ec512.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

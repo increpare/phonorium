@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mid-central_vowel_0.mp3-9cc9a971c4b32332845a15c3dd032c1c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/VOWEL/Mid-central_vowel_0.mp3"
+dest_files=[ "res://.import/Mid-central_vowel_0.mp3-9cc9a971c4b32332845a15c3dd032c1c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

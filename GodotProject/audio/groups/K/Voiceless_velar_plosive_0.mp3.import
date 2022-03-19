@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_velar_plosive_0.mp3-31a2eafc7bf6bc8cad069b4ec6d11c8f.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/K/Voiceless_velar_plosive_0.mp3"
+dest_files=[ "res://.import/Voiceless_velar_plosive_0.mp3-31a2eafc7bf6bc8cad069b4ec6d11c8f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

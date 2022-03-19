@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labiodental_approximant_0.mp3-9ad8e94e204d26ec4eb2978babe1f0c1.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/VW/Labiodental_approximant_0.mp3"
+dest_files=[ "res://.import/Labiodental_approximant_0.mp3-9ad8e94e204d26ec4eb2978babe1f0c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

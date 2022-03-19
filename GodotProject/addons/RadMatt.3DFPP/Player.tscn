@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.gd" type="Script" id=1]
 [ext_resource path="res://textures/crosshair_full.png" type="Texture" id=2]
 [ext_resource path="res://textures/crosshair_empty.png" type="Texture" id=3]
 [ext_resource path="res://models/silhouette.glb" type="PackedScene" id=4]
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tres" type="Material" id=5]
+[ext_resource path="res://default_env.tres" type="Environment" id=6]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.6
@@ -13,20 +14,6 @@ mid_height = 2.0
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.6
 height = 2.0
-
-[sub_resource type="ProceduralSky" id=9]
-sky_top_color = Color( 1, 1, 1, 1 )
-ground_bottom_color = Color( 0.294118, 0.498039, 0.737255, 1 )
-ground_horizon_color = Color( 0.294118, 0.498039, 0.737255, 1 )
-
-[sub_resource type="Environment" id=8]
-background_mode = 1
-background_sky = SubResource( 9 )
-background_sky_custom_fov = 48.4
-background_color = Color( 0.658824, 0.752941, 0.890196, 1 )
-ambient_light_color = Color( 0.521569, 0.521569, 0.521569, 1 )
-fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
-fog_depth_end = 200.0
 
 [sub_resource type="Animation" id=5]
 length = 0.5
@@ -139,7 +126,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.473636, 0 )
 
 [node name="Camera" type="Camera" parent="Yaw"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
-environment = SubResource( 8 )
+environment = ExtResource( 6 )
 current = true
 far = 600.0
 

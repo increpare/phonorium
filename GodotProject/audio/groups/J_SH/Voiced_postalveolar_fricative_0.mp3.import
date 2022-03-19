@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_postalveolar_fricative_0.mp3-87e6cd9a60e5c430493c9d5f8b52fb63.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/J_SH/Voiced_postalveolar_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_postalveolar_fricative_0.mp3-87e6cd9a60e5c430493c9d5f8b52fb63.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
