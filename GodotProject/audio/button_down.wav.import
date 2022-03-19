@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/button_down.wav-f831b419a299568a87f1c13ffc9ee873.sample"
+
+[deps]
+
+source_file="res://audio/button_down.wav"
+dest_files=[ "res://.import/button_down.wav-f831b419a299568a87f1c13ffc9ee873.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

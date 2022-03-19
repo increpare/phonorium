@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_alveolar_plosive_0.mp3-e3dd504573753f38b87a67097965fa45.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_dg/Voiceless_alveolar_plosive_0.mp3"
+dest_files=[ "res://.import/Voiceless_alveolar_plosive_0.mp3-e3dd504573753f38b87a67097965fa45.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

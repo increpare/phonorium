@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_alveolo-palatal_fricative_0.mp3-4dcdffecff27921f43a5f0d9dbeebe8b.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_j_sh/Voiced_alveolo-palatal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_alveolo-palatal_fricative_0.mp3-4dcdffecff27921f43a5f0d9dbeebe8b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

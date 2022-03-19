@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Near-open_front_unrounded_vowel_0.mp3-9baa6423b655055a537f1f15da37120a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_vowel/Near-open_front_unrounded_vowel_0.mp3"
+dest_files=[ "res://.import/Near-open_front_unrounded_vowel_0.mp3-9baa6423b655055a537f1f15da37120a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

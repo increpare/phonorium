@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_palatal_fricative_0.mp3-0d68291099d0495187979e7fab6f82e1.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_j_sh/Voiceless_palatal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_palatal_fricative_0.mp3-0d68291099d0495187979e7fab6f82e1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

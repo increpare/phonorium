@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_dorso-palatal_velar_fricative_0.mp3-ef58c22c74f9afbcaec2b0ce41555abb.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_h/Voiceless_dorso-palatal_velar_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_dorso-palatal_velar_fricative_0.mp3-ef58c22c74f9afbcaec2b0ce41555abb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

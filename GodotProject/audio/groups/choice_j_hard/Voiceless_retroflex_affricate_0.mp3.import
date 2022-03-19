@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_retroflex_affricate_0.mp3-e9be77f19f05e70a1cc381d0a61d4cbd.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_j_hard/Voiceless_retroflex_affricate_0.mp3"
+dest_files=[ "res://.import/Voiceless_retroflex_affricate_0.mp3-e9be77f19f05e70a1cc381d0a61d4cbd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_retroflex_plosive_0.mp3-4df1b152d23120e43afaefcf6650fd94.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_dg/Voiceless_retroflex_plosive_0.mp3"
+dest_files=[ "res://.import/Voiceless_retroflex_plosive_0.mp3-4df1b152d23120e43afaefcf6650fd94.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

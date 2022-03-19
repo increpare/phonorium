@@ -1,0 +1,1006 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=false;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};</script>
+<script>window.ezslots_raw=[];var __sellerid='fe783550192491ab17783d703d6bf0dc';var __ez_nid ='1254144';__advertiserRule=[''];var ezasVars = {'cid':'9537560319','pid':'pub-8258777574639852','ssid':44};window.google_reactive_ads_global_state = {
+                adCount: {},
+                floatingAdsStacking: { maxZIndexListeners: [], maxZIndexRestrictions: {}, nextRestrictionId: 0 },
+                messageValidationEnabled: false,
+                reactiveTypeDisabledByPublisher: {},
+                reactiveTypeEnabledInAsfe: {},
+                sideRailAvailableSpace: [],
+                sideRailOverlappableElements: [],
+                stateForType: {},
+                tagSpecificState: {},
+                wasPlaTagProcessed: true,
+                wasReactiveAdConfigReceived: { 1: true, 2: true, 8: true },
+                wasReactiveAdVisible: {},
+                wasReactiveTagRequestSent: true,
+                description: "Can't disable auto ads programmatically on the page, so here we are!"
+            };window.ezasvEvent=function(e,o){if(e[0].isIntersecting===true){var i=e[0].target.attributes[0].value.substr(0,e[0].target.attributes[0].value.length-9);window.ezoSTPixelAdd(i,'viewed',1);o.disconnect();}};window.ezaslEvent=function(m,o){if(typeof m[0].target.attributes['data-ad-status']!='undefined'){var v=m[0].target.attributes['data-ad-status'].value;var i=m[0].target.attributes[0].value.substr(0,m[0].target.attributes[0].value.length-9);if(v=='filled'){window.ezoSTPixelAdd(i,'loaded',1);var vo=new IntersectionObserver(window.ezasvEvent,{threshold:[1]});vo.observe(document.getElementById(i+'-asloaded'));}
+o.disconnect();}};window.ezoSTPixels=[];var stPixelInterval=setInterval(function(){if(typeof __ez!=='undefined'&&typeof __ezDotData!=='undefined'&&(typeof ezslots!=='undefined'&&window.ezslots_raw.length>0)){window.ezoSTPixelFire();clearInterval(stPixelInterval);}},250);window.ezoSTPixelAdd=function(id,name,value){window.ezoSTPixels.push({id:id,name:name,value:value});window.ezoSTPixelFire();};window.ezoGetSlotById=function(id){var slotId=id.split('div-gpt-ad-')[1].split('-',3).join('-');for(s in window.ezslots_raw){if(window.ezslots_raw[s].tap.includes(slotId)){return window.ezslots_raw[s];}}};window.ezoSTPixelFire=function(){if(typeof __ez!=='undefined'&&typeof __ezDotData!=='undefined'&&(typeof ezslots!=='undefined'&&window.ezslots_raw.length>0)){while(window.ezoSTPixels.length>0){var event=window.ezoSTPixels.shift();var s=window.ezoGetSlotById(event.id);var pxData=[{type:'impression',impression_id:s.eid,domain_id:window.did.toString(),unit:event.id,t_epoch:__ez.dot.getEpoch(0),ad_position:parseInt(s.ap),country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:1,data:__ez.dot.dataToStr([(new __ezDotData(event.name,event.value.toString()))]),is_orig:0}];var pxURL='/porpoiseant/army.gif';var pixelURL=__ez.dot.getURL(pxURL)+'?orig=0&sts='+btoa(JSON.stringify(pxData));__ez.dot.Fire(pixelURL);}}};</script>
+<script>window.ezhbopt=true;</script>
+<link rel='preload' as='script' href='//securepubads.g.doubleclick.net/tag/js/gpt.js'>
+<link href="//ad.doubleclick.net" rel="dns-prefetch">
+<link href="//pagead2.googlesyndication.com" rel="dns-prefetch">
+<link href="//googleads.g.doubleclick.net" rel="dns-prefetch">
+<link href="//tpc.googlesyndication.com" rel="dns-prefetch">
+<link href="//adservice.google.com" rel="dns-prefetch">
+<link href="//secureads.g.doubleclick.net" rel="dns-prefetch">
+<link href="//www.googletagservices.com" rel="dns-prefetch">
+<link rel='preload' as='script' href='//go.ezodn.com/hb/dall.js?b=adyoulike,amx,criteo,gumgum,ix,onemobile,onetag,pubmatic,pulsepoint,sharethrough,sovrn,spotx,yahoossp,yieldmo&cb=195-0-35' onerror="window.ezDallErr=true">
+<script type="text/javascript">
+	var __banger_pmp_deals=function(){var d={17:{"DealId":17,"Floor":160},18:{"DealId":18,"Floor":25},19:{"DealId":19,"Floor":100},20:{"DealId":20,"Floor":300},1428:{"DealId":1428,"Floor":25},2310:{"DealId":2310,"Floor":400},2339:{"DealId":2339,"Floor":800},2351:{"DealId":2351,"Floor":155},2526:{"DealId":2526,"Floor":300},2527:{"DealId":2527,"Floor":300},2610:{"DealId":2610,"Floor":125}};return[{"SlotName":"/1254144,21986279360/ipachart_com-banner-1","Deals":[d[17],d[18],d[19],d[20],d[1428],d[2310],d[2339],d[2351],d[2526],d[2527],d[2610]]},{"SlotName":"/1254144,21986279360/ipachart_com-medrectangle-2","Deals":[d[17],d[18],d[19],d[20],d[1428],d[2310],d[2339],d[2351],d[2526],d[2527],d[2610]]},{"SlotName":"/1254144,21986279360/ipachart_com-banner-2","Deals":[d[17],d[18],d[19],d[20],d[1428],d[2310],d[2339],d[2351],d[2526],d[2527],d[2610]]},{"SlotName":"/1254144,21986279360/ipachart_com-large-leaderboard-2","Deals":[d[17],d[18],d[19],d[20],d[1428],d[2310],d[2339],d[2351],d[2526],d[2527],d[2610]]}]}();
+</script>
+<script type='text/javascript'>_ebcids=[138231308856,138231308940,138231308949,138231387842,138231421744,138231421759,138231421774,138231421783,138231421789,138231421792,138242067587,138242067590,138242067602,138242067605,138242067608,138242067614,138242229406,138242229415,138242229421,138242229430];</script>
+<script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>ezobv=107;</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>function ez_isclean(data){if(typeof data==='undefined'){data=document.URL;}
+var re=/(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))(@|%2540|%40)((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;var isClean=!re.test(data);return isClean;}
+var ezSlotKVStore={};function ezSetSlotTargeting(divid,key,value){var slot=ezGetSlotById(divid);if(slot){slot.setTargeting(key,value);}else{if(typeof ezSlotKVStore[divid]=='undefined'){ezSlotKVStore[divid]={};}
+ezSlotKVStore[divid][key]=value;}}
+function ezGetSlotById(id){if(typeof window.ezslots==='undefined'||window.ezslots==0){return;}
+for(var i=0;i<window.ezslots.length;i++){var slot=window[ezslots[i]];if(typeof slot==='undefined'){continue;}
+var slotId=slot.getSlotElementId();if(typeof slotId!=='undefined'&&slotId==id){return slot;}}}
+function ezSetTargetingFromMap(slot,obj){if(typeof slot==='undefined'){return;}
+for(var key in obj){if(!obj.hasOwnProperty(key)){continue;}
+slot.setTargeting(key,obj[key]);}}
+var ez_queue=new Array();function sort_queue(a,b)
+{if(a.priority<b.priority)return-1;else if(a.priority==b.priority)return 0;else return 1;}
+function execute_ez_queue()
+{ez_queue.sort(sort_queue);for(var i in ez_queue)
+{if(typeof ez_queue[i].method!="undefined")
+{try{ez_queue[i].method.call(null);}
+catch(err){}}}}
+window.ez_ad_units=new Array();window.ezslots=new Array();window.ezsrqt={};function ez_write_tag(d){if(ez_isclean()&&d instanceof Array){if(typeof ezstandalone!=='undefined'&&typeof ezstandalone.selectedPlaceholders!=='undefined'&&ezstandalone.selectedPlaceholders[d[3]]===true){return "1+1";}
+if(typeof ezstandaloneForAll!=='undefined'&&typeof ezstandaloneForAll.selectedPlaceholders!=='undefined'&&ezstandaloneForAll.selectedPlaceholders[d[3]]===true){return "1+1";}
+ez_ad_units[ez_ad_units.length]=d;var dve="";if(typeof d[5]!='undefined'&&d[5]>0){dve='_'+d[5];}
+var ezcmd="googletag.cmd.push(function() {var divid = 'div-gpt-ad-"+d[1]+"-"+d[4]+""+dve+"';if(typeof ezlrarn == 'function'){ezlrarn(divid);}googletag.display(divid);var to = 0;if("+d[2]+".getTargeting('ga')[0] == '0'){to = 500;}if((window.ezDisableInitialLoad==true || googletag.pubads().isInitialLoadDisabled()) && window.ezoll != true){setTimeout(function(){if(typeof window.adjustHbValues == 'function'){window.adjustHbValues("+d[2]+");}if(typeof window.ezasBuild == 'function' && window.ezasBuild("+d[2]+")){return;}googletag.pubads().refresh(["+d[2]+"])},to);}});";return ezcmd;}
+return "1+1";}
+function in_array(needle,haystack){var length=haystack.length;for(var i=0;i<length;i++){if(haystack[i]==needle)return true;}
+return false;}
+var ezrpos=new Array();var ez_current_interval;var ez_current_load=0;function __ez_fad_load(n,r){if(!__ez_fad_csnt()||!__ez_fad_rdy()||ezslit_run[n]===true||typeof __ez_fad_divs[n]==='undefined'||__ez_fad_divs[n].length===0){return;}
+ezslit_run[n]=true;__ez_fad_gpt();if(n>0&&n!==5){__ez_fad_pb();}
+googletag.cmd.push(function(){var s=[];for(var i=0;i<__ez_fad_divs[n].length;i++){if(__ez_fad_divsd.indexOf(__ez_fad_divs[n][i])==-1){__ez_fad_divsd.push(__ez_fad_divs[n][i]);s.push(__ez_fad_initslot[__ez_fad_divs[n][i]](r));googletag.display(__ez_fad_divs[n][i]);}}
+var ws=[];for(i3=0;i3<s.length;i3++){var slot=window[s[i3]];if(typeof window.ezasBuild==='function'){if(window.ezasBuild(slot)){continue;}}
+if(typeof window.adjustHbValues==='function'){window.adjustHbValues(slot);}
+ws.push(slot);}
+googletag.pubads().refresh(ws);setTimeout(__ez_fad_floatshow,0);});if(n===0){if(document.readyState==="complete"){googletag.cmd.push(function(){__ez_fad_load(5,null);});setTimeout(function(){__ez_fad_load(1,null);__ez_fad_load(5,null);},5500);return;}
+document.addEventListener('DOMContentLoaded',function(evt){googletag.cmd.push(function(){__ez_fad_load(5,null);});setTimeout(function(){__ez_fad_load(1,null);__ez_fad_load(5,null);},5500);},false);}}
+var __ez_fad_floatshowd=false;function __ez_fad_floatshow(d){if(__ez_fad_floatshowd===true||typeof __ez_fad_floating==='undefined'){return;}
+__ez_fad_floatshowd=true;var e=document.getElementById('ezmobfooter');if(e!=null){e.classList.add('ezmobtrans');}else{head=document.head||document.getElementsByTagName('head')[0],style=document.createElement('style');head.appendChild(style);var css="body > #ezmobfooter{bottom:0px;visibility:visible;}";style.type='text/css';if(style.styleSheet){style.styleSheet.cssText=css;}else{style.appendChild(document.createTextNode(css));}}
+googletag.cmd.push(function(){for(var i=0;i<__ez_fad_floating.length;i++){var s=__ez_fad_initslot[__ez_fad_floating[i]](null);googletag.display(__ez_fad_floating[i]);if(typeof window.adjustHbValues==='function'){window.adjustHbValues(window[s]);}
+googletag.pubads().refresh([window[s]]);}});}
+var __ez_fad_initslot={};var __ez_fad_fastd=[];var __ez_fad_fastdiv=[];var __ez_fad_fastslots=[];var __ez_fad_viewslots=[];var __ez_fad_instaslots=[];var ezslit_run=[];var __ez_fad_divs=[[],[],[],[],[],[],[]];__ez_fad_divpos={};var __ez_fad_divsd=[];var __ez_fad_vw=window.screen.width;var __ez_fad_vh=window.screen.height;var __ez_fad_count=0;function __ez_fad_invisible(e){!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)}
+function __ez_fad_position(id){var did=document.getElementById(id);if(did!=null){var rect=did.getBoundingClientRect();var vs=window.scrollY||document.body.scrollTop||document.documentElement.scrollTop;var vh=vs+__ez_fad_vh;_ez_fad_vw=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;__ez_fad_vh=window.innerHeight||Math.max(document.documentElement.clientHeight,document.body.clientHeight);var height_adjust=800;if(__ez_fad_vw<1200){height_adjust=__ez_fad_vh*1.25;vh+=0;}
+if(__ez_fad_floating.indexOf(id)==-1){__ez_fad_divpos[id]=rect.top;if(__ez_fad_invisible(did)&&isFloat!=true){__ez_fad_divs[4].push(id);}else if(rect.top<vh&&(ezslit_run[0]!=true||ezslit_run[5]!=true)){if(ezslit_run[0]!=true){__ez_fad_gpt();__ez_fad_divs[0].push(id);}else{__ez_fad_divs[5].push(id);}}else if(rect.top<(vh+height_adjust)&&ezslit_run[1]!=true){if(ezslit_run[0]!=true){__ez_fad_load(0,0);};__ez_fad_divs[1].push(id);}else if(rect.top<(vh+height_adjust+(__ez_fad_vh))&&ezslit_run[2]!=true){if(ezslit_run[0]!=true){__ez_fad_load(0,0);}
+__ez_fad_divs[2].push(id);}else{__ez_fad_divs[3].push(id);}
+__ez_fad_count++;}}}
+function __ez_fad_fast(s,f,m){if(__ez_fad_fastd.indexOf(s)==-1){__ez_fad_fastd.push(s);googletag.cmd.push(function(){var ebbr2='empty';var br2=0;if(typeof ezoibfh[f]!='undefined'){ebbr2=ezoibfh[f];br2=f;}
+if(typeof window['ezslot_'+s]!='undefined'){var br1=parseInt(window['ezslot_'+s].getTargeting('br1')[0]);if(isNaN(br1)||br2<br1){window['ezslot_'+s].setTargeting('br1',br2).setTargeting('eb_br',ebbr2);if(m!=null){window['ezslot_'+s].setTargeting('bvr',m);}}else{}}else{}});}}
+function __ez_fad_csnt(){return document.cookie.indexOf('ezCMPCookieConsent')!==-1||typeof __ez_conestreq=='undefined';}
+var __ez_fad_haspo=false;if(typeof PerformanceObserver!='undefined'&&typeof PerformanceObserver.supportedEntryTypes!='undefined'){if(PerformanceObserver.supportedEntryTypes.indexOf('largest-contentful-paint')>-1){__ez_fad_haspo=true;}}
+function __ez_fad_rdy(){if(document.body!==null&&(__ez_fad_haspo==false&&__ez_fad_doc_ht>__ez_fad_vp_ht||__ez_fad_hascp)||document.readyState==="complete"){return true;}else{__ez_fad_doc_ht=__ez_fad_docht();__ez_fad_vp_ht=__ez_fad_vpht();}
+return false;}
+function __ez_fad_docht(){if(typeof document.body!='undefined'&&document.body!=null){return Math.max(document.body.scrollHeight,document.body.offsetHeight);}else if(typeof document.documentElement!='undefined'){return Math.max(document.documentElement.clientHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);}else{return 0;}}
+function __ez_fad_vpht(){if(typeof window.innerHeight!='undefined'){return window.innerHeight;}else if(typeof document.body!='undefined'&&document.body!=null){return document.body.clientHeight;}else if(typeof document.documentElement!='undefined'){return document.documentElement.clientHeight;}
+else{return 0;}}
+function __ez_close_anchor(){googletag.cmd.push(function(slot){for(var i=0;i<window.ezslots.length;i++){var slot=window[ezslots[i]];if(typeof slot==='undefined'){continue;}
+var alS=slot.getTargeting('al')[0]%1000;if(alS==5){googletag.destroySlots([slot]);}}
+__ez_set_cnx_floor(0);var anchor=document.getElementById('ezmobfooter');if(!anchor){return;}
+anchor.innerHTML='';var styleElement=document.getElementById('ezoicCSS');if(!styleElement){return;}
+var styles=styleElement.sheet?styleElement.sheet:styleElement.styleSheet;for(var i=0;i<styles.cssRules.length;i++){var rules=styles.cssRules[i];if(rules.selectorText==='body'&&rules.style.height==='auto'&&(rules.style.paddingTop!==''||rules.style.paddingBottom!=='')){styles.deleteRule(i);}}});}
+function __ez_set_cnx_floor(px){var cnx=document.getElementsByClassName('cnx-float');if(!cnx||cnx.length<1){return;}
+cnx=cnx[0];cnx.style.top=(-1*px)+'px';}
+var __ez_fad_doc_ht=__ez_fad_docht();var __ez_fad_vp_ht=__ez_fad_vpht();var __ez_fad_hascp=false;try{const __ez__fad_po=new PerformanceObserver((entryList)=>{__ez_fad_hascp=true;});__ez__fad_po.observe({type:'largest-contentful-paint',buffered:true});}catch(e){}</script><script type='text/javascript' data-ezscrex="false">var ezorbf = []; </script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>window.isEZABL=false;window.ezmadspc=300;window.ezoViewCheck=false;</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>window.ezDisableInitialLoad=false;</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>window.googletag=window.googletag||{};googletag.cmd=googletag.cmd||[];</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>(function(){var gads=document.createElement('script');gads.async=true;gads.type='text/javascript';var useSSL='https:'==document.location.protocol;gads.src=(useSSL?'https:':'http:')+
+'//securepubads.g.doubleclick.net/tag/js/gpt.js';var node=document.getElementsByTagName('script')[0];node.parentNode.insertBefore(gads,node);})();</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer type='text/javascript'>window.ezogetbrkey = function(s){ var k = 'br1';var k2 = 'eb_br';if(window.ezogtk == ""){k='br1u';k2='eb_bru';}else if(window.ezogtk != "NT"){k='br1t';k2='eb_brt';} s.setTargeting('br1', s.getTargeting(k));s.setTargeting('eb_br', s.getTargeting(k2));};googletag.cmd.push(function() {googletag.pubads().enableSingleRequest();googletag.pubads().addEventListener('slotRenderEnded', function(event) { __ez.queue.addFunc("ezbanger", "ezbanger", event, false, ['banger.js'], true, true, false, true); });googletag.pubads().addEventListener('impressionViewable', function(event) { __ez.queue.addFunc("ezvb", "ezvb", event, false, ['banger.js'], true, true, false, true); });googletag.pubads().addEventListener('slotResponseReceived', function(event) { __ez.queue.addFunc("ezsr", "ezsr", event, false, ['banger.js'], true, true, false, true); });googletag.pubads().addEventListener('slotRequested', function(e) { window.ezsrqt[e.slot.getSlotElementId()] = Date.now();});googletag.pubads().disableInitialLoad();googletag.enableServices();});window.ezoll = false;window.ezoadxnc = '1254144';window.ezoadhb = '1500';var ezoibfh = {0:'zero',1000000:'off',6500:'b6ac10cddc8471927cec0144110502e9',90:'b355e9227b551c119a30a68852723b62',50:'3ba982fc4238dd4197b1d51b345478dc',46:'fe5b0c99ab7ba15f050582be1301303f',28:'674294a1b21a1e89fc99c14c9b17be44',7000:'4552fb4beab2a055aec0d6113a8d9e42',5500:'b069a06daabd6e3043166f0e7a2edef4',5000:'116f73d8738ced0c5546d5313109581e',4600:'d297138284357206d38c781a2291b99a',2700:'401612ca672af30f67eaf5e0989ce385',750:'6ac330e431a70c7d8ce9fb95aee95c72',450:'6e85b37de1b1ffc2593baa5d6e4b02fc',200:'86802a923a1f32517e4c5d3b6d550271',32:'d31e71883d00099e275b6c5878eed023',18:'8de355ef1cf56b7da61277050d9957b1',10000:'f1e225445ec024e41bfd8ce2ba4aa91b',1600:'6dbaa2f5e27e83e2fcd15988d9095988',3600:'81f896ad12450b2f0257b1df6d3f1edc',2900:'ef3231a19d034bff92faf99318a47a5f',2600:'cc65d2d1fcda72df55233f97cf215dad',2100:'b2ac58e6c0c84fc65f344f47dd85768b',80:'dfa60cee6e1053fc0c9e607c8047bd28',40:'ee685f77592ce296910ee91457d66ba3',14:'ad0061a38dd7c6f7bcb692aee88dfda4',2400:'6240c545bce1855c4e5a6ca430f526b1',1200:'736e09a0771285737509ab8954c475a7',240:'8de2c8ca79e8623e3cb37120a35ebaa2',30:'54d0fa6d5f6aabe7623cb24faa42a441',6:'33dd523f8e4dda158f0aa99686dda7f2',4000:'e95a0029a1c0d52e1f82ee010826e7d9',3000:'92831edb305b955e915a7cc2288d5df6',1700:'ff69c327c284033fca821ae81630bfa9',800:'dc3573d5dc41abdf97751be02f53537f',8:'2e8b8c60843e52e5aaa1e3a52287a2bb',500:'5f2b94bb26a5aa9b1a00e66d30cfd5ec',220:'43aa1607a0c08c74b14a9039e7b909b4',2800:'a9ec56005762ef40746ec1b6d554f472',2200:'2620dac3b050a8e36c132f49cccab5a1',1800:'72c13a89ac876aaffdde39253459460b',160:'3530fcb6bcc13dc3c1712eaef7d92700',100:'a495ce7dbb4cefcd3e0a722048894f41',34:'a7a863b24978e69c4cdbb5a49be70d5e',26:'bf9a045b836005b6c23b7b0749249612',16:'e29f69dd468d31a5514dc9b5587ce757',10:'291d27313eb66c50243129b23df8a579',6000:'49d60519eec4f00cfb2d91dec1e48d41',4200:'e9b52ed700c176b9b3f036aa176f3f3e',1400:'04b5efc3207e2390972f099a6a3c4757',140:'af063c244089b52ec5a0423a258f1f8e',22:'1e913e99b80640fd5b86a539e5b97c94',2:'b6c98a8bb15764f1c4ee331dcb724178',9000:'e4c87a0c427c95c548a2ad50bc2fc99d',2500:'78e9436ba8e29037bc31f94589331e0b',2300:'a835e008e248a793da87524a4919f755',1900:'65b2c11be72ed8610e2ac0304f3023a9',1100:'39abb99448d54704c4afa42efe76e15d',4:'9c3e4ee8eae7f1433cb2fe69b1326605',4400:'a2de9c8773c426848d7815dff1d2d44f',3200:'41ad5c6ea7dab736638507e437e60604',350:'9e0a1ce5b2455cb9b48d5df4c6bf4053',260:'57914c3716312cb7e954090f0717ea25',180:'9ae587f95e95c876b7b76fd4c72a3838',70:'527e52c10635ac8136a4c84094ee49a8',20:'7432360301409ae695ba255f16fbcf06',12:'14e8a85d4c42ff1db8790cbef9e33493',8000:'e41b3739f340bda9dcfb30f79c9db1c9',950:'c410f2a2b0c2123f4b6651cda6c5cf53',600:'45a351e981f435b4c20fafca8a5d741c',44:'a928cf2c3ad36f5e9ed2d90f655c1dc9',24:'e66c30deca31b19eda212eeca1258584',3800:'58e03b675175bbbec8566d319041c5ee',3400:'2c0082dd1efc5e4dfdd4f50677fea822',700:'8b07bae800b215e481d05a271b3e723b',550:'26dfa00588543c52511429ade391f561',60:'c352ba581bd3ffd8cea608cf2d55f519',4800:'f0459c7057d45e6fbbed62c0762b551e',2000:'12a3b3570adcf20fd41a00445219acaa',1000:'c5429b6ddd929d0bc40a832a87789a7c',9500:'6fd3046d2172040882079eb07d0038c9',7500:'0de5c793b95df3adacbee8e14c308afc',1500:'d81e229576f8cb8a43ff5c6a8e596727',850:'5297de5240aa45da173a0792747e0d26',650:'5bac35e1a3b6adc56da706000a645484',400:'76163170a8636ae5b88417f095893e08',300:'90c3c48d0172916d27c102ea4aa9d49c',48:'8fc09e60bfd78aa82afac0405213359a',42:'947f1d5169cc7d0f997560e34838fb04',36:'8c5ffefb122f59a66a8b7672d4452af2',8500:'d5abc50791c030d76efa2ded02dcc115',1300:'bfa042bdb1583c959161b7823290dc1f',900:'eeb0e32289ff31f9ddef18331038e5e9',280:'c16fac08e79a971524b1c6834f5caad3',120:'58ef7bddb438af5e257c4377f32c243a',38:'23b5ca1d9de2587e6a4ecfd33d61b709'};var ezaxmns={};var ezaucmns={};ezaxmns["div-gpt-ad-ipachart_com-medrectangle-2-0"]=0;ezaucmns["div-gpt-ad-ipachart_com-medrectangle-2-0"]=0;ezaxmns["div-gpt-ad-ipachart_com-banner-2-0"]=0;ezaucmns["div-gpt-ad-ipachart_com-banner-2-0"]=0;ezaxmns["div-gpt-ad-ipachart_com-large-leaderboard-2-0"]=0;ezaucmns["div-gpt-ad-ipachart_com-large-leaderboard-2-0"]=0;ezaxmns["div-gpt-ad-ipachart_com-banner-1-0"]=0;ezaucmns["div-gpt-ad-ipachart_com-banner-1-0"]=0;
+
+		var __ez_fad_floating = ['div-gpt-ad-ipachart_com-medrectangle-2-0'];
+		var __ez_fad_gptd = false;var __ez_fad_ezpbinitd = false;var __ez_fad_pbt = setTimeout(function(){__ez_fad_pb();},5000);function __ez_fad_gpt(){if(__ez_fad_gptd == false){__ez_fad_gptd=true;(function(){var gads=document.createElement('script');gads.async=true;gads.type='text/javascript';var useSSL='https:'==document.location.protocol;gads.src=(useSSL?'https:':'http:')+
+'//securepubads.g.doubleclick.net/tag/js/gpt.js';var node=document.getElementsByTagName('script')[0];node.parentNode.insertBefore(gads,node);})();}}function __ez_fad_pb(){if(__ez_fad_ezpbinitd==false && typeof __ez_fad_ezpbinit == 'function'){__ez_fad_ezpbinitd = true;__ez_fad_ezpbinit()}};
+		__ez_fad_initslot['div-gpt-ad-ipachart_com-medrectangle-2-0'] = function(bvr){
+				googletag.cmd.push(function() {
+				var did = 'div-gpt-ad-ipachart_com-medrectangle-2-0';
+				ezslot_1 = googletag.defineSlot('/1254144,21986279360/ipachart_com-medrectangle-2',[728,90],'div-gpt-ad-ipachart_com-medrectangle-2-0').addService(googletag.pubads()).setCollapseEmptyDiv(false);var ezslot_1_raw = {'a':'1','iid1':'6947057518804451','eid':'6947057518804451','t':'134','d':'188317','t1':'134','pvc':'0','ap':'1100','sap':'1100','a':'|2|','as':'revenue','plat':'1','bra':'mod1','ic':'1','at':'mbf','adr':'399','ezosn':'1','reft':'tf','refs':'30','ga':'2497208','gala':'','rid':'99998','pt':'5','al':'1005','compid':'0','tap':'ipachart_com-medrectangle-2-6947057518804451','eb_br':'c5429b6ddd929d0bc40a832a87789a7c','eba':'1','ebss':[10017,10082,10061,10015,10063,11304,11307],'asau':'5339076804','bv':'4','bvm':'0','bvr':'4','shp':'1','ftsn':'3','br1':'1000','br2':'500','ezoic':'1','nmau':'0','mau':'0','stl':[77,193,0,67,0,193,20,20,71,201,192,31,902,903,901,902,903],'deal1':[21,22,23,24,25,26,27,28,29,30,760,761,813,814,815,816,817,818,819,893,899,917,918,919,783],'ax_ssid':'10082'}; window.ezslots_raw.push( ezslot_1_raw);ezSetTargetingFromMap(ezslot_1,ezslot_1_raw);ezrpos[1]="1";ezslots.push("ezslot_1");
+				if(bvr != null){
+					if(typeof __ez_fad_fastslots['div-gpt-ad-ipachart_com-medrectangle-2-0'] == 'function') {
+						__ez_fad_fastslots['div-gpt-ad-ipachart_com-medrectangle-2-0']();
+					}
+				}
+				if(typeof ezSlotKVStore != 'undefined' && typeof ezSlotKVStore[did] != 'undefined') {
+					for (var name in ezSlotKVStore[did]) {
+						if (!ezSlotKVStore.hasOwnProperty(name)) {
+							ezSetSlotTargeting(did, name, ezSlotKVStore[did][name]);
+						}
+					}
+					ezSlotKVStore[did] = {};
+				}
+			});return "ezslot_1";};
+			__ez_fad_fastslots['div-gpt-ad-ipachart_com-medrectangle-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-medrectangle-2-0'); __ez_fad_fast('1',1000,null);};
+			__ez_fad_viewslots['div-gpt-ad-ipachart_com-medrectangle-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-medrectangle-2-0'); __ez_fad_fast('1',1000,null);};
+			__ez_fad_instaslots['div-gpt-ad-ipachart_com-medrectangle-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-medrectangle-2-0'); __ez_fad_fast('1',0,0);};__ez_fad_initslot['div-gpt-ad-ipachart_com-banner-2-0'] = function(bvr){
+				googletag.cmd.push(function() {
+				var did = 'div-gpt-ad-ipachart_com-banner-2-0';
+				ezslot_0 = googletag.defineSlot('/1254144,21986279360/ipachart_com-banner-2',[[300,250],[320,50],[250,250],[120,240],[200,200],[336,280],[320,100],[180,150],[125,125],[234,60]],'div-gpt-ad-ipachart_com-banner-2-0').addService(googletag.pubads()).setCollapseEmptyDiv(false);var ezslot_0_raw = {'a':'1','iid1':'1600980980780645','eid':'1600980980780645','t':'134','d':'188317','t1':'134','pvc':'0','ap':'1121','sap':'1121','a':'|5|','as':'revenue','plat':'1','bra':'mod1','ic':'1','at':'mbf','adr':'399','ezosn':'0','reft':'tf','refs':'30','ga':'2497208','gala':'','rid':'99998','pt':'31','al':'1031','compid':'0','tap':'ipachart_com-banner-2-1600980980780645','eb_br':'c5429b6ddd929d0bc40a832a87789a7c','eba':'1','ebss':[10017,10082,10061,10015,10063,11304,11307],'asau':'5339076804','bv':'23','bvm':'0','bvr':'3','shp':'2','ftsn':'3','br1':'1000','br2':'500','ezoic':'1','nmau':'0','mau':'0','stl':[34,193,0,168,0,168,192,192,192,197,187,0,901,182,901,902,903],'deal1':[21,22,23,24,25,26,27,28,29,30,760,761,813,814,815,816,817,818,819,893,899,903,917,918,919,783],'ax_ssid':'10082'}; window.ezslots_raw.push( ezslot_0_raw);ezSetTargetingFromMap(ezslot_0,ezslot_0_raw);ezrpos[0]="0";ezslots.push("ezslot_0");
+				if(bvr != null){
+					if(typeof __ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-2-0'] == 'function') {
+						__ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-2-0']();
+					}
+				}
+				if(typeof ezSlotKVStore != 'undefined' && typeof ezSlotKVStore[did] != 'undefined') {
+					for (var name in ezSlotKVStore[did]) {
+						if (!ezSlotKVStore.hasOwnProperty(name)) {
+							ezSetSlotTargeting(did, name, ezSlotKVStore[did][name]);
+						}
+					}
+					ezSlotKVStore[did] = {};
+				}
+			});return "ezslot_0";};
+			__ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-2-0'); __ez_fad_fast('0',1000,null);};
+			__ez_fad_viewslots['div-gpt-ad-ipachart_com-banner-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-2-0'); __ez_fad_fast('0',1000,null);};
+			__ez_fad_instaslots['div-gpt-ad-ipachart_com-banner-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-2-0'); __ez_fad_fast('0',0,0);};__ez_fad_initslot['div-gpt-ad-ipachart_com-large-leaderboard-2-0'] = function(bvr){
+				googletag.cmd.push(function() {
+				var did = 'div-gpt-ad-ipachart_com-large-leaderboard-2-0';
+				ezslot_2 = googletag.defineSlot('/1254144,21986279360/ipachart_com-large-leaderboard-2',[[336,280],[728,90],[320,50],[468,60],[234,60],['fluid']],'div-gpt-ad-ipachart_com-large-leaderboard-2-0').addService(googletag.pubads()).setCollapseEmptyDiv(false);var ezslot_2_raw = {'a':'1','iid1':'6709283612785518','eid':'6709283612785518','t':'134','d':'188317','t1':'134','pvc':'0','ap':'1116','sap':'1116','a':'|2|','as':'revenue','plat':'1','bra':'mod1','ic':'1','at':'mbf','adr':'399','ezosn':'2','reft':'tf','refs':'30','ga':'2497208','gala':'','rid':'99998','pt':'36','al':'1036','compid':'0','tap':'ipachart_com-large-leaderboard-2-6709283612785518','eb_br':'736e09a0771285737509ab8954c475a7','eba':'1','ebss':[10017,10082,10061,10015,10063,11304,11307],'asau':'5339076804','bv':'15','bvm':'0','bvr':'5','shp':'1','ftsn':'3','br1':'1200','br2':'600','ezoic':'1','nmau':'0','mau':'0','stl':[85,163,176,27,170,131,88,20,26,145,205,0,181,173,901,902,903],'deal1':[21,22,23,24,25,26,27,28,760,815,816,817,899,903,919,783],'ax_ssid':'10082'}; window.ezslots_raw.push( ezslot_2_raw);ezSetTargetingFromMap(ezslot_2,ezslot_2_raw);ezrpos[2]="2";ezslots.push("ezslot_2");
+				if(bvr != null){
+					if(typeof __ez_fad_fastslots['div-gpt-ad-ipachart_com-large-leaderboard-2-0'] == 'function') {
+						__ez_fad_fastslots['div-gpt-ad-ipachart_com-large-leaderboard-2-0']();
+					}
+				}
+				if(typeof ezSlotKVStore != 'undefined' && typeof ezSlotKVStore[did] != 'undefined') {
+					for (var name in ezSlotKVStore[did]) {
+						if (!ezSlotKVStore.hasOwnProperty(name)) {
+							ezSetSlotTargeting(did, name, ezSlotKVStore[did][name]);
+						}
+					}
+					ezSlotKVStore[did] = {};
+				}
+			});return "ezslot_2";};
+			__ez_fad_fastslots['div-gpt-ad-ipachart_com-large-leaderboard-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-large-leaderboard-2-0'); __ez_fad_fast('2',1200,null);};
+			__ez_fad_viewslots['div-gpt-ad-ipachart_com-large-leaderboard-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-large-leaderboard-2-0'); __ez_fad_fast('2',1200,null);};
+			__ez_fad_instaslots['div-gpt-ad-ipachart_com-large-leaderboard-2-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-large-leaderboard-2-0'); __ez_fad_fast('2',0,0);};__ez_fad_initslot['div-gpt-ad-ipachart_com-banner-1-0'] = function(bvr){
+				googletag.cmd.push(function() {
+				var did = 'div-gpt-ad-ipachart_com-banner-1-0';
+				ezslot_3 = googletag.defineSlot('/1254144,21986279360/ipachart_com-banner-1',[300,250],'div-gpt-ad-ipachart_com-banner-1-0').addService(googletag.pubads()).setCollapseEmptyDiv(false);var ezslot_3_raw = {'a':'1','iid1':'5728209860775887','eid':'5728209860775887','t':'134','d':'188317','t1':'134','pvc':'0','ap':'1115','sap':'1115','a':'|6|','as':'revenue','plat':'1','bra':'mod1','ic':'1','at':'mbf','adr':'399','ezosn':'3','reft':'tf','refs':'30','ga':'2497208','gala':'','rid':'99998','pt':'30','al':'1030','compid':'0','tap':'ipachart_com-banner-1-5728209860775887','eb_br':'d81e229576f8cb8a43ff5c6a8e596727','eba':'1','ebss':[10017,10082,10061,10015,10063,11304,11307],'asau':'5339076804','bv':'16','bvm':'0','bvr':'6','shp':'1','ftsn':'3','br1':'1500','br2':'750','ezoic':'1','nmau':'0','mau':'0','stl':[77,168,0,67,0,193,20,20,71,201,192,31,902,903,901,902,903],'deal1':[21,22,23,24,25,26,27,28,760,815,816,817,899,919,783],'ax_ssid':'10082'}; window.ezslots_raw.push( ezslot_3_raw);ezSetTargetingFromMap(ezslot_3,ezslot_3_raw);ezrpos[3]="3";ezslots.push("ezslot_3");
+				if(bvr != null){
+					if(typeof __ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-1-0'] == 'function') {
+						__ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-1-0']();
+					}
+				}
+				if(typeof ezSlotKVStore != 'undefined' && typeof ezSlotKVStore[did] != 'undefined') {
+					for (var name in ezSlotKVStore[did]) {
+						if (!ezSlotKVStore.hasOwnProperty(name)) {
+							ezSetSlotTargeting(did, name, ezSlotKVStore[did][name]);
+						}
+					}
+					ezSlotKVStore[did] = {};
+				}
+			});return "ezslot_3";};
+			__ez_fad_fastslots['div-gpt-ad-ipachart_com-banner-1-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-1-0'); __ez_fad_fast('3',1500,null);};
+			__ez_fad_viewslots['div-gpt-ad-ipachart_com-banner-1-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-1-0'); __ez_fad_fast('3',1500,null);};
+			__ez_fad_instaslots['div-gpt-ad-ipachart_com-banner-1-0'] = function(){__ez_fad_fastdiv.push('div-gpt-ad-ipachart_com-banner-1-0'); __ez_fad_fast('3',0,0);};</script>
+<script type="text/javascript">(function(){function storageAvailable(type){var storage;try{storage=window[type];var x='__storage_test__';storage.setItem(x,x);storage.removeItem(x);return true;}
+catch(e){return e instanceof DOMException&&(e.code===22||e.code===1014||e.name==='QuotaExceededError'||e.name==='NS_ERROR_DOM_QUOTA_REACHED')&&(storage&&storage.length!==0);}}
+function remove_ama_config(){if(storageAvailable('localStorage')){localStorage.removeItem("google_ama_config");}}
+remove_ama_config()})()</script>
+<script type="text/javascript">var ezoicTestActive = true</script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":2,"ad_count_adjustment":0,"ad_lazyload_version":0,"ad_load_version":1,"ad_location_ids":"31,5,36,30","ad_transform_level":0,"adx_ad_count":4,"bidder_method":1,"bidder_version":2,"city":"","country":"DE","days_since_last_visit":-1,"display_ad_count":3,"domain_id":188317,"domain_test_group":20210303,"ds_adsize_opt_id":-1,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"has_bad_image":0,"has_bad_words":0,"iab_category":"","is_from_recommended_pages":false,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"max_ads":3,"metro_code":0,"optimization_version":1,"page_ad_positions":"1100,1115,1116,1121","page_view_count":0,"page_view_id":"fe7b9e18-92c8-4829-67f0-09781c4790cc","position_selection_id":39,"postal_code":"","pv_event_count":0,"response_size_orig":30153,"response_time_orig":4,"serverid":"54.93.106.189:29225","state":"","sub_page_ad_positions":"1100,1115,1116,1121","t_epoch":1647526206,"template_id":134,"time_on_site_visit":0,"url":"https://www.ipachart.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":468,"worst_bad_word_level":0};var _ezim_d = {"ipachart_com-banner-1":{"adsense_stat_source_id":5,"adx_ad_count":4,"adx_stat_source_id":35,"full_id":"ipachart_com-banner-1/2022-03-17/5728209860775887","height":"250","position_id":1115,"sub_position_id":1115,"width":"300"},"ipachart_com-banner-2":{"adsense_stat_source_id":5,"adx_ad_count":4,"adx_stat_source_id":35,"full_id":"ipachart_com-banner-2/2022-03-17/1600980980780645","height":"250","position_id":1121,"sub_position_id":1121,"width":"300"},"ipachart_com-large-leaderboard-2":{"adsense_stat_source_id":5,"adx_ad_count":4,"adx_stat_source_id":35,"full_id":"ipachart_com-large-leaderboard-2/2022-03-17/6709283612785518","height":"280","position_id":1116,"sub_position_id":1116,"width":"336"},"ipachart_com-medrectangle-2":{"adsense_stat_source_id":5,"adx_ad_count":4,"adx_stat_source_id":35,"full_id":"ipachart_com-medrectangle-2/2022-03-17/6947057518804451","height":"90","position_id":1100,"sub_position_id":1100,"width":"728"}};var _ezat = {"domain_id":188317,"form_factor_id":1,"framework_id":1,"pageview_date":"2022-03-17","pageview_id":"fe7b9e18-92c8-4829-67f0-09781c4790cc","template_id":134,"url":"https://www.ipachart.com/","visit_uuid":"e077efc3-7ea2-4553-6632-6f64f00fcbcc"};</script><script data-ezscrex="false" data-pagespeed-no-defer data-cfasync="false" type="text/javascript">__ez.queue.addFile('banger.js', '/porpoiseant/banger.js?cb=195-0&bv=107&v=57&PageSpeed=off', true, [], true, false, false, true);</script>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+if(typeof isOrig==='undefined'){isOrig=false;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){if((impId!=="0"||isOrig===true)&&adUnit!==""){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}}
+function AddPixelById(impFullId,pixelData,isOrig,revenue){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];var pix={type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig};if(typeof revenue!=='undefined'){pix.revenue=revenue;}
+pixels.push(pix);}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}});}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false;}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();</script>
+
+
+
+<meta name="viewport" content="width=device-width, user-scalable=no"/>
+
+<title>IPA Chart</title>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30905425-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<style type="text/css">
+	@font-face {
+		font-family: CustomIPA;
+		src: url('dejavusans-ipa.ttf') format("truetype");
+	}
+	.IPA {
+		font-family: CustomIPA, "DejaVu Sans", "Arial Unicode MS", "Lucida Sans Unicode", sans-serif;
+	}
+	body {
+		font-family: sans-serif;
+		text-align: center;
+	}
+	h2 {
+		text-align: center;
+		margin: 1em 0 0 0;
+	}
+	.text h1, .text h2 {
+		margin: 0.25em 0;
+		text-align: left;
+	}
+	.nowrap {
+		white-space: nowrap;
+	}
+	.problem {
+		background-color: #faa;
+		border: 1px solid #f00;
+		padding: 0 1em;
+		margin: 1em auto;
+		max-width: 37em;
+	}
+	.text {
+		background-color: #cfc;
+		border: 1px solid #bdb;
+		padding: 0 1em;
+		margin: 1em auto;
+		max-width: 37em;
+		text-align: left;
+	}
+	#object {
+		display: none;
+		margin: 1em 0;
+		padding: 0;
+		text-align: center;
+		height: 2em;
+	}
+	#object object {
+		margin: 0;
+		padding: 0;
+		width: 20em;
+		height: 3em;
+	}
+	#noaudio {
+		display: none;
+	}
+
+	.at, .ct, .rt {
+		text-align: center;
+		margin: 0.2em auto 0.1em auto;
+		border-spacing: 0.15em;
+	}
+	.at {
+		width: 49em;
+	}
+	.at td, .at th {
+		vertical-align: middle;
+	}
+	.at th {
+		line-height: 100%;
+		padding: 0.15em;
+	}
+	.at td {
+		width: 1.5em;
+		height: 1.5em;
+		padding: 0.1em;
+		line-height: 1.3em;
+	}
+	.at tr:nth-child(1) td:nth-child(1) {
+		background-color: white !important;
+		min-width: 10em;
+	}
+	.at tr th:nth-child(even), .at tr .interactive:nth-child(4n+2), .at tr .interactive:nth-child(4n+3), .ct td, .rt td {
+		background-color: #ccffc1;
+	}
+	.at tr th:nth-child(odd), .at tr .interactive:nth-child(4n+4), .at tr .interactive:nth-child(4n+1), .ct th, .rt th, .vowels .interactive {
+		background-color: #6f4;
+	}
+	.at td, .ct .blank {
+		background-color: #eeffea;
+	}
+	.interactive {
+		cursor: pointer;
+	}
+	.interactive:hover {
+		background-color: #22f !important;
+		color: #fff;
+	}
+	.at .extended:nth-child(even) {
+		padding-left: 3.85em !important;
+	}
+	.at .extended:nth-child(odd) {
+		padding-right: 3.85em !important;
+	}
+	.at .impossible {
+		background-color: #d2d2d2 !important;
+	}
+	.ct .IPA, .rt .IPA {
+		float: left;
+		display: block;
+		width: 2em;
+		text-align: center;
+	}
+	.nofloat {
+		float: none !important;
+		display: inline !important;
+		width: auto !important;
+		text-align: inherit !important;
+	}
+	.ct td, .rt td {
+		padding: 0.2em 1em 0.2em 0.2em;
+		text-align: left;
+		line-height: 1.5em;
+		white-space: nowrap;
+	}
+	.ct .IPA, .rt .IPA {
+		font-size: 1.3em;
+	}
+	.ct {
+		width: 35em;
+	}
+	.overflow, .twins, .voweloverflow {
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+	.voweloverflow {
+		position: relative;
+		max-width: 38em;
+		margin: 1.5em auto 0.1em auto;
+	}
+	.vowels {
+		position: relative;
+		width: 35em;
+		margin: 0 0 0 1.5em;
+	}
+	.vowels .trapezoid {
+		position: absolute:
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.vowels .v {
+		width: 14%;
+		text-align: center;
+		position: absolute;
+	}
+	.vowels .close_front {
+		top: 4%;
+		left: 4%;
+	}
+	.vowels .close_central {
+		top: 4%;
+		left: 44%;
+	}
+	.vowels .close_back {
+		top: 4%;
+		left: 84%;
+	}
+	.vowels .nearclose_nearfront {
+		top: 18%;
+		left: 23%;
+	}
+	.vowels .nearclose_nearback {
+		top: 18%;
+		left: 71%;
+	}
+	.vowels .closemid_front {
+		top: 33%;
+		left: 18%;
+	}
+	.vowels .closemid_central {
+		top: 33%;
+		left: 51%;
+	}
+	.vowels .closemid_back {
+		top: 33%;
+		left: 84%;
+	}
+	.vowels .mid_central {
+		top: 47%;
+		left: 54%;
+	}
+	.vowels .openmid_front {
+		top: 61%;
+		left: 31%;
+	}
+	.vowels .openmid_central {
+		top: 61%;
+		left: 58%;
+	}
+	.vowels .openmid_back {
+		top: 61%;
+		left: 84%;
+	}
+	.vowels .nearopen_front {
+		top: 79%;
+		left: 34%;
+	}
+	.vowels .nearopen_central {
+		top: 73%;
+		left: 60%;
+	}
+	.vowels .open_front {
+		top: 90%;
+		left: 44%;
+	}
+	.vowels .open_back {
+		top: 90%;
+		left: 84%;
+	}
+	.vowels .interactive {
+		font-size: 1.3em;
+		padding: 0.3em;
+	}
+	.vowels .l {
+		position: absolute;
+		font-size: 90%;
+	}
+	.vowels .front {
+		top: -1.5em;
+		left: 7%;
+	}
+	.vowels .central {
+		top: -1.5em;
+		left: 45%;
+	}
+	.vowels .back {
+		top: -1.5em;
+		left: 87%;
+	}
+	.vowels .close {
+		top: 5%;
+		left: -1.5em;
+	}
+	.vowels .closemid {
+		top: 34%;
+		left: -1.5em;
+	}
+	.vowels .openmid {
+		top: 62%;
+		left: -1.5em;
+	}
+	.vowels .open {
+		top: 90%;
+		left: -1.5em;
+	}
+	.caption {
+		font-size: 90%;
+		text-align: center;
+		margin: 0.1em auto 0.2em auto;
+	}
+	.copyright {
+		font-size: 90%;
+		text-align: left;
+	}
+	.twins {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	.twin1, .twin2 {
+		margin: 0;
+		padding: 0;
+			display: -moz-inline-stack;
+			display: inline-block;
+			vertical-align: top;
+			margin: 5px;
+			zoom: 1;
+			*display: inline;
+	}
+</style>
+
+<!--[if lt IE 9]>
+<script src="nwmatcher-1.2.2.min.js"></script>
+<script src="selectivizr.js"></script>
+<![endif]-->
+<script type="text/javascript" src="mdetect.min.js"></script>
+<script type="text/javascript">
+	mobile = (DetectTierIphone()||DetectTierRichCss()||DetectTierOtherPhones());
+	support = !!(document.createElement('audio').canPlayType);
+	if(support){
+		method = "html5";
+		audio = new Audio("");
+		ogg_support = audio.canPlayType("audio/ogg");
+		mp3_support = audio.canPlayType("audio/mpeg");
+		wav_support = audio.canPlayType("audio/vnd.wave");
+		if(ogg_support == "probably")
+			type = "ogg";
+		else if(mp3_support == "probably")
+			type = "mp3";
+		else if(wav_support == "probably")
+			type = "wav";
+		else if(ogg_support == "maybe")
+			type = "ogg";
+		else if(mp3_support == "maybe")
+			type = "mp3";
+		else if(wav_support == "maybe")
+			type = "wav";
+		else if(ogg_support != "no" && ogg_support != "")
+			type = "ogg";
+		else if(mp3_support != "no" && mp3_support != "")
+			type = "mp3";
+		else if(wav_support != "no" && wav_support != "")
+			type = "wav";
+		else {
+			type = "mp3";
+			support = false;
+		}
+		if(support) clips=[];
+	} else {
+		support = false;
+		type = "mp3";
+	}
+	function ipa(sound) {
+		if(support){
+			if(!clips[sound]) clips[sound] = new Audio(type+'/'+sound+'.'+type);
+			clips[sound].play();
+		}else{
+			if(mobile) {
+				window.location = type+'/'+sound+'.'+type;
+			} else {
+			document.getElementById("object").innerHTML = '<object classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" type="audio/mpeg" data="mp3/'+sound+'.mp3"><param name="src" value="mp3/'+sound+'.mp3"><param name="autoplay" value="true"><param name="autoStart" value="1"><object classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" type="audio/x-wav" data="wav/'+sound+'.wav"><param name="src" value="wav/'+sound+'.wav"><param name="autoplay" value="true"><param name="autoStart" value="1"><script type="text/javascript" language="javascript"><object type="audio/mpeg" data="mp3/'+sound+'.mp3"><param name="src" value="mp3/'+sound+'.mp3"><param name="autoplay" value="true"><param name="autoStart" value="1"><object type="audio/ogg" data="ogg/'+sound+'.ogg"><param name="src" value="ogg/'+sound+'.ogg"><param name="autoplay" value="true"><param name="autoStart" value="1"><object type="audio/x-wav" data="wav/'+sound+'.wav"><param name="src" value="wav/'+sound+'.wav"><param name="autoplay" value="true"><param name="autoStart" value="1"><script type="text/javascript" language="javascript">window.location = type+"/"+sound+"."+type;</scr'+'ipt></object></object></object></object>';
+			}
+		}
+	}
+	function set_type(new_type) {
+		type = new_type;
+	}
+</script>
+
+<style id='ezoicCSS'>.ezoic-ad.banner-1115 { display:block !important;float:none !important;line-height:0px;margin-bottom:15px !important;margin-left:0px !important;margin-right:0px !important;margin-top:15px !important;max-width:100% !important;min-height:250px;min-width:300px;padding:0;text-align:center !important; }
+.ezoic-ad.large-leaderboard-2116 { display:block !important;float:none !important;line-height:0px;margin-bottom:2px !important;margin-left:0px !important;margin-right:0px !important;margin-top:2px !important;max-width:100% !important;min-height:90px;min-width:728px;padding:0;text-align:center !important; }
+.ezoic-ad.banner-2121 { display:block !important;float:none !important;line-height:0px;margin-bottom:2px !important;margin-left:0px !important;margin-right:0px !important;margin-top:2px !important;max-width:100% !important;min-height:280px;min-width:336px;padding-bottom:20px !important;padding-top:20px !important;text-align:center !important; }
+.ezoic-ad.medrectangle-2100 { display:inline-block;float:none;line-height:0px;max-width:100% !important;min-height:90px;min-width:728px;padding:0; }
+.ezoic-ad{display:inline-block;border:0px;}.ezoic-ad>div>iframe{margin:0px!important;padding:0px!important;}
+.adtester-container-113,.adtester-container-112,.adtester-container-125,.adtester-container-120,.adtester-container-110,.adtester-container-122,.adtester-container-108,.adtester-container-114,.adtester-container-117,.adtester-container-111,.adtester-container-124,.adtester-container-119,.adtester-container-118,.adtester-container-123{display:none!important}
+.ezmob-footer{position:fixed;left:0;bottom:0;width:100%;background:#fff;z-index:100000;line-height:0}.ezmob-footer-desktop{background-color:#fffc;border-top:1px solid #d3d3d3;padding-top:5px}.ezmob-footer-close{cursor:pointer;color:#b2b2b2;border:1px solid #b2b2b2;border-radius:20px;background:#fff;line-height:20px;display:inline-block;font-size:20px;font-family:arial,sans-serif;padding:0 5px;position:absolute;top:5px;right:5px;height:24px;width:21px;text-align:center}body {
+					padding-bottom: 120px !important;
+					height: auto;
+				}
+				.ezmob-footer-close-mobile {
+				display:none;
+			}
+			#ezmobfooter {
+				bottom: 0px !important;
+			}
+			</style><link rel='canonical' href='https://www.ipachart.com/' />
+<script data-ezscrex="false" pagespeed_no_defer="" data-cfasync="false" type="text/javascript">
+        window.cookieconsent_options = {
+            "message":"Wir verwenden Cookies um Inhalte und Anzeigen zu personalisieren, um Social-Media-Funktionen zur Verfügung zu stellen und unseren Traffic zu analysieren. Wir teilen auch Informationen über Ihre Nutzung unserer Website mit unseren Social Media-, Werbe- und Analysepartnern.",
+            "dismiss":"Verstanden!",
+            "learnMore":"Details anzeigen",
+            "link":"/privacy.html",
+            "theme":"/ezoic/styles/dark-bottom.css",
+			"domain":"ipachart.com"
+        };
+    </script>
+<script data-ezscrex="false" pagespeed_no_defer="" data-cfasync="false" type="text/javascript" src="/ezoic/cookieconsent.min.js"></script>
+<script type="text/javascript">var ezouid = "1";</script><base href="https://www.ipachart.com/"><script type='text/javascript'>
+var ezoTemplate = 'pub_site';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 188317;
+var ezdomain = 'ipachart.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_188317=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["fe7b9e18-92c8-4829-67f0-09781c4790cc", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script>
+<script type="text/javascript">var _audins_dom="ipachart_com",_audins_did=188317;__ez.queue.addFile('/detroitchicago/cmbv2.js', '/detroitchicago/cmbv2.js?gcb=195-0&cb=04-1y02-5y06-12y07-1y0b-5y0d-14y13-3y17-4y21-3y36-23y55-1y59-21&cmbcb=28&sj=x04x02x06x07x0bx0dx13x17x21x36x55x59', true, [], true, false, true, false);</script>
+<script type="text/javascript" defer>__ez.queue.addFile('/detroitchicago/cmbdv2.js', '/detroitchicago/cmbdv2.js?gcb=195-0&cb=03-5y0c-5y18-4y37-23y5a-21&cmbcb=28&sj=x03x0cx18x37x5a', true, ['/detroitchicago/cmbv2.js'], true, false, true, false);</script></head>
+<body>
+
+<!-- Ezoic - top_of_page - top_of_page -->
+<span id="ezoic-pub-ad-placeholder-108"></span>
+<!-- End Ezoic - top_of_page - top_of_page -->
+
+<div class="text">
+	<h1>Interactive IPA Chart</h1>
+	<!-- Ezoic - under_page_title - under_page_title -->
+	<span id="ezoic-pub-ad-placeholder-111"></span>
+	<!-- End Ezoic - under_page_title - under_page_title -->
+	<p>The <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">International Phonetic Alphabet</a> (IPA) is a set of symbols that linguists use to describe the sounds of spoken languages.</p>
+	<!-- Ezoic - under_first_paragraph - under_first_paragraph -->
+	<span id="ezoic-pub-ad-placeholder-112"></span>
+	<!-- End Ezoic - under_first_paragraph - under_first_paragraph -->
+	<p>This page lets you hear the sounds that the symbols represent, but remember that it is only a rough guide. There is lots of variation in how these sounds are said depending on the language and context. For example, in English voiceless plosives usually end with a puff of air called <em>aspiration</em>, but the voiceless plosives on this page aren&#39;t aspirated.</p>
+</div>
+
+<!-- Ezoic - under_second_paragraph - under_second_paragraph -->
+<span id="ezoic-pub-ad-placeholder-110"></span>
+<!-- End Ezoic - under_second_paragraph - under_second_paragraph -->
+
+<div class="text">
+	<p>Choose a symbol to hear the sound it represents.</p>
+</div>
+
+<div class="problem" id="noaudio">
+	<p>For best results, please use a browser with HTML5 Audio support. The latest version of any popular web browser will do.</p>
+</div>
+
+<script type="text/javascript">
+	if(!support && !mobile) document.getElementById("noaudio").style.display = "block";
+</script>
+
+<noscript><div class="problem">
+	<p><strong>Sorry, you have JavaScript disabled or your web browser doesn't support it.</strong></p>
+	<p>This interactive chart won't work without JavaScript enabled. Please enable JavaScript or upgrade to a modern web browser.</p>
+</div></noscript>
+
+<!-- Ezoic - mid_content - mid_content -->
+<span id="ezoic-pub-ad-placeholder-113"></span>
+<!-- End Ezoic - mid_content - mid_content -->
+
+<h2>Vowels</h2>
+<p class="caption">Where symbols appear in pairs, the one to the right represents a rounded vowel.</p>
+<div class="voweloverflow">
+	<div class="vowels">
+		<img src="Blank_vowel_trapezoid.png" class="trapezoid"/>
+		<div class="l front">Front</div>
+		<div class="l central">Central</div>
+		<div class="l back">Back</div>
+		<div class="l close">Close</div>
+		<div class="l closemid">Close-mid</div>
+		<div class="l openmid">Open-mid</div>
+		<div class="l open">Open</div>
+		<div class="v close_front"><span class="interactive IPA" onclick="ipa(&#39;Close_front_unrounded_vowel&#39;);">i</span> <span class="interactive IPA" onclick="ipa(&#39;Close_front_rounded_vowel&#39;);">y</span></div>
+		<div class="v close_central"><span class="interactive IPA" onclick="ipa(&#39;Close_central_unrounded_vowel&#39;);">ɨ</span> <span class="interactive IPA" onclick="ipa(&#39;Close_central_rounded_vowel&#39;);">ʉ</span></div>
+		<div class="v close_back"><span class="interactive IPA" onclick="ipa(&#39;Close_back_unrounded_vowel&#39;);">ɯ</span> <span class="interactive IPA" onclick="ipa(&#39;Close_back_rounded_vowel&#39;);">u</span></div>
+		<div class="v nearclose_nearfront"><span class="interactive IPA" onclick="ipa(&#39;Near-close_near-front_unrounded_vowel&#39;);">ɪ</span> <span class="interactive IPA" onclick="ipa(&#39;Near-close_near-front_rounded_vowel&#39;);">ʏ</span></div>
+		<div class="v nearclose_nearback"><span class="interactive IPA" onclick="ipa(&#39;Near-close_near-back_rounded_vowel&#39;);">ʊ</span></div>
+		<div class="v closemid_front"><span class="interactive IPA" onclick="ipa(&#39;Close-mid_front_unrounded_vowel&#39;);">e</span> <span class="interactive IPA" onclick="ipa(&#39;Close-mid_front_rounded_vowel&#39;);">ø</span></div>
+		<div class="v closemid_central"><span class="interactive IPA" onclick="ipa(&#39;Close-mid_central_unrounded_vowel&#39;);">ɘ</span> <span class="interactive IPA" onclick="ipa(&#39;Close-mid_central_rounded_vowel&#39;);">ɵ</span></div>
+		<div class="v closemid_back"><span class="interactive IPA" onclick="ipa(&#39;Close-mid_back_unrounded_vowel&#39;);">ɤ</span> <span class="interactive IPA" onclick="ipa(&#39;Close-mid_back_rounded_vowel&#39;);">o</span></div>
+		<div class="v mid_central"><span class="interactive IPA" onclick="ipa(&#39;Mid-central_vowel&#39;);">ə</span></div>
+		<div class="v openmid_front"><span class="interactive IPA" onclick="ipa(&#39;Open-mid_front_unrounded_vowel&#39;);">ɛ</span> <span class="interactive IPA" onclick="ipa(&#39;Open-mid_front_rounded_vowel&#39;);">œ</span></div>
+		<div class="v openmid_central"><span class="interactive IPA" onclick="ipa(&#39;Open-mid_central_unrounded_vowel&#39;);">ɜ</span> <span class="interactive IPA" onclick="ipa(&#39;Open-mid_central_rounded_vowel&#39;);">ɞ</span></div>
+		<div class="v openmid_back"><span class="interactive IPA" onclick="ipa(&#39;Open-mid_back_unrounded_vowel&#39;);">ʌ</span> <span class="interactive IPA" onclick="ipa(&#39;Open-mid_back_rounded_vowel&#39;);">ɔ</span></div>
+		<div class="v nearopen_front"><span class="interactive IPA" onclick="ipa(&#39;Near-open_front_unrounded_vowel&#39;);">æ</span></div>
+		<div class="v nearopen_central"><span class="interactive IPA" onclick="ipa(&#39;Near-open_central_unrounded_vowel&#39;);">ɐ</span></div>
+		<div class="v open_front"><span class="interactive IPA" onclick="ipa(&#39;Open_front_unrounded_vowel&#39;);">a</span> <span class="interactive IPA" onclick="ipa(&#39;Open_front_rounded_vowel&#39;);">ɶ</span></div>
+		<div class="v open_back"><span class="interactive IPA" onclick="ipa(&#39;Open_back_unrounded_vowel&#39;);">ɑ</span> <span class="interactive IPA" onclick="ipa(&#39;Open_back_rounded_vowel&#39;);">ɒ</span></div>
+	</div>
+</div>
+
+<!-- Ezoic - long_content - long_content -->
+<span id="ezoic-pub-ad-placeholder-115"></span><span class="ezoic-ad banner-1 banner-1115 adtester-container adtester-container-115" data-ez-name="ipachart_com-banner-1"><span id="div-gpt-ad-ipachart_com-banner-1-0" ezaw="300" ezah="250" style="position:relative;z-index:0;display:inline-block;padding:0;min-height:250px;min-width:300px;" class="ezoic-ad"><script data-ezscrex="false" data-cfasync="false" type="text/javascript" style="display:none;">if(typeof __ez_fad_position != 'undefined'){__ez_fad_position('div-gpt-ad-ipachart_com-banner-1-0')};</script></span></span>
+<!-- End Ezoic - long_content - long_content -->
+
+<h2>Pulmonic consonants</h2>
+<p class="caption">Where symbols appear in pairs, the one to the right represents a voiced consonant.</p>
+<p class="caption">Areas shaded grey indicate articulations judged impossible.</p>
+<div class="overflow">
+	<table class="at"><!-- at = articulation table -->
+	<tbody><tr>
+	<td></td>
+	<th colspan="2">Bi­labial</th>
+	<th colspan="2">Labio­dental</th>
+	<th colspan="2">Den<wbr/>tal</th>
+	<th colspan="2">Alve<wbr/>olar</th>
+	<th colspan="2">Post alveolar</th>
+	<th colspan="2">Retro<wbr/>flex</th>
+	<th colspan="2">Pala<wbr/>tal</th>
+	<th colspan="2">Ve<wbr/>lar</th>
+	<th colspan="2">Uvu<wbr/>lar</th>
+	<th colspan="2">Phary<wbr/>ngeal</th>
+	<th colspan="2">Glot<wbr/>tal</th>
+	</tr>
+	<tr>
+	<th>Plosive</th>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_bilabial_plosive&#39;);">p</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_bilabial_plosive&#39;);">b</td>
+	<td></td><td></td>
+	<td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Voiceless_alveolar_plosive&#39;);">t</td>
+	<td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Voiced_alveolar_plosive&#39;);">d</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_retroflex_plosive&#39;);">ʈ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_retroflex_plosive&#39;);">ɖ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_palatal_plosive&#39;);">c</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_palatal_plosive&#39;);">ɟ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_velar_plosive&#39;);">k</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_velar_plosive&#39;);">g</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_uvular_plosive&#39;);">q</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_uvular_plosive&#39;);">ɢ</td>
+	<td></td>
+	<td class="impossible"></td>
+	<td class="interactive IPA" onclick="ipa(&#39;Glottal_stop&#39;);">ʔ</td>
+	<td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Nasal</th>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Bilabial_nasal&#39;);">m</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Labiodental_nasal&#39;);">ɱ</td>
+	<td colspan="3" class="extended"></td><td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Alveolar_nasal&#39;);">n</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Retroflex_nasal&#39;);">ɳ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Palatal_nasal&#39;);">ɲ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Velar_nasal&#39;);">ŋ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Uvular_nasal&#39;);">ɴ</td>
+	<td class="impossible"></td><td class="impossible"></td><td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Trill</th>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Bilabial_trill&#39;);">ʙ</td>
+	<td></td><td></td>
+	<td colspan="3" class="extended"></td><td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Alveolar_trill&#39;);">r</td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Uvular_trill&#39;);">ʀ</td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Tap or Flap</th>
+	<td></td><td></td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Labiodental_flap&#39;);">ⱱ</td>
+	<td colspan="3" class="extended"></td><td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Alveolar_tap&#39;);">ɾ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Retroflex_flap&#39;);">ɽ</td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Fricative</th>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_bilabial_fricative&#39;);">ɸ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_bilabial_fricative&#39;);">β</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_labiodental_fricative&#39;);">f</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_labiodental_fricative&#39;);">v</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_dental_fricative&#39;);">θ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_dental_fricative&#39;);">ð</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_alveolar_fricative&#39;);">s</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_alveolar_fricative&#39;);">z</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_postalveolar_fricative&#39;);">ʃ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_postalveolar_fricative&#39;);">ʒ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_retroflex_fricative&#39;);">ʂ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_retroflex_fricative&#39;);">ʐ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_palatal_fricative&#39;);">ç</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_palatal_fricative&#39;);">ʝ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_velar_fricative&#39;);">x</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_velar_fricative&#39;);">ɣ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_uvular_fricative&#39;);">χ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_uvular_fricative&#39;);">ʁ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_pharyngeal_fricative&#39;);">ħ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_pharyngeal_fricative&#39;);">ʕ</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiceless_glottal_fricative&#39;);">h</td>
+	<td class="interactive IPA" onclick="ipa(&#39;Voiced_glottal_fricative&#39;);">ɦ</td>
+	</tr>
+	<tr>
+	<th>Lateral Fricative</th>
+	<td class="impossible"></td><td class="impossible"></td><td class="impossible"></td><td class="impossible"></td>
+	<td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Voiceless_alveolar_lateral_fricative&#39;);">ɬ</td>
+	<td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Voiced_alveolar_lateral_fricative&#39;);">ɮ</td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td><td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Approximant</th>
+	<td></td><td></td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Labiodental_approximant&#39;);">ʋ</td>
+	<td colspan="3" class="extended"></td><td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Alveolar_approximant&#39;);">ɹ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Retroflex_approximant&#39;);">ɻ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Palatal_approximant&#39;);">j</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Voiced_velar_approximant&#39;);">ɰ</td>
+	<td></td><td></td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	<tr>
+	<th>Lateral Approximant</th>
+	<td class="impossible"></td><td class="impossible"></td><td class="impossible"></td><td class="impossible"></td>
+	<td colspan="3" class="extended"></td><td colspan="3" class="interactive extended IPA" onclick="ipa(&#39;Alveolar_lateral_approximant&#39;);">l</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Retroflex_lateral_approximant&#39;);">ɭ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Palatal_lateral_approximant&#39;);">ʎ</td>
+	<td></td><td class="interactive IPA" onclick="ipa(&#39;Velar_lateral_approximant&#39;);">ʟ</td>
+	<td></td><td></td>
+	<td class="impossible"></td><td class="impossible"></td><td class="impossible"></td><td class="impossible"></td>
+	</tr>
+	</tbody></table>
+</div>
+
+<!-- Ezoic - longer_content - longer_content -->
+<span id="ezoic-pub-ad-placeholder-116"></span><span class="ezoic-ad large-leaderboard-2 large-leaderboard-2116 adtester-container adtester-container-116" data-ez-name="ipachart_com-large-leaderboard-2"><span id="div-gpt-ad-ipachart_com-large-leaderboard-2-0" ezaw="336" ezah="280" style="position:relative;z-index:0;display:inline-block;padding:0;width:100%;max-width:1200px;margin-left:auto !important;margin-right:auto !important;min-height:90px;min-width:728px;" class="ezoic-ad"><script data-ezscrex="false" data-cfasync="false" type="text/javascript" style="display:none;">if(typeof __ez_fad_position != 'undefined'){__ez_fad_position('div-gpt-ad-ipachart_com-large-leaderboard-2-0')};</script></span></span>
+<!-- End Ezoic - longer_content - longer_content -->
+
+<h2>Non-pulmonic consonants</h2>
+<div class="overflow">
+	<table class="ct"><!-- ct = columns table -->
+	<tbody><tr><th>Clicks</th><th>Voiced implosives</th><th>Ejectives</th></tr>
+	<tr><td class="interactive" onclick="ipa(&#39;Bilabial_click&#39;);"><span class="IPA">ʘ</span> Bilabial</td><td class="interactive" onclick="ipa(&#39;Voiced_bilabial_implosive&#39;);"><span class="IPA">ɓ</span> Bilabial</td><td class="interactive" onclick="ipa(&#39;Bilabial_ejective_plosive&#39;);"><span class="IPA">pʼ</span> Bilabial</td></tr>
+	<tr><td class="interactive" onclick="ipa(&#39;Dental_click&#39;);"><span class="IPA">ǀ</span> Dental</td><td class="interactive" onclick="ipa(&#39;Voiced_alveolar_implosive&#39;);"><span class="IPA">ɗ</span> Dental/alveolar</td><td class="interactive" onclick="ipa(&#39;Alveolar_ejective_plosive&#39;);"><span class="IPA">tʼ</span> Dental/alveolar</td></tr>
+	<tr><td class="interactive" onclick="ipa(&#39;Postalveolar_click&#39;);"><span class="IPA">ǃ</span> (Post)alveoalar</td><td class="interactive" onclick="ipa(&#39;Voiced_palatal_implosive&#39;);"><span class="IPA">ʄ</span> Palatal</td><td class="interactive" onclick="ipa(&#39;Velar_ejective_plosive&#39;);"><span class="IPA">kʼ</span> Velar</td></tr>
+	<tr><td class="interactive" onclick="ipa(&#39;Palatoalveolar_click&#39;);"><span class="IPA">ǂ</span> Palatoalveolar</td><td class="interactive" onclick="ipa(&#39;Voiced_velar_implosive&#39;);"><span class="IPA">ɠ</span> Velar</td><td class="interactive" onclick="ipa(&#39;Alveolar_ejective_fricative&#39;);"><span class="IPA">sʼ</span> Alveolar fricative</td></tr>
+	<tr><td class="interactive" onclick="ipa(&#39;Alveolar_lateral_click&#39;);"><span class="IPA">ǁ</span> Alveolar lateral</td><td class="interactive" onclick="ipa(&#39;Voiced_uvular_implosive&#39;);"><span class="IPA">ʛ</span> Uvular</td><td class="blank"><span class="IPA">ʼ</span> <em>etc…</em></td></tr>
+	</tbody></table>
+</div>
+
+<!-- Ezoic - longest_content - longest_content -->
+<span id="ezoic-pub-ad-placeholder-117"></span>
+<!-- End Ezoic - longest_content - longest_content -->
+
+<div class="twins">
+	<div class="twin1">
+		<h2>Other symbols</h2>
+		<table class="rt"><!-- rt = rows table -->
+		<tbody><tr><td class="interactive" onclick="ipa(&#39;Voiceless_labio-velar_fricative&#39;);"><span class="IPA">ʍ</span> Voiceless labial-velar fricative</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_labio-velar_approximant&#39;);"><span class="IPA">w</span> Voiced labial-velar approximant</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Labial-palatal_approximant&#39;);"><span class="IPA">ɥ</span> Voiced labial-palatal approximant</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_epiglottal_fricative&#39;);"><span class="IPA">ʜ</span> Voiceless epiglottal fricative</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_epiglottal_fricative&#39;);"><span class="IPA">ʢ</span> Voiced epiglottal fricative</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_epiglottal_plosive&#39;);"><span class="IPA">ʡ</span> Epiglottal plosive</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_alveolo-palatal_fricative&#39;);"><span class="IPA">ɕ</span> Voiceless alveolo-palatal fricative</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_alveolo-palatal_fricative&#39;);"><span class="IPA">ʑ</span> Voiced alveolo-palatal fricative</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Alveolar_lateral_flap&#39;);"><span class="IPA">ɺ</span> Alveolar lateral flap</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_dorso-palatal_velar_fricative&#39;);"><span class="IPA">ɧ</span> Simultaneous <span class="IPA nofloat">ʃ</span> and <span class="IPA nofloat">x</span></td></tr>
+		</tbody></table>
+	</div>
+	<div class="twin2">
+		<h2>Affricates</h2>
+		<table class="rt"><!-- rt = rows table -->
+		<tbody><tr><td class="interactive" onclick="ipa(&#39;Voiceless_alveolar_affricate&#39;);"><span class="IPA">t͡s</span> Voiceless alveolar affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_palato-alveolar_affricate&#39;);"><span class="IPA">t͡ʃ</span> Voiceless palato-alveolar affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_alveolo-palatal_affricate&#39;);"><span class="IPA">t͡ɕ</span> Voiceless alveolo-palatal affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiceless_retroflex_affricate&#39;);"><span class="IPA">ʈ͡ʂ</span> Voiceless retroflex affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_alveolar_affricate&#39;);"><span class="IPA">d͡z</span> Voiced alveolar affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_postalveolar_affricate&#39;);"><span class="IPA">d͡ʒ</span> Voiced post-alveolar affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_alveolo-palatal_affricate&#39;);"><span class="IPA">d͡ʑ</span> Voiced alveolo-palatal affricate</td></tr>
+		<tr><td class="interactive" onclick="ipa(&#39;Voiced_retroflex_affricate&#39;);"><span class="IPA">ɖ͡ʐ</span> Voiceless retroflex affricate</td></tr>
+		</tbody></table>
+	</div>
+</div>
+
+<div id="object"></div>
+<script type="text/javascript">
+	if(!support && !mobile) document.getElementById("object").style.display = "block";
+</script>
+
+<!-- Ezoic - incontent_5 - incontent_5 -->
+<span id="ezoic-pub-ad-placeholder-118"></span>
+<!-- End Ezoic - incontent_5 - incontent_5 -->
+
+<div class="text">
+	<p class="copyright">Each audio clip is the work of Peter Isotalo, User:Denelson83, UCLA Phonetics Lab Archive 2003, User:Halibutt, User:Pmx or User:Octane, and made available under a free and/or copyleft licence. For details on the licensing and attribution requirements of a particular clip, browse to it from the <a href="https://commons.wikimedia.org/wiki/General_phonetics">general phonetics</a> page at the Wikimedia Commons. Vowel trapezoid background by User:Denelson83; see <a href="https://commons.wikimedia.org/wiki/File:Blank_vowel_trapezoid.png">File:Blank vowel trapezoid.png</a> on Wikimedia Commons for details.</p>
+</div>
+
+<!-- Ezoic - incontent_6 - incontent_6 -->
+<span id="ezoic-pub-ad-placeholder-119"></span>
+<!-- End Ezoic - incontent_6 - incontent_6 -->
+
+<div class="text">
+	<p>Queries and comments can be directed to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a4945445e4b495e6a435a4b49424b585e04494547">[email&#160;protected]</a></p>
+</div>
+
+<!-- Ezoic - bottom_of_page - bottom_of_page -->
+<span id="ezoic-pub-ad-placeholder-114"></span>
+<!-- End Ezoic - bottom_of_page - bottom_of_page -->
+
+<!-- Ezoic - sidebar_floating_2 - sidebar_floating_1 -->
+<div style="position:fixed; margin: 0; padding: 0; left: 0; top: 25%; text-align: left; max-height: 75%;">
+<span id="ezoic-pub-ad-placeholder-121"></span><span class="ezoic-ad banner-2 banner-2121 adtester-container adtester-container-121" data-ez-name="ipachart_com-banner-2"><span id="div-gpt-ad-ipachart_com-banner-2-0" ezaw="300" ezah="250" style="position:relative;z-index:0;display:inline-block;padding:0;min-height:280px;min-width:336px;" class="ezoic-ad"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-ezscrex="false" data-cfasync="false" type="text/javascript" style="display:none;">if(typeof __ez_fad_position != 'undefined'){__ez_fad_position('div-gpt-ad-ipachart_com-banner-2-0')};</script></span><span style="width:300px;display:block;height:14px;margin:auto" class="reportline"><span style="text-align:center;font-size: smaller;float:left;line-height:normal;"><a href="https://www.ezoic.com/what-is-ezoic/" target="_blank" rel="noopener noreferrer nofollow" style="cursor:pointer"><img src="https://go.ezoic.net/utilcave_com/img/ezoic.png" alt="Ezoic" loading="lazy" style="height:12px !important; padding:2px !important; border:0px !important; cursor:pointer !important; width: 58px !important; margin:0 !important; box-sizing: content-box !important;"/></a></span><span class="ez-report-ad-button" name="?pageview_id=fe7b9e18-92c8-4829-67f0-09781c4790cc&amp;ad_position_id=121&amp;impression_group_id=ipachart_com-banner-2/2022-03-17/1600980980780645&amp;ad_size=300x250&amp;domain_id=188317&amp;url=https://www.ipachart.com/" style="cursor: pointer!important; font-size:12px !important;color: #a5a5a5 ;float:right;text-decoration:none !important;font-family:arial !important;line-height:normal;">report this ad</span></span></span>
+</div>
+<!-- End Ezoic - sidebar_floating_2 - sidebar_floating_1 -->
+
+<!-- Ezoic - sidebar_floating_5 - sidebar_floating_1 -->
+<div style="position:fixed; margin: 0; padding: 0; right: 0; top: 25%; text-align: right; max-height: 75%;">
+<span id="ezoic-pub-ad-placeholder-124"></span>
+</div>
+<!-- End Ezoic - sidebar_floating_5 - sidebar_floating_1 -->
+
+
+
+<div class="ezmob-footer ezoic-floating-bottom ezo_ad ezmob-footer-desktop" id="ezmobfooter"><center><span id="ezoic-pub-ad-placeholder-100"></span><div class="ezmob-footer ezoic-floating-bottom ezo_ad ezmob-footer-desktop" id="ezmobfooter"><center><span class="ezoic-ad medrectangle-2 medrectangle-2100 adtester-container adtester-container-100" data-ez-name="ipachart_com-medrectangle-2"><span id="div-gpt-ad-ipachart_com-medrectangle-2-0" ezaw="728" ezah="90" style="position:relative;z-index:0;display:inline-block;padding:0;min-height:90px;min-width:728px;" class="ezoic-ad"><script data-ezscrex="false" data-cfasync="false" type="text/javascript" style="display:none;">if(typeof __ez_fad_position != 'undefined'){__ez_fad_position('div-gpt-ad-ipachart_com-medrectangle-2-0')};</script></span></span></center><span class="ezmob-footer-close" onclick="__ez_close_anchor()">x</span></div></center><span class="ezmob-footer-close" onclick="__ez_close_anchor()">x</span></div><script>function __ez_fad_ezpbinit(){var s = document.createElement( 'script' );
+	s.setAttribute( 'src', '//go.ezodn.com/hb/dall.js?b=adyoulike,amx,criteo,gumgum,ix,onemobile,onetag,pubmatic,pulsepoint,sharethrough,sovrn,spotx,yahoossp,yieldmo&cb=195-0-35' );
+	s.onerror = function () {window.ezDallErr = true};
+	document.body.appendChild( s );}var epbjs=epbjs||{};epbjs.que=epbjs.que||[];epbjs.bidderTimeout=2500;epbjs.useAdj=true;epbjs.SS={"adyoulike":11314,"amx":11290,"criteo":10050,"gumgum":10079,"ix":10082,"onemobile":11293,"onetag":11291,"pubmatic":10061,"pulsepoint":11301,"sharethrough":11309,"sovrn":10017,"spotx":11304,"yahoossp":11318,"yieldmo":11315};epbjs.bidders=['adyoulike,amx,criteo,gumgum,ix,onemobile,onetag,pubmatic,pulsepoint,sharethrough,sovrn,spotx,yahoossp,yieldmo'];epbjs.que.push(function(){});epbjs.bidderSettings={'ix': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'criteo': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'sharethrough': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'yahoossp': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'gumgum': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'pulsepoint': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'spotx': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 0.560000; var adj2 = adj1 * 1.000000; return adj2; }},'onemobile': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'adyoulike': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'yieldmo': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'onetag': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'amx': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'sovrn': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},'pubmatic': { bidCpmAdjustment: function(bidCpm) { var adj1 = bidCpm * 1.000000; var adj2 = adj1 * 1.000000; return adj2; }},};epbjs.gadj=1.000000;var __enableAnalytics=false;
+var __s2sbidders=['onetag','amx','sovrn','pubmatic'];
+var __allBidders=['ix','criteo','sharethrough','yahoossp','gumgum','pulsepoint','spotx','onemobile','adyoulike','yieldmo','onetag','amx','sovrn','pubmatic'];
+__ez.queue.addFile('/detroitchicago/houston.js', '/detroitchicago/houston.js?gcb=0&cb=16', false, [], true, false, true, false);__ez.queue.addFunc("epbjsRequestAdUnits", "epbjsRequestAdUnits", [[{code: 'div-gpt-ad-ipachart_com-banner-2-0', mediaTypes: {banner: { sizes:[[300,250]] }}, bids: [{bidder: 'ix', params: { siteId: '305145', size: [300,250], video: {} }},{bidder: 'criteo', params: { networkId: '7987' }},{bidder: 'sharethrough', params: { pkey: 'ZuLKhEvL3Xpyu8vcJZvy4GGZ' }},{bidder: 'gumgum', params:{ inSlot: '20847' }},{bidder: 'pulsepoint', params: { cf: '300x250', cp: '562406', ct: '719185' }},{bidder: 'adyoulike', params: { placement: 'a7af8ef0d99a8689c3f488724b4de63b' }},{bidder: 'yieldmo', params: { placementId: '2834942196124164132' }},{bidder: 'onetag', params: { pubId: '62499636face9dc' }},{bidder: 'amx', params: { tagId: 'ZXpvaWMtc2VydmVyLXNpZGUuY29t' }},{bidder: 'sovrn', params: { tagid: '966086'}},{bidder: 'pubmatic', params:{ publisherId: '156983', adSlot: '4114530' }}] },{code: 'div-gpt-ad-ipachart_com-medrectangle-2-0', mediaTypes: {banner: { sizes:[[728,90]] }}, bids: [{bidder: 'ix', params: { siteId: '305141', size: [728,90], video: {} }},{bidder: 'criteo', params: { networkId: '7987' }},{bidder: 'sharethrough', params: { pkey: 'e1sI5HKO9lbvTm6UAa1WEpg9' }},{bidder: 'gumgum', params:{ inSlot: '20890' }},{bidder: 'pulsepoint', params: { cp: '562406', ct: '719177', cf: '728x90' }},{bidder: 'adyoulike', params: { placement: '1445fa30166d47821a0f97789148a105' }},{bidder: 'yieldmo', params: { placementId: '2834942196124164132' }},{bidder: 'onetag', params: { pubId: '62499636face9dc' }},{bidder: 'amx', params: { tagId: 'ZXpvaWMtc2VydmVyLXNpZGUuY29t' }},{bidder: 'sovrn', params: { tagid: '966082'}},{bidder: 'pubmatic', params:{ publisherId: '156983', adSlot: '4114533' }}] },{code: 'div-gpt-ad-ipachart_com-large-leaderboard-2-0', mediaTypes: {banner: { sizes:[[336,280],[300,250]] }}, bids: [{bidder: 'ix', params: { siteId: '305148', size: [336,280], video: {} }},{bidder: 'criteo', params: { networkId: '7987' }},{bidder: 'sharethrough', params: { pkey: 'Vqh9A2nu0ACUssgx5gyWaEde' }},{bidder: 'gumgum', params:{ inSlot: '20853' }},{bidder: 'pulsepoint', params: { cf: '336x280', cp: '562406', ct: '719186' }},{bidder: 'adyoulike', params: { placement: '0d4dbc563844d6cfb112e51010203ad9' }},{bidder: 'yieldmo', params: { placementId: '2834942196124164132' }},{bidder: 'onetag', params: { pubId: '62499636face9dc' }},{bidder: 'amx', params: { tagId: 'ZXpvaWMtc2VydmVyLXNpZGUuY29t' }},{bidder: 'sovrn', params: { tagid: '966089'}},{bidder: 'pubmatic', params:{ publisherId: '156983', adSlot: '4114530' }}] },{code: 'div-gpt-ad-ipachart_com-banner-1-0', mediaTypes: {banner: { sizes:[[300,250]] }}, bids: [{bidder: 'ix', params: { siteId: '305144', size: [300,250], video: {} }},{bidder: 'criteo', params: { networkId: '7987' }},{bidder: 'sharethrough', params: { pkey: 'ZuLKhEvL3Xpyu8vcJZvy4GGZ' }},{bidder: 'gumgum', params:{ inSlot: '20845' }},{bidder: 'pulsepoint', params: { cf: '300x250', cp: '562406', ct: '719185' }},{bidder: 'adyoulike', params: { placement: 'a7af8ef0d99a8689c3f488724b4de63b' }},{bidder: 'yieldmo', params: { placementId: '2834942196124164132' }},{bidder: 'onetag', params: { pubId: '62499636face9dc' }},{bidder: 'amx', params: { tagId: 'ZXpvaWMtc2VydmVyLXNpZGUuY29t' }},{bidder: 'sovrn', params: { tagid: '966085'}},{bidder: 'pubmatic', params:{ publisherId: '156983', adSlot: '4114530' }}] }]], false, ['/detroitchicago/houston.js'], true, true, true, true);</script>
+<script>var __ez_tkn_evnt = function() { if(typeof(_ezaq) != 'undefined'){if(typeof window.ezogtk !== "undefined" && window.ezogtk !== "") {__ez.bit.AddAndFire(_ezaq.page_view_id,[new __ezDotData("ext_user_hash",window.ezogtk)]);}}};document.addEventListener("DOMContentLoaded", __ez.queue.addFunc("__ez_tkn_evnt", "__ez_tkn_evnt", event, false, ['/detroitchicago/minneapolis.js','/detroitchicago/memphis.js'], true, true, false, true));</script>
+<script async data-ezscrex="false">__ez_fad_load(0,0);__ez_fad_doc_ht=__ez_fad_docht();__ez_fad_vp_ht=__ez_fad_vpht();function __ez_fad_scroll(){return window.pageYOffset||(document.documentElement||document.body.parentNode||document.body).scrollTop}
+var __ez_fad_scrollint=setInterval(function(){var sy=__ez_fad_scroll();var isShortPage=__ez_fad_doc_ht<=(__ez_fad_vh+100);var bot=(__ez_fad_vp_ht+sy);var botThresh=bot+__ez_fad_vp_ht;for(var divid in __ez_fad_divpos){if(__ez_fad_fastdiv.indexOf(divid)!=-1){continue;}
+var divPos=__ez_fad_divpos[divid];if(divPos>0&&divPos>sy&&divPos<(sy+200)){if(typeof __ez_fad_instaslots[divid]=='function'){__ez_fad_instaslots[divid]();}}else if(divPos>0&&divPos>sy&&divPos<(sy+600)){if(typeof __ez_fad_instaslots[divid]=='function'){__ez_fad_viewslots[divid]();}}}
+__ez_fad_chkpos();if(ezslit_run[0]!==true){__ez_fad_load(0,0);}
+if((sy>0||isShortPage)&&ezslit_run[1]!=true){__ez_fad_load(1,null);__ez_fad_load(5,null);}
+if((sy>100||isShortPage)&&ezslit_run[2]!=true){__ez_fad_load(2,null);}
+if(sy>(__ez_fad_vp_ht*.75)&&ezslit_run[3]!=true){__ez_fad_load(3,null);}
+if(document.readyState==="complete"&&!__ez_fad_floatshowd&&typeof __ez_fad_floating!=='undefined'&&__ez_fad_floating.length>0&&__ez_fad_count===0){setTimeout(googletag.cmd.push(function(){__ez_fad_floatshow()}),500);}
+if(ezslit_run[1]==true&&ezslit_run[2]==true&&ezslit_run[3]==true){clearInterval(__ez_fad_scrollint);}},500);function __ez_fad_chkpos(){if(typeof __ez_fad_divs[4]!='undefined'){for(var i=0;i<__ez_fad_divs[4].length;i++){var id=__ez_fad_divs[4][i];__ez_fad_divs[4][i]=null;__ez_fad_position([id]);}}}</script>
+<script type="text/javascript">(function(f,a){function g(b,a,c){b.addEventListener?b.addEventListener(a,c):b.attachEvent("on"+a,function(){c.call(b)})}function k(b){b&&("string"==typeof b["class"]&&b["class"]&&a.getElementById("uglipop_popbox").setAttribute("class",b["class"]),b.keepLayout&&!b["class"]&&a.getElementById("uglipop_popbox").setAttribute("style","position:relative;height:300px;width:300px;background-color:white;opacity:1;"),"string"==typeof b.content&&b.content&&"html"==b.source&&(a.getElementById("uglipop_popbox").innerHTML=b.content),"string"==typeof b.content&&b.content&&"div"==b.source&&(a.getElementById("uglipop_popbox").innerHTML=a.getElementById(b.content).innerHTML));a.getElementById("uglipop_overlay_wrapper").style.display="";a.getElementById("uglipop_overlay").style.display="";a.getElementById("uglipop_content_fixed").style.display=""}function h(){a.getElementById("uglipop_overlay_wrapper").style.display="none";a.getElementById("uglipop_overlay").style.display="none";a.getElementById("uglipop_content_fixed").style.display="none"}g(a,"DOMContentLoaded",function(){var b=a.createElement("div"),e=a.createElement("div"),c=a.createElement("div"),d=a.createElement("div");e.id="uglipop_content_fixed";e.setAttribute("style","position:fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);opacity:1;z-index:10000000;");c.id="uglipop_popbox";d.id="uglipop_overlay_wrapper";d.setAttribute("style","position:absolute;top:0;bottom:0;left:0;right:0;display:none");b.id="uglipop_overlay";b.setAttribute("style","position:fixed;top:0;bottom:0;left:0;right:0;opacity:0.3;width:100%;height:100%;background-color:black;");d.appendChild(b);e.appendChild(c);a.body.appendChild(d);a.body.appendChild(e);a.getElementById("uglipop_overlay_wrapper").style.display="none";a.getElementById("uglipop_overlay").style.display="none";a.getElementById("uglipop_content_fixed").style.display="none";d.addEventListener("click",h);g(f,"keydown",function(a){27==a.keyCode&&h()});f.uglipop=k})})(window,document);var ezRBA=(function(){function init(){var reportAdsBtns=document.querySelectorAll('.ez-report-ad-button');for(var i=0;i<reportAdsBtns.length;i++){reportAdsBtns[i].addEventListener('click',function(e){var url='<iframe src="https://svc.ezoic.com/pub/reportads/reportads.html'+e.target.getAttribute('name')+'" width="400" height="500" style="border-radius: 10px; box-shadow: 2px 2px 30px 6px rgba(0,0,0,0.75); border: 1px solid black;"></iframe>'
+uglipop({class:'none',source:'html',content:url,});});}
+function bindEvent(element,eventName,eventHandler){if(element.addEventListener){element.addEventListener(eventName,eventHandler,false);}else if(element.attachEvent){element.attachEvent('on'+eventName,eventHandler);}}
+bindEvent(window,'message',function(e){if(e.data==='close-report-ad-modal'){document.getElementById('uglipop_overlay_wrapper').style.display='none';document.getElementById('uglipop_overlay').style.display='none';document.getElementById('uglipop_content_fixed').style.display='none';}})}
+return{init:init};})();ezRBA.init();</script>
+<script type="text/javascript" data-cfasync="false"></script>
+<script type="text/javascript" style='display:none;'>var __ez_dims = (function() {
+		var setCookie = function( name, content, expiry ) {
+			return document.cookie = name+'='+content+((expiry)?';expires='+(new Date(Math.floor(new Date().getTime()+expiry*1000)).toUTCString()):'')+';path=/';
+		};
+		var ffid = 1;
+		var oh = window.screen.height;
+		var ow = window.screen.width;
+		var h = ffid === 1 ? oh : (oh > ow) ? oh : ow;
+		var w = ffid === 1 ? ow : (oh > ow) ? ow : oh;
+		var uh = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+		var uw = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+		setCookie('ezds', encodeURIComponent('ffid='+ffid+',w='+w+',h='+h), (31536e3*7));
+		setCookie('ezohw', encodeURIComponent('w='+uw+',h='+uh), (31536e3*7));
+	})();</script><script type='text/javascript' style='display:none;' async>
+</script>
+<script type="text/javascript" onload="__ezcl.handle(true);" async src="/utilcave_com/inc/ezcl.webp?cb=4"></script></body></html>

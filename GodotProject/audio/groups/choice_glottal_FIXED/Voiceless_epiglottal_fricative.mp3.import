@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_epiglottal_fricative.mp3-fb88e9cafab93d3b52120ce96a332f01.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_glottal_FIXED/Voiceless_epiglottal_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_epiglottal_fricative.mp3-fb88e9cafab93d3b52120ce96a332f01.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

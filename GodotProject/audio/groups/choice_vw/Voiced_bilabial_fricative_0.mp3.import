@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_bilabial_fricative_0.mp3-b45698530791fa442037c7c3dd72b5d0.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_vw/Voiced_bilabial_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_bilabial_fricative_0.mp3-b45698530791fa442037c7c3dd72b5d0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

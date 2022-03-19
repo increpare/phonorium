@@ -1,0 +1,62 @@
+MN - sky waterfall mill
+B = coast/beach (big sandcastle?)
+SZ = holiday home
+CH = sandstone quarry
+DG = stonehenge-style underground tunnel
+RL/Roll = windmill
+VW = side-cliff-house
+J_LOW/_MED/_HIGH = Watchtower
+K - museum with statues
+GLOT - precipice 
+FIXED - trenchm
+POP scaffolding in air
+H - Rainbow road
+Vowel - floating castle in air
+
+
+--------
+
+TO DO:
+fix player speed
+
+TERMINAL SPECIFICATIONS
+Dynamic number of buttons 2-4 (maybe one with 16)
+4-6 output lightsb
+'Play button'
+Red/Green/White lights indicating success
+
+
+on screen context-sensitive cursor
+
+elevator sfx
+
+what happens when you get all the puzzles? I'd like the exit to be somewhere in the world!
+
+BOOTH-IMPLEMENTATION
+DONE 1 - make buttons interactable
+DONE 2 - do some visual reaction on click (colour flash?)
+DONE 3 - light-bulb colours  set random on start
+DONE 4 - press buttons to play sounds
+5 - press play to play sequence - have lights turn on
+flash red if bad then reset
+DONE 6 - turn on lights in order (green/red)
+DONE 9 - variable number of buttons
+DONE 9 - variable number of lights
+
+SFX for success/failure in boothes
+
+Better player silhouette
+
+
+====
+
+Title screen
+Sound effects for failure/success
+Music
+End-game?
+Hooking up glowing flames in the sky
+Placing all the machines
+designing all the puzzles
+credits screen
+killbox
+light baking?
