@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_pharyngeal_fricative_0.mp3-fd568b7d64b273d0af3d21993a1df182.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiceless_pharyngeal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_pharyngeal_fricative_0.mp3-fd568b7d64b273d0af3d21993a1df182.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

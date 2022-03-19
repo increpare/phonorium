@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_lateral_flap.mp3-55af984a3affa2b977574882eaad9e23.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/FIXED/Alveolar_lateral_flap.mp3"
+dest_files=[ "res://.import/Alveolar_lateral_flap.mp3-55af984a3affa2b977574882eaad9e23.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

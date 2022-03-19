@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Glottal_stop_0.mp3-520d9aef71e2f06842336aa50923ff38.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/POP/Glottal_stop_0.mp3"
+dest_files=[ "res://.import/Glottal_stop_0.mp3-520d9aef71e2f06842336aa50923ff38.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

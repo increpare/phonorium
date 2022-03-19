@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_tap_0.mp3-45af2196ad414b51aa6dc58120ae6fc7.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ROLLED/Alveolar_tap_0.mp3"
+dest_files=[ "res://.import/Alveolar_tap_0.mp3-45af2196ad414b51aa6dc58120ae6fc7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

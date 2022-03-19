@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Velar_lateral_approximant_0.mp3-ab6f68d43a3ad6587300c022ce2a2c76.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/VW/Velar_lateral_approximant_0.mp3"
+dest_files=[ "res://.import/Velar_lateral_approximant_0.mp3-ab6f68d43a3ad6587300c022ce2a2c76.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

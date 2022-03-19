@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_velar_fricative_0.mp3-a58389a9f4b46993973a10f64c5fc2eb.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiceless_velar_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_velar_fricative_0.mp3-a58389a9f4b46993973a10f64c5fc2eb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

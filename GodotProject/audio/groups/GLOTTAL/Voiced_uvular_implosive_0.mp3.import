@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_uvular_implosive_0.mp3-53beba649b6e52f95eae6e818fa4f614.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/GLOTTAL/Voiced_uvular_implosive_0.mp3"
+dest_files=[ "res://.import/Voiced_uvular_implosive_0.mp3-53beba649b6e52f95eae6e818fa4f614.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

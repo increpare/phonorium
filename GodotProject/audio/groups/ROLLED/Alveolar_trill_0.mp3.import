@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_trill_0.mp3-c293381fa40d3a4eb7d29d9d83cc7379.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ROLLED/Alveolar_trill_0.mp3"
+dest_files=[ "res://.import/Alveolar_trill_0.mp3-c293381fa40d3a4eb7d29d9d83cc7379.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

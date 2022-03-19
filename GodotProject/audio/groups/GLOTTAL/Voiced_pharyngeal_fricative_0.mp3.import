@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_pharyngeal_fricative_0.mp3-f30c0518ad5be920dd9ec53a2e37386a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/GLOTTAL/Voiced_pharyngeal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_pharyngeal_fricative_0.mp3-f30c0518ad5be920dd9ec53a2e37386a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

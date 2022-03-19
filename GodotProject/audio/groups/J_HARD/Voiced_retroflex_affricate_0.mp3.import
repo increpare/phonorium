@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_retroflex_affricate_0.mp3-38b9954d1f93278aef1a3be06ba8a8b4.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/J_HARD/Voiced_retroflex_affricate_0.mp3"
+dest_files=[ "res://.import/Voiced_retroflex_affricate_0.mp3-38b9954d1f93278aef1a3be06ba8a8b4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

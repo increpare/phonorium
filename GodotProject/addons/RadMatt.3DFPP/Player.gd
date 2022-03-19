@@ -1,6 +1,7 @@
 
 extends KinematicBody
 
+var startpos : Vector3
 var carried_object = null
 var throw_power = 0
 
@@ -66,6 +67,7 @@ var justclicked=false
 		
 	
 func _ready():
+	startpos = global_transform.origin
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
 

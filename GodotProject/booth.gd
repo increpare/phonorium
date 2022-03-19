@@ -9,14 +9,28 @@ var light_on = preload("res://models/Lampe_on.material")
 var light_red = preload("res://models/Lampe_red.material")
 var light_green = preload("res://models/Lampe_green.material")
 	
+var jingle_lose = preload("res://audio/booth_fail_short.wav")
+var jingle_solve = preload("res://audio/booth_solve.wav")
+var jingle_solve_area = preload("res://audio/both_solve_area.wav")
+
 var lights : Array = []
 
 var lightmats : Array = []
 	
 var inputarray:Array=[]
 var spacing:float=-1
+
+var level;
+
+var group:String
+var solved:bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	solved=false
+	group = get_parent().name
+	level = self.get_parent().get_parent().get_parent()
+	
 	lightmats = [light_off,light_on,light_red,light_green]
 	
 	if equally_spaced:
@@ -39,6 +53,9 @@ func _ready():
 		4:
 			$boothmodel/Base/Buttons_3.free()
 		_:
+			print(Audio.size())
+			print(get_parent().name)
+			print(name)
 			print("ERROR WRONG NUMBER OF BUTTONS")	
 	
 	match Solution.size():
@@ -116,6 +133,19 @@ func on_pressed(n_i):
 		for i in Solution.size():
 			if inputarray[i]!=Solution[i]:
 				won=false
+		if won:
+			solved=true
+			var groupsolved = level.solvedgroup(self)
+			if groupsolved:
+				$AudioStreamPlayer3D.stream = jingle_solve_area
+				$AudioStreamPlayer3D.play()		
+			else:
+				$AudioStreamPlayer3D.stream = jingle_solve
+				$AudioStreamPlayer3D.play()		
+		else:			
+			$AudioStreamPlayer3D.stream = jingle_lose
+			$AudioStreamPlayer3D.play()			
+			
 		var mm=6
 		if won:
 			mm=7
@@ -128,6 +158,10 @@ func on_pressed(n_i):
 				else:
 						set_light(n,2)
 			yield(get_tree().create_timer(0.3), "timeout")
+		if won:
+			solved=true
+			level.onsolve(self)
+	
 		inputarray=[]
 		playing=false
 		

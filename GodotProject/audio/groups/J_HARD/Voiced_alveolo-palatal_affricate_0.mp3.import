@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_alveolo-palatal_affricate_0.mp3-de151785bfd55ad84a1a6e61f405d3e3.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/J_HARD/Voiced_alveolo-palatal_affricate_0.mp3"
+dest_files=[ "res://.import/Voiced_alveolo-palatal_affricate_0.mp3-de151785bfd55ad84a1a6e61f405d3e3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

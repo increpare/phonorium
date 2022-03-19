@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_glottal_fricative_0.mp3-0c1e91629a5fcc01b2385331d948bfd8.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiced_glottal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_glottal_fricative_0.mp3-0c1e91629a5fcc01b2385331d948bfd8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

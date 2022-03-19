@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labiodental_nasal_0.mp3-17e52c0aac9dba5e1af2c285ad55c5f7.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/MN/Labiodental_nasal_0.mp3"
+dest_files=[ "res://.import/Labiodental_nasal_0.mp3-17e52c0aac9dba5e1af2c285ad55c5f7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

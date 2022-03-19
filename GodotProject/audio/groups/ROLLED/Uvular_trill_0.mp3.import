@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Uvular_trill_0.mp3-aefd0f82a84a74763817dd7b2646f719.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ROLLED/Uvular_trill_0.mp3"
+dest_files=[ "res://.import/Uvular_trill_0.mp3-aefd0f82a84a74763817dd7b2646f719.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

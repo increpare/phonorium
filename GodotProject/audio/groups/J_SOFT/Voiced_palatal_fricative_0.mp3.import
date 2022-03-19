@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_palatal_fricative_0.mp3-9ef32b849ef6669705d7c40029e62b76.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/J_SOFT/Voiced_palatal_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_palatal_fricative_0.mp3-9ef32b849ef6669705d7c40029e62b76.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

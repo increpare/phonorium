@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_dental_fricative_0.mp3-dc0c34d28e56d53638d600031fbf731a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/TH/Voiceless_dental_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_dental_fricative_0.mp3-dc0c34d28e56d53638d600031fbf731a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_uvular_fricative_0.mp3-41ccfbf12d87be14c2176f5de8fe814f.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/H/Voiceless_uvular_fricative_0.mp3"
+dest_files=[ "res://.import/Voiceless_uvular_fricative_0.mp3-41ccfbf12d87be14c2176f5de8fe814f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
