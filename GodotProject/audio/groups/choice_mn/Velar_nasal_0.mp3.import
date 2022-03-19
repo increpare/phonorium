@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Velar_nasal_0.mp3-58af9ed38377390563ea1cb91c177829.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_mn/Velar_nasal_0.mp3"
+dest_files=[ "res://.import/Velar_nasal_0.mp3-58af9ed38377390563ea1cb91c177829.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

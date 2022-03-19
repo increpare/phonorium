@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_bilabial_plosive_0.mp3-ce257aca7ac9a50762d763e94e5fd213.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_b/Voiced_bilabial_plosive_0.mp3"
+dest_files=[ "res://.import/Voiced_bilabial_plosive_0.mp3-ce257aca7ac9a50762d763e94e5fd213.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

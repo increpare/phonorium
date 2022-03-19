@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_nasal_0.mp3-0ee10c7e06d4888ee7635157e6af0bd2.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_mn/Alveolar_nasal_0.mp3"
+dest_files=[ "res://.import/Alveolar_nasal_0.mp3-0ee10c7e06d4888ee7635157e6af0bd2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

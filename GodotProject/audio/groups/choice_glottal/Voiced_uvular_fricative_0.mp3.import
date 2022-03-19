@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_uvular_fricative_0.mp3-d8239afdcdb3af75c1cb3c31e16d66b8.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/choice_glottal/Voiced_uvular_fricative_0.mp3"
+dest_files=[ "res://.import/Voiced_uvular_fricative_0.mp3-d8239afdcdb3af75c1cb3c31e16d66b8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

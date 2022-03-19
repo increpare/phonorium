@@ -1,0 +1,20 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+/GodotProject/Level.tscn filter=lfs diff=lfs merge=lfs -text
+/GodotProject/Room_01.lmbake filter=lfs diff=lfs merge=lfs -text
+/GodotProject/Room_01.tscn filter=lfs diff=lfs merge=lfs -text
+/GodotProject/assets/maujoe.basic_water_material/textures/cloud_layers_1k.hdr filter=lfs diff=lfs merge=lfs -text
+/GodotProject/entities/Basketball/ball/Ball.obj filter=lfs diff=lfs merge=lfs -text
+/GodotProject/entities/Basketball/basketbal_ropes.png filter=lfs diff=lfs merge=lfs -text
+/GodotProject/models/booth.blend filter=lfs diff=lfs merge=lfs -text
+/GodotProject/models/booth.blend1 filter=lfs diff=lfs merge=lfs -text
+/GodotProject/models/worldmapblended.blend filter=lfs diff=lfs merge=lfs -text
+/GodotProject/models/worldmapblended.blend1 filter=lfs diff=lfs merge=lfs -text
+/GodotProject/screenshot.PNG filter=lfs diff=lfs merge=lfs -text
+/GodotProject/worldmap.exr filter=lfs diff=lfs merge=lfs -text
+/audio/elevator_data/e08/d08/e080855d.au filter=lfs diff=lfs merge=lfs -text
+/audio/elevator_data/e08/d08/e0808d01.au filter=lfs diff=lfs merge=lfs -text
+/models/islandrender.png filter=lfs diff=lfs merge=lfs -text
+/models/islandrender2.png filter=lfs diff=lfs merge=lfs -text
+/models/islandrender3.png filter=lfs diff=lfs merge=lfs -text
+/models/untitled.blend filter=lfs diff=lfs merge=lfs -text
