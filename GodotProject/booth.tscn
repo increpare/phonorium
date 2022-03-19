@@ -514,6 +514,7 @@ material/0 = ExtResource( 3 )
 
 [node name="LoudSpeaker" type="MeshInstance" parent="boothmodel/Base"]
 transform = Transform( 1.35712e-07, 0.0730081, 0, -0.758957, 1.30549e-08, 0, 0, 0, 0.758958, 0.119956, 0, 0 )
+visible = false
 use_in_baked_light = true
 mesh = SubResource( 15 )
 material/0 = null

@@ -31,6 +31,42 @@ func _ready():
 	group = get_parent().name
 	level = self.get_parent().get_parent().get_parent()
 	
+	var solutionLength = 5;
+	randomize()
+	if randi()%2==0:
+		solutionLength=4
+	match Audio.size():
+		2:
+			solutionLength=7
+			if randi()%2==0:
+				solutionLength=6
+		3:
+			solutionLength=6
+			if randi()%2==0:
+				solutionLength=5
+			
+	Solution=[]
+	for i in solutionLength:
+		var r = randi()%Audio.size()
+		Solution.append(r)
+		
+	#force to include one of each
+	for i in Audio.size():
+		var found=false
+		var frequency=[0,0,0,0,0,0,0]
+		var example_pos=[0,0,0,0,0,0,0]
+		for idx in Solution.size():
+			var n = Solution[idx] 
+			frequency[n]=frequency[n]+1
+			example_pos[n]=idx
+		if frequency[i]==0:
+			for idx in Audio.size():
+				if frequency[idx]>1:
+					var target_pos = example_pos[idx]
+					Solution[target_pos]=i
+					break
+					
+	
 	lightmats = [light_off,light_on,light_red,light_green]
 	
 	if equally_spaced:
@@ -41,17 +77,15 @@ func _ready():
 				
 	match Audio.size():
 		2:
-			$boothmodel/Base/Buttons_3.free()
-			$boothmodel/Base/Buttons_4.visible=true
+			$boothmodel/Base/Buttons_3.queue_free()
 			$boothmodel/Base/Buttons_4/Button2.visible=false
 			$boothmodel/Base/Buttons_4/Button2/StaticBody/CollisionShape.disabled=true
 			$boothmodel/Base/Buttons_4/Button3.visible=false
 			$boothmodel/Base/Buttons_4/Button3/StaticBody/CollisionShape.disabled=true
 		3:
-			$boothmodel/Base/Buttons_3.visible=true
-			$boothmodel/Base/Buttons_4.free()
+			$boothmodel/Base/Buttons_4.queue_free()
 		4:
-			$boothmodel/Base/Buttons_3.free()
+			$boothmodel/Base/Buttons_3.queue_free()
 		_:
 			print(Audio.size())
 			print(get_parent().name)
