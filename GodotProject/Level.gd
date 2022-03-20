@@ -131,6 +131,7 @@ func setRegionVisibility():
 	if solvedcount==13:
 		$EndingPortal.visible=true
 		$EndingPortal/EndBox/CollisionShape.disabled=false
+		$EndingPortal/AudioStreamPlayer3D.play()
 	
 	
 	

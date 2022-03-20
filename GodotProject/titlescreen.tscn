@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://textures/title/phonorium.png" type="Texture" id=1]
+[ext_resource path="res://textures/title/titlebg.png" type="Texture" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera2" type="Camera" parent="."]
+projection = 1
+
+[node name="bg" type="Sprite3D" parent="Camera2"]
+transform = Transform( 0.184528, 0, 0, 0, 0.146212, 0, 0, 0, 0.792357, -0.0226426, -0.0053916, -0.778767 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera2"]
+transform = Transform( 0.0956231, 0, 0, 0, 0.0956231, 0, 0, 0, 1, 0, 0.327758, -0.536157 )
+texture = ExtResource( 1 )

@@ -29,3 +29,6 @@
 /GodotProject/models/splits_tongue.blend1 filter=lfs diff=lfs merge=lfs -text
 /GodotProject/models/worldmaphead.blend filter=lfs diff=lfs merge=lfs -text
 /GodotProject/models/worldmaphead.blend1 filter=lfs diff=lfs merge=lfs -text
+/audio/endmusic.wav filter=lfs diff=lfs merge=lfs -text
+/audio/portal.wav filter=lfs diff=lfs merge=lfs -text
+/audio/scarytrack.wav filter=lfs diff=lfs merge=lfs -text
