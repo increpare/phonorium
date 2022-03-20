@@ -9,3 +9,4 @@ export_presets.cfg
 # Mono-specific ignores
 GodotProject/.mono/
 GodotProject/data_*/
+Build/*
