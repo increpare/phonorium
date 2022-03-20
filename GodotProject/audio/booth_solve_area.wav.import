@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/booth_solve_area.wav-53023837eed578056ece1911ae4b0662.sample"
+
+[deps]
+
+source_file="res://audio/booth_solve_area.wav"
+dest_files=[ "res://.import/booth_solve_area.wav-53023837eed578056ece1911ae4b0662.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

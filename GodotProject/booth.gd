@@ -11,7 +11,8 @@ var light_green = preload("res://models/Lampe_green.material")
 	
 var jingle_lose = preload("res://audio/booth_fail_short.wav")
 var jingle_solve = preload("res://audio/booth_solve.wav")
-var jingle_solve_area = preload("res://audio/both_solve_area.wav")
+var jingle_solve_area = preload("res://audio/booth_solve_area_big.wav")
+
 
 var lights : Array = []
 
@@ -64,8 +65,17 @@ func _ready():
 				if frequency[idx]>1:
 					var target_pos = example_pos[idx]
 					Solution[target_pos]=i
+					frequency[idx] = frequency[idx]-1
 					break
 					
+	#if you get four in a row the same, swap out the middle one with something else
+	for i in (Solution.size()-3):
+		var a1 = Solution[i]
+		var a2 = Solution[i+1]
+		var a3 = Solution[i+2]
+		var a4 = Solution[i+3]
+		if a1 == a2 && a1 == a3 && a1 == a4:
+			 Solution[i+1] = ( Solution[i+1]+1)%Audio.size()		
 	
 	lightmats = [light_off,light_on,light_red,light_green]
 	
@@ -148,7 +158,8 @@ func on_pressed(n_i):
 	$AudioStreamPlayer3D.play()
 	print("onpressed"+str(n_i))
 	
-	
+	if solved:
+		return
 	
 	var idx = inputarray.size()
 	

@@ -19,3 +19,4 @@
 /models/islandrender3.png filter=lfs diff=lfs merge=lfs -text
 /models/untitled.blend filter=lfs diff=lfs merge=lfs -text
 /audio/jingles/all.wav filter=lfs diff=lfs merge=lfs -text
+/audio/jingles/all2.wav filter=lfs diff=lfs merge=lfs -text
