@@ -27,7 +27,6 @@ func _ready():
 	
 	button_area.connect("body_entered", self, "on_body_enter")
 	button_area.connect("body_exited", self, "on_body_exit")
-	$Platform/KinematicBody.connect("body_entered",self,"bodyIn")
 	
 	
 	pass # Replace with function body.

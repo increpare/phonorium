@@ -26,6 +26,11 @@ var level;
 var group:String
 var solved:bool
 
+func setsolved():
+	solved=true
+	for n in lights.size():		
+		set_light(n,3)
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	solved=false
