@@ -89,6 +89,10 @@ func _process(d):
 		pass
 		#$interaction_text.set_text("")
 	
+	var center_position = get_viewport().size/2
+	$Pointer_Interact.position = center_position
+	$Pointer_Nothing.position = center_position
+	
 	$Pointer_Interact.visible=caninteract
 	$Pointer_Nothing.visible=not caninteract
 	
