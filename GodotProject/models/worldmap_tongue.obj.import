@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/worldmap_tongue.obj-c484d0fce03e118c5301fc8886a111ab.mesh"
+
+[deps]
+
+files=[ "res://.import/worldmap_tongue.obj-c484d0fce03e118c5301fc8886a111ab.mesh" ]
+
+source_file="res://models/worldmap_tongue.obj"
+dest_files=[ "res://.import/worldmap_tongue.obj-c484d0fce03e118c5301fc8886a111ab.mesh", "res://.import/worldmap_tongue.obj-c484d0fce03e118c5301fc8886a111ab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

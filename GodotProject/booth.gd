@@ -31,8 +31,11 @@ func setsolved():
 	for n in lights.size():		
 		set_light(n,3)
 		
+var timestamp
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timestamp=0
 	solved=false
 	group = get_parent().name
 	level = self.get_parent().get_parent().get_parent()
@@ -159,6 +162,8 @@ func on_pressed(n_i):
 	if playing:
 		return
 		
+	timestamp = timestamp+1
+		
 	$AudioStreamPlayer3D.stream = Audio[n_i] 
 	$AudioStreamPlayer3D.play()
 	print("onpressed"+str(n_i))
@@ -169,10 +174,19 @@ func on_pressed(n_i):
 	var idx = inputarray.size()
 	
 
-	if idx>0:			
-		set_light(idx-1,0)
-	set_light(idx,1)
+	for n in Solution.size():
+		if n==idx:
+			set_light(n,1)
+		else:
+			set_light(n,0)
 	
+	var cheat = Input.is_key_pressed(KEY_SHIFT) && OS.is_debug_build()
+	
+	var sceneroot = get_tree().get_root()
+	print(sceneroot)
+	print(sceneroot.name)
+	
+	var audiostreamplayer:AudioStreamPlayer = level.find_node("AudioStreamPlayer",false)
 	
 	inputarray.append(n_i)
 	print(str(inputarray.size())+" - "+str(Solution.size()))	
@@ -183,12 +197,14 @@ func on_pressed(n_i):
 		for i in Solution.size():
 			if inputarray[i]!=Solution[i]:
 				won=false
+		if cheat:
+			won=true
 		if won:
 			solved=true
 			var groupsolved = level.solvedgroup(self)
 			if groupsolved:
-				$AudioStreamPlayer3D.stream = jingle_solve_area
-				$AudioStreamPlayer3D.play()		
+				audiostreamplayer.stream = jingle_solve_area
+				audiostreamplayer.play()		
 			else:
 				$AudioStreamPlayer3D.stream = jingle_solve
 				$AudioStreamPlayer3D.play()		
@@ -227,16 +243,21 @@ func do_play():
 	if playing:
 		return
 		
+		
+	timestamp=timestamp+1
+	
 	inputarray=[]
-	playing=true
 	
 	for n in Solution.size():
 		set_light(n,0)
 		
 	print("do_play")
+	var basecolour = 0
+	if solved:
+		basecolour=3
 	for n in Solution.size():
 		if n>0:			
-			set_light(n-1,0)
+			set_light(n-1,basecolour)
 		set_light(n,1)
 		var sound_index : int = Solution[n]
 		var sound : AudioStream = Audio[sound_index]
@@ -245,13 +266,15 @@ func do_play():
 		var delay = sound.get_length()
 		if equally_spaced:
 			delay = spacing
+		var curtimestamp = timestamp
 		yield(get_tree().create_timer(delay), "timeout")
+		if curtimestamp!=timestamp:
+			return
 		
 		
 	for n in Solution.size():
-		set_light(n,0)
+		set_light(n,basecolour)
 		
-	playing=false
 		
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
