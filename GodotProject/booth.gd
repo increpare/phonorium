@@ -34,8 +34,8 @@ func _ready():
 	
 	var solutionLength = 5;
 	randomize()
-	if randi()%2==0:
-		solutionLength=4
+	#if randi()%2==0:
+#		solutionLength=4
 	match Audio.size():
 		2:
 			solutionLength=7
