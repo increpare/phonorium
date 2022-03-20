@@ -9,6 +9,8 @@ var player_on = false
 var at_top = false
 var at_bottom=true
 
+export var group:String
+
 export var speed:float = 1
 export var endPos:Vector3 = Vector3(1,0,0)
 export var player_path:NodePath 

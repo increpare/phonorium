@@ -77,7 +77,7 @@ func _process(d):
 	var caninteract=false
 	if $Yaw/Camera/InteractionRay.is_colliding():
 		var x = $Yaw/Camera/InteractionRay.get_collider()
-		if x.has_method("interact"):
+		if is_instance_valid(x) && x.has_method("interact"):
 			caninteract=true
 			if justclicked:
 				x.call("interact");
