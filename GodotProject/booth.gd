@@ -205,6 +205,7 @@ func on_pressed(n_i):
 			if groupsolved:
 				audiostreamplayer.stream = jingle_solve_area
 				audiostreamplayer.play()		
+				level.Player.doflash()
 			else:
 				$AudioStreamPlayer3D.stream = jingle_solve
 				$AudioStreamPlayer3D.play()		

@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://textures/ending/ending0.png" type="Texture" id=1]
 [ext_resource path="res://endingscript.gd" type="Script" id=2]
+[ext_resource path="res://GlobalKeyShortcuts.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 2 )
+
+[node name="GlobalKeyShortcuts" parent="." instance=ExtResource( 3 )]
 
 [node name="Tween" type="Tween" parent="."]
 

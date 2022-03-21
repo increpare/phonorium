@@ -90,4 +90,6 @@ func _process(delta):
 		if (index+1)<frames.size():
 			index = index + 1
 			setframes()
+		else:
+			get_tree().change_scene("res://titlescreen.tscn")
 	

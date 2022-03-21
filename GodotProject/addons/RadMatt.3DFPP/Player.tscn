@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.gd" type="Script" id=1]
 [ext_resource path="res://textures/crosshair_full.png" type="Texture" id=2]
@@ -14,6 +14,16 @@ mid_height = 2.0
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.6
 height = 2.0
+
+[sub_resource type="QuadMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 0.74902, 0.356863, 0.678431, 1 )
 
 [sub_resource type="Animation" id=5]
 length = 0.5
@@ -142,6 +152,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.10606 )
 [node name="InteractionRay" type="RayCast" parent="Yaw/Camera"]
 enabled = true
 cast_to = Vector3( 0, 0, -5 )
+
+[node name="PinkFlash" type="MeshInstance" parent="Yaw/Camera"]
+transform = Transform( 5.7189, 0, 0, 0, 5.7189, 0, 0, 0, 1, 0, 0, -0.681795 )
+visible = false
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Tween" type="Tween" parent="Yaw/Camera/PinkFlash"]
 
 [node name="stair_check" type="RayCast" parent="Yaw"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02655, -0.624282 )
