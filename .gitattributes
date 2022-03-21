@@ -32,3 +32,5 @@
 /audio/endmusic.wav filter=lfs diff=lfs merge=lfs -text
 /audio/portal.wav filter=lfs diff=lfs merge=lfs -text
 /audio/scarytrack.wav filter=lfs diff=lfs merge=lfs -text
+/audio/jingles/title.wav filter=lfs diff=lfs merge=lfs -text
+/audio/titlemusic.wav filter=lfs diff=lfs merge=lfs -text

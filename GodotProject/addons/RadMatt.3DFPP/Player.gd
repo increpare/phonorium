@@ -117,6 +117,32 @@ func _physics_process(delta): #IS PLAYER MOVING NORMALLY OR ON LADDER?
 # NORMAL MOVEMENT
 #######################################################################################################
 
+func doflash():
+	
+	var mesh :MeshInstance = $Yaw/Camera/PinkFlash
+	var mat = mesh.get_surface_material(0)
+	var albedo : Color = mat.albedo_color
+	var albedo_transparent : Color = albedo	
+	var albedo_opaque : Color = albedo
+	var tween = $Yaw/Camera/PinkFlash/Tween
+	mesh.visible=true
+	albedo_transparent.a=0
+	albedo_opaque.a=1
+	var duration = 0.3;
+	tween.interpolate_property(mesh, 
+		"material/0:albedo_color",
+		albedo_transparent, albedo_opaque, duration,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+	yield(get_tree().create_timer(3*duration), "timeout")
+	tween.interpolate_property(mesh, 
+		"material/0:albedo_color",
+		albedo_opaque, albedo_transparent, duration,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+	yield(get_tree().create_timer(duration), "timeout")
+	mesh.visible=false
+	
 var direction = Vector3()
 func _process_movements(delta):
 
@@ -298,8 +324,8 @@ func _input(event):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
-	if Input.is_key_pressed(KEY_R):
-		get_tree().reload_current_scene()
+	#	get_tree().reload_current_scene()
+	#if Input.is_key_pressed(KEY_R):
 
 	# If already carries an object - release it, otherwise (if ray is colliding) pick an object up
 	if Input.is_action_just_pressed("pick_up"):

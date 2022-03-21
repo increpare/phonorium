@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://font/CooperHewitt-Medium.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/title/titlebg.png" type="Texture" id=2]
+[ext_resource path="res://credits.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.52549, 0.52549, 0.52549, 1 )
+self_modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme = SubResource( 2 )
+text = "CREDITS
+Testers:
+	Paco Criado, Jazz Mickle, Tarek Sabet, Yunis Sabet, Letibus Design
+Inspiration:
+	This is a joke based on The Witness + Sensorium, two very lovely games.  
+	The joke was inspired by Michael Lefkowitz. I'm so sorry, Michael.
+
+Mouth sounds from https://www.ipachart.com/
+
+Each audio clip is the work of Peter Isotalo, User:Denelson83, UCLA Phonetics Lab Archive 2003, User:Halibutt, User:Pmx or User:Octane, and made available under Creative Commons CC0 License from https://commons.wikimedia.org/wiki/General_phonetics
+	(taken via ipachart.com)
+	
+The rest: increpare - send any feedback to analytic@gmail.com
+
+Press SPACE or ESC to return to title screen"
