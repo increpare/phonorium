@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_retroflex_fricative.mp3-d06af1beb89a1af9ae60d0c81cde6298.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/cor_fric/Voiceless_retroflex_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_retroflex_fricative.mp3-d06af1beb89a1af9ae60d0c81cde6298.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

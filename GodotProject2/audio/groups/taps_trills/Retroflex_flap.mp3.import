@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retroflex_flap.mp3-be2e1b7a2dc4a27266a9ed7e52b8dd0a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/taps_trills/Retroflex_flap.mp3"
+dest_files=[ "res://.import/Retroflex_flap.mp3-be2e1b7a2dc4a27266a9ed7e52b8dd0a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

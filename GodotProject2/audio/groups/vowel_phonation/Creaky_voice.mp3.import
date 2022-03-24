@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Creaky_voice.mp3-104bbc232a93a7fd931ca6e9b56d1b58.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowel_phonation/Creaky_voice.mp3"
+dest_files=[ "res://.import/Creaky_voice.mp3-104bbc232a93a7fd931ca6e9b56d1b58.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

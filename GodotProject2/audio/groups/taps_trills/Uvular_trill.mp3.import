@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Uvular_trill.mp3-49d75373ad9790871145bf7cfccc41dd.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/taps_trills/Uvular_trill.mp3"
+dest_files=[ "res://.import/Uvular_trill.mp3-49d75373ad9790871145bf7cfccc41dd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

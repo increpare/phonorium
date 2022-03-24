@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/oral_i.mp3-a9bee893715b03113e94c36bacd5708f.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/nas_vow/oral_i.mp3"
+dest_files=[ "res://.import/oral_i.mp3-a9bee893715b03113e94c36bacd5708f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/nasal_i_plus_n.mp3-7a9ff2258af003d6a6b3c127bd50e28f.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/nas_vow/nasal_i_plus_n.mp3"
+dest_files=[ "res://.import/nasal_i_plus_n.mp3-7a9ff2258af003d6a6b3c127bd50e28f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

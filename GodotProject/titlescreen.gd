@@ -113,6 +113,10 @@ func _process(delta):
 			redraw()
 	if Input.is_action_just_pressed("ui_accept"):
 		leaving=true
+		
+		if OS.get_name()=="HTML5":
+			$MusicPlayer.stop()
+			
 		$AudioStreamPlayer.stream = sfx_action[index]
 		$AudioStreamPlayer.play()
 		for i in 4:
@@ -120,8 +124,6 @@ func _process(delta):
 			sel.visible = i%2==0
 			yield(get_tree().create_timer(0.2), "timeout")
 		
-		if OS.get_name()=="HTML5":
-			$MusicPlayer.stop()
 			
 		match index:
 			0:

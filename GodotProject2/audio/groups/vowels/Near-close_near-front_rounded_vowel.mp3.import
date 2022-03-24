@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Near-close_near-front_rounded_vowel.mp3-cc4d3a905cce2cd1e8990c2fcbbe53e1.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowels/Near-close_near-front_rounded_vowel.mp3"
+dest_files=[ "res://.import/Near-close_near-front_rounded_vowel.mp3-cc4d3a905cce2cd1e8990c2fcbbe53e1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

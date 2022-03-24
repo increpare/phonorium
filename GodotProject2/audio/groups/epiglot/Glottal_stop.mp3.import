@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Glottal_stop.mp3-2202aa25832688c75dc61da40ae833c3.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/epiglot/Glottal_stop.mp3"
+dest_files=[ "res://.import/Glottal_stop.mp3-2202aa25832688c75dc61da40ae833c3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

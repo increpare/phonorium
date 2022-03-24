@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Palatal_approximant.mp3-a007bb5547011ba677c8f59890f13c37.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/pal/Palatal_approximant.mp3"
+dest_files=[ "res://.import/Palatal_approximant.mp3-a007bb5547011ba677c8f59890f13c37.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

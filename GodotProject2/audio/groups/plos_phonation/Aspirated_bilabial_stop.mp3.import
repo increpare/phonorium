@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Aspirated_bilabial_stop.mp3-0f68610344e8a7d48fb94e94410f46a6.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/Aspirated_bilabial_stop.mp3"
+dest_files=[ "res://.import/Aspirated_bilabial_stop.mp3-0f68610344e8a7d48fb94e94410f46a6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

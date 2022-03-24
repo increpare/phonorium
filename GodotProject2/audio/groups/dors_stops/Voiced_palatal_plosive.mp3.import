@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_palatal_plosive.mp3-976ec278e5c3611be1843f10ecfb45db.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors_stops/Voiced_palatal_plosive.mp3"
+dest_files=[ "res://.import/Voiced_palatal_plosive.mp3-976ec278e5c3611be1843f10ecfb45db.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

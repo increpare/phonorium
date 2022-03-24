@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_pharyngeal_fricative.mp3-a65d4721142ce45ec2b5d5b571f546d2.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors/Voiced_pharyngeal_fricative.mp3"
+dest_files=[ "res://.import/Voiced_pharyngeal_fricative.mp3-a65d4721142ce45ec2b5d5b571f546d2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

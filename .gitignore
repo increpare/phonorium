@@ -10,3 +10,5 @@ export_presets.cfg
 GodotProject/.mono/
 GodotProject/data_*/
 Build/*
+Build2/*
+*.zip

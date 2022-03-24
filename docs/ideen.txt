@@ -101,3 +101,49 @@ midstate:
 endstate:
 	head.y = 0.309 (local?)
 	top rot.z =0
+
+
+ending jingles should be played in global sound machine
+ending music
+portal swirly loop
+
+
+DONE CREDITS
+Testers:
+	Paco Criado, Jazz Mickle, Tarek Sabet, Yunis Sabet
+Audio Feedback: 
+	Letibus Design
+Inspiration:
+	This is a joke based on The Witness + Sensorium, two very lovely games.  
+	The joke was inspired by Michael Lefkowitz. I'm so sorry, Michael.
+
+Mouth sounds from https://www.ipachart.com/
+
+Each audio clip is the work of Peter Isotalo, User:Denelson83, UCLA Phonetics Lab Archive 2003, User:Halibutt, User:Pmx or User:Octane, and made available under Creative Commons CC0 License from https://commons.wikimedia.org/wiki/General_phonetics
+	(taken via ipachart.com)
+
+DONE press ESC to go to title screen
+DONE press M to toggle audiop
+
+DONE check that ending loops back around
+
+
+cehck about asset/bundle compression? checking for unused assets/deleting thme
+
+
+LOAD SAVE TODO LIST
+1 - decide on file-name
+2 - check if exists on title screen
+3 - save state
+
+
+killbox sound
+when you turn off area, turn off lights associated with that area pls
+
+todos aren't gettind disabled?
+
+turn off GI for tongue+mouth, render GI when head/tongue turned off
+
+- render world-map with tongue + head off
+- reenable tongue + head
+- set upper head and tongue rendering to not be affected by gi

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Breathy_voice.mp3-faf19886e2d4223cd3286d3b85392123.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowel_phonation/Breathy_voice.mp3"
+dest_files=[ "res://.import/Breathy_voice.mp3-faf19886e2d4223cd3286d3b85392123.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

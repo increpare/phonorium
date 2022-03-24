@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_ejective_plosive.mp3-d7b2f7520d843ab38a0252b07d1bc2d7.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ejectives/Alveolar_ejective_plosive.mp3"
+dest_files=[ "res://.import/Alveolar_ejective_plosive.mp3-d7b2f7520d843ab38a0252b07d1bc2d7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_postalveolar_fricative.mp3-61107c0bc9e2a2e6ffdab043c7041a46.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/cor_fric/Voiced_postalveolar_fricative.mp3"
+dest_files=[ "res://.import/Voiced_postalveolar_fricative.mp3-61107c0bc9e2a2e6ffdab043c7041a46.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

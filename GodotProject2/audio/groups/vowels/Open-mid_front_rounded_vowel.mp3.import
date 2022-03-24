@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Open-mid_front_rounded_vowel.mp3-b33fd6961e69f2986b7d7b68c1c353bb.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowels/Open-mid_front_rounded_vowel.mp3"
+dest_files=[ "res://.import/Open-mid_front_rounded_vowel.mp3-b33fd6961e69f2986b7d7b68c1c353bb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

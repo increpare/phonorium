@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ejective_bilabial_stop.mp3-f9dc3b27866df4361a66f2b94619c08a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/Ejective_bilabial_stop.mp3"
+dest_files=[ "res://.import/Ejective_bilabial_stop.mp3-f9dc3b27866df4361a66f2b94619c08a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

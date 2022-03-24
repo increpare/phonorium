@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bilabial_ejective_plosive.mp3-789c67363933827e76ffc79ddb3ef76a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ejectives/Bilabial_ejective_plosive.mp3"
+dest_files=[ "res://.import/Bilabial_ejective_plosive.mp3-789c67363933827e76ffc79ddb3ef76a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

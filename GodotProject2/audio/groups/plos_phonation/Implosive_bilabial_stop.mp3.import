@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Implosive_bilabial_stop.mp3-81b9f37b4f2a0209e1ed44a80eac9c49.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/Implosive_bilabial_stop.mp3"
+dest_files=[ "res://.import/Implosive_bilabial_stop.mp3-81b9f37b4f2a0209e1ed44a80eac9c49.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

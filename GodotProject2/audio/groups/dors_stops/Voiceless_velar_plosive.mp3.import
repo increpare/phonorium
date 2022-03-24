@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_velar_plosive.mp3-f57eb3f80c167ca8e8f628d4a18cccc8.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors_stops/Voiceless_velar_plosive.mp3"
+dest_files=[ "res://.import/Voiceless_velar_plosive.mp3-f57eb3f80c167ca8e8f628d4a18cccc8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

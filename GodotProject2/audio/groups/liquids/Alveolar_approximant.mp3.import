@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alveolar_approximant.mp3-6215b5ceb5b6891a2fab173a7bf75306.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/liquids/Alveolar_approximant.mp3"
+dest_files=[ "res://.import/Alveolar_approximant.mp3-6215b5ceb5b6891a2fab173a7bf75306.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

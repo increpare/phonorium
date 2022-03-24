@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Velar_ejective_plosive.mp3-d3d0af1569e3db707e082f57572e66f8.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ejectives/Velar_ejective_plosive.mp3"
+dest_files=[ "res://.import/Velar_ejective_plosive.mp3-d3d0af1569e3db707e082f57572e66f8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/booth_fail_short.wav-3c7cdcd685313b57122583e80315af76.sample"
+
+[deps]
+
+source_file="res://audio/sfx/booth_fail_short.wav"
+dest_files=[ "res://.import/booth_fail_short.wav-3c7cdcd685313b57122583e80315af76.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

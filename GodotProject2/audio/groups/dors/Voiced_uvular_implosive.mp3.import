@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_uvular_implosive.mp3-74a2dba48c9875cf992ab1134bd9664c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors/Voiced_uvular_implosive.mp3"
+dest_files=[ "res://.import/Voiced_uvular_implosive.mp3-74a2dba48c9875cf992ab1134bd9664c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

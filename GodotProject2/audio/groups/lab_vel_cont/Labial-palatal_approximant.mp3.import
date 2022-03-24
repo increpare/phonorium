@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labial-palatal_approximant.mp3-84d608afc7d4dc36cb9a3c9ebe9b7b7d.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/lab_vel_cont/Labial-palatal_approximant.mp3"
+dest_files=[ "res://.import/Labial-palatal_approximant.mp3-84d608afc7d4dc36cb9a3c9ebe9b7b7d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

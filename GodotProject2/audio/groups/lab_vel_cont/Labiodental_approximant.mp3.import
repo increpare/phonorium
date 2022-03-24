@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labiodental_approximant.mp3-1b9f91b9ac04a2bb01110582fb73859c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/lab_vel_cont/Labiodental_approximant.mp3"
+dest_files=[ "res://.import/Labiodental_approximant.mp3-1b9f91b9ac04a2bb01110582fb73859c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

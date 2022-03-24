@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_alveolo-palatal_fricative.mp3-8148b8bc189a6bb2ecccc417209c3f14.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/cor_fric/Voiceless_alveolo-palatal_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_alveolo-palatal_fricative.mp3-8148b8bc189a6bb2ecccc417209c3f14.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

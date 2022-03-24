@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Palatal_nasal.mp3-0aa29e7cb1dd9cef9105de35132af0a2.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/nasals/Palatal_nasal.mp3"
+dest_files=[ "res://.import/Palatal_nasal.mp3-0aa29e7cb1dd9cef9105de35132af0a2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

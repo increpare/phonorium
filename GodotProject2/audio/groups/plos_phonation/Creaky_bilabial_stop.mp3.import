@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Creaky_bilabial_stop.mp3-e615cd9c22f545b6a883e77820175d7a.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/Creaky_bilabial_stop.mp3"
+dest_files=[ "res://.import/Creaky_bilabial_stop.mp3-e615cd9c22f545b6a883e77820175d7a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

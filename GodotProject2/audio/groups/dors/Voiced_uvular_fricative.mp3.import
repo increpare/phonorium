@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_uvular_fricative.mp3-60ddc254818a51f90909d3632125a32e.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors/Voiced_uvular_fricative.mp3"
+dest_files=[ "res://.import/Voiced_uvular_fricative.mp3-60ddc254818a51f90909d3632125a32e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

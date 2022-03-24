@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/High.mp3-010cc5875a6512de13b751a4278743c0.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones/High.mp3"
+dest_files=[ "res://.import/High.mp3-010cc5875a6512de13b751a4278743c0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/plos_phonation.mp3-a4f4e8105e9d991c1bfb36a6766271c0.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/plos_phonation.mp3"
+dest_files=[ "res://.import/plos_phonation.mp3-a4f4e8105e9d991c1bfb36a6766271c0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
