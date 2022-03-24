@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bilabial_nasal.mp3-52fd48cb014d5e9dea0b741fe99ef602.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/nasals/Bilabial_nasal.mp3"
+dest_files=[ "res://.import/Bilabial_nasal.mp3-52fd48cb014d5e9dea0b741fe99ef602.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

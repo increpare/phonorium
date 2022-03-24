@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labiodental_flap.mp3-3db25c408e45e3a29320b10261f5a418.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/taps_trills/Labiodental_flap.mp3"
+dest_files=[ "res://.import/Labiodental_flap.mp3-3db25c408e45e3a29320b10261f5a418.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

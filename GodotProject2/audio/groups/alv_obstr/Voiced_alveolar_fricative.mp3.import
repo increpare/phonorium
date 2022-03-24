@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_alveolar_fricative.mp3-d8bf62135cc3328b2ce7c6c109c4bbb8.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/alv_obstr/Voiced_alveolar_fricative.mp3"
+dest_files=[ "res://.import/Voiced_alveolar_fricative.mp3-d8bf62135cc3328b2ce7c6c109c4bbb8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Low.mp3-2969a27cba4de686474a449308a2cde3.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones/Low.mp3"
+dest_files=[ "res://.import/Low.mp3-2969a27cba4de686474a449308a2cde3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

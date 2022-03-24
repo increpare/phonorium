@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bilabial_trill.mp3-4616ee16b69a576a1fc5810cf1a22b15.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/taps_trills/Bilabial_trill.mp3"
+dest_files=[ "res://.import/Bilabial_trill.mp3-4616ee16b69a576a1fc5810cf1a22b15.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

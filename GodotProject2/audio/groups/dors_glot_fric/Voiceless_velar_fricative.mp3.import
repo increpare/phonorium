@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_velar_fricative.mp3-1faf815602cbfd2f6fa4c831e101d197.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors_glot_fric/Voiceless_velar_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_velar_fricative.mp3-1faf815602cbfd2f6fa4c831e101d197.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

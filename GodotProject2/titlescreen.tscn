@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://textures/title/selection_star1.png" type="Texture" id=3]
+[ext_resource path="res://textures/title/selection_star2.png" type="Texture" id=4]
+[ext_resource path="res://textures/title/selection_star4.png" type="Texture" id=5]
+[ext_resource path="res://textures/title/selection_star3.png" type="Texture" id=6]
+[ext_resource path="res://textures/title/option_newgame.png" type="Texture" id=7]
+[ext_resource path="res://textures/title/option_credits.png" type="Texture" id=8]
+[ext_resource path="res://textures/title/option_continue.png" type="Texture" id=9]
+[ext_resource path="res://textures/title/option_quit.png" type="Texture" id=10]
+[ext_resource path="res://titlescreen.gd" type="Script" id=11]
+[ext_resource path="res://GlobalKeyShortcuts.tscn" type="PackedScene" id=13]
+[ext_resource path="res://audio/sfx/titlemusic.mp3" type="AudioStream" id=14]
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_color = Color( 0.396078, 0.105882, 0.247059, 1 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 11 )
+
+[node name="GlobalKeyShortcuts" parent="." instance=ExtResource( 13 )]
+
+[node name="Camera2" type="Camera" parent="."]
+environment = SubResource( 2 )
+projection = 1
+
+[node name="Menu" type="Spatial" parent="Camera2"]
+transform = Transform( 1.41954, 0, 0, 0, 1.41954, 0, 0, 0, 1, 0, -0.293826, 0 )
+
+[node name="option_newgame" type="Sprite3D" parent="Camera2/Menu"]
+transform = Transform( 0.0847161, 0, 0, 0, 0.0847161, 0, 0, 0, 1, 0.111452, 0.168374, -0.536157 )
+texture = ExtResource( 7 )
+
+[node name="Spatial" type="Spatial" parent="Camera2/Menu/option_newgame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68097, 0 )
+
+[node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_newgame/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -1.67078, 0 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_newgame/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -1.67078, 0 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="option_continue" type="Sprite3D" parent="Camera2/Menu"]
+transform = Transform( 0.0847161, 0, 0, 0, 0.0847161, 0, 0, 0, 1, 0.111452, 0.104218, -0.536157 )
+texture = ExtResource( 9 )
+
+[node name="Spatial" type="Spatial" parent="Camera2/Menu/option_continue"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.11925, 0 )
+
+[node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_continue/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_continue/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="option_credits" type="Sprite3D" parent="Camera2/Menu"]
+transform = Transform( 0.0847161, 0, 0, 0, 0.0847161, 0, 0, 0, 1, 0.111452, 0.0373723, -0.536157 )
+texture = ExtResource( 8 )
+
+[node name="Spatial" type="Spatial" parent="Camera2/Menu/option_credits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13428, 0 )
+
+[node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_credits/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_credits/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="options_quit" type="Sprite3D" parent="Camera2/Menu"]
+transform = Transform( 0.0850501, 0, 0, 0, 0.0930235, 0, 0, 0, 1.1, 0.111452, -0.0285269, -0.536157 )
+texture = ExtResource( 10 )
+
+[node name="Spatial" type="Spatial" parent="Camera2/Menu/options_quit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.18836, 0 )
+
+[node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/options_quit/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/options_quit/Spatial"]
+transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -17.256
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

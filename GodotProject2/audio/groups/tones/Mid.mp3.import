@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mid.mp3-f339ccbf80db05a260e47e9daef499af.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones/Mid.mp3"
+dest_files=[ "res://.import/Mid.mp3-f339ccbf80db05a260e47e9daef499af.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

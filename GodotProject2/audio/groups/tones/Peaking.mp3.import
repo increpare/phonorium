@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Peaking.mp3-6b9ad4cdf532c8b30243d0c9a350d16c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones/Peaking.mp3"
+dest_files=[ "res://.import/Peaking.mp3-6b9ad4cdf532c8b30243d0c9a350d16c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

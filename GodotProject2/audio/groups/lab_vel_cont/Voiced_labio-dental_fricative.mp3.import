@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_labio-dental_fricative.mp3-77d2d132903dc618c59fabb2b5070749.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/lab_vel_cont/Voiced_labio-dental_fricative.mp3"
+dest_files=[ "res://.import/Voiced_labio-dental_fricative.mp3-77d2d132903dc618c59fabb2b5070749.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

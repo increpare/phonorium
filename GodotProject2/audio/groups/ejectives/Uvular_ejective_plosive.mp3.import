@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Uvular_ejective_plosive.mp3-7ecdf1c26ca29cea89b7e8f4b58dab97.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ejectives/Uvular_ejective_plosive.mp3"
+dest_files=[ "res://.import/Uvular_ejective_plosive.mp3-7ecdf1c26ca29cea89b7e8f4b58dab97.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

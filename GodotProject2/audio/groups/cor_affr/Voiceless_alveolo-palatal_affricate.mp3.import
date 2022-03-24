@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_alveolo-palatal_affricate.mp3-cea5da806bd17dd39a3dc9e173f40443.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/cor_affr/Voiceless_alveolo-palatal_affricate.mp3"
+dest_files=[ "res://.import/Voiceless_alveolo-palatal_affricate.mp3-cea5da806bd17dd39a3dc9e173f40443.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

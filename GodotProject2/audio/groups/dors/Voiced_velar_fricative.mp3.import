@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_velar_fricative.mp3-e3e85665ed0e5ff0b31f289ef43e0ba7.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/dors/Voiced_velar_fricative.mp3"
+dest_files=[ "res://.import/Voiced_velar_fricative.mp3-e3e85665ed0e5ff0b31f289ef43e0ba7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_bilabial_fricative.mp3-cc3c26336c5a27e296518e69f3adf6fd.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/lab_vel_cont/Voiced_bilabial_fricative.mp3"
+dest_files=[ "res://.import/Voiced_bilabial_fricative.mp3-cc3c26336c5a27e296518e69f3adf6fd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

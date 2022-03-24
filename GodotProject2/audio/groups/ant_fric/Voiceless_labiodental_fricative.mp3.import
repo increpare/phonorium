@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_labiodental_fricative.mp3-2ede7b104ed6ef07a7fd834a5026dffd.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ant_fric/Voiceless_labiodental_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_labiodental_fricative.mp3-2ede7b104ed6ef07a7fd834a5026dffd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

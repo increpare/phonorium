@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Rising.mp3-cb1123562c7a179fc7848e68f09e1311.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones/Rising.mp3"
+dest_files=[ "res://.import/Rising.mp3-cb1123562c7a179fc7848e68f09e1311.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_epiglottal_plosive.mp3-6d471097662b5671a55ac04e9df1979e.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/epiglot/Voiceless_epiglottal_plosive.mp3"
+dest_files=[ "res://.import/Voiceless_epiglottal_plosive.mp3-6d471097662b5671a55ac04e9df1979e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

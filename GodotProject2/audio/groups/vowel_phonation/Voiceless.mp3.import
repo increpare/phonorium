@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless.mp3-485006f5af6471f51061d3e69224f238.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowel_phonation/Voiceless.mp3"
+dest_files=[ "res://.import/Voiceless.mp3-485006f5af6471f51061d3e69224f238.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

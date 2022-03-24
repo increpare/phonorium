@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Palatal_lateral_approximant.mp3-35311f2ff858c87829b27a2687d3371c.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/pal/Palatal_lateral_approximant.mp3"
+dest_files=[ "res://.import/Palatal_lateral_approximant.mp3-35311f2ff858c87829b27a2687d3371c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

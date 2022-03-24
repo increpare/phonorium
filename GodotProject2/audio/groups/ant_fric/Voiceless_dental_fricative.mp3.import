@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiceless_dental_fricative.mp3-3ba231b6180f4323354a055a85d763a4.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ant_fric/Voiceless_dental_fricative.mp3"
+dest_files=[ "res://.import/Voiceless_dental_fricative.mp3-3ba231b6180f4323354a055a85d763a4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

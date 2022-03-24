@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_bilabial_stop.mp3-224aca8e21431f8c2614be717c7057fa.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/plos_phonation/Voiced_bilabial_stop.mp3"
+dest_files=[ "res://.import/Voiced_bilabial_stop.mp3-224aca8e21431f8c2614be717c7057fa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

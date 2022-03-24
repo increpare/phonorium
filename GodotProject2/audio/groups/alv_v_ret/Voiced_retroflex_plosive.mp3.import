@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voiced_retroflex_plosive.mp3-50ea8002e838b1b1751a97077f6c5a93.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/alv_v_ret/Voiced_retroflex_plosive.mp3"
+dest_files=[ "res://.import/Voiced_retroflex_plosive.mp3-50ea8002e838b1b1751a97077f6c5a93.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

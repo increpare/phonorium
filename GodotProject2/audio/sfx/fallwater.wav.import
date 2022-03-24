@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fallwater.wav-5cd9238dfd6c7eb0797efdc2a97a8711.sample"
+
+[deps]
+
+source_file="res://audio/sfx/fallwater.wav"
+dest_files=[ "res://.import/fallwater.wav-5cd9238dfd6c7eb0797efdc2a97a8711.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

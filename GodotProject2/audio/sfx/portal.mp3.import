@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/portal.mp3-23a0d06c99a9f982b153e4a794a3df06.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/portal.mp3"
+dest_files=[ "res://.import/portal.mp3-23a0d06c99a9f982b153e4a794a3df06.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
