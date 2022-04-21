@@ -22,7 +22,7 @@ window/size/height=900
 
 [editor_plugins]
 
-enabled=PoolStringArray( "toyman.terraineditor" )
+enabled=PoolStringArray(  )
 
 [global]
 

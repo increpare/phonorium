@@ -25,7 +25,7 @@ func save_level():
 		var booth = booths[n]
 		if !is_instance_valid(booth):
 			solvedarray.append(true)	
-		else:		
+		else:					
 			solvedarray.append(booth.solved)
 	var save_file = File.new()
 	save_file.open("user://savegame.save", File.WRITE)

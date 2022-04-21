@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/modal_voice.mp3-71772df1b86c93d141043d21d4c15946.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/vowel_phonation_v2/modal_voice.mp3"
+dest_files=[ "res://.import/modal_voice.mp3-71772df1b86c93d141043d21d4c15946.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ant_lab_vel_1.mp3-16bf5029eab0cf76ee68bc4da2ba8229.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/ant_lab_vel/ant_lab_vel_1.mp3"
+dest_files=[ "res://.import/ant_lab_vel_1.mp3-16bf5029eab0cf76ee68bc4da2ba8229.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
