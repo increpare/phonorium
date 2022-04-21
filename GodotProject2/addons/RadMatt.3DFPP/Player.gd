@@ -349,6 +349,7 @@ func _input(event):
 			var x = $Yaw/Camera/InteractionRay.get_collider()
 			print("COLLIDING")
 			print(x.get_name())
+			print(x.get_parent().get_name())
 			if x.has_method("interact"):
 				x.interact(self)
 

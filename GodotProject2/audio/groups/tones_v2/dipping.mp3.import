@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dipping.mp3-b10bde01f038219a2ae85f1a45acb816.mp3str"
+
+[deps]
+
+source_file="res://audio/groups/tones_v2/dipping.mp3"
+dest_files=[ "res://.import/dipping.mp3-b10bde01f038219a2ae85f1a45acb816.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

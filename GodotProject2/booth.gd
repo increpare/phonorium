@@ -4,10 +4,10 @@ export(Array, int) var Solution : Array = [ 1,0,1,1,0 ]
 export(Array, AudioStream) var Audio : Array = []
 export var equally_spaced:bool = true
 
-var light_off = preload("res://models/Lampe_off.material")
-var light_on = preload("res://models/Lampe_on.material")
+var light_off = preload("res://models/castiron.material")
+var light_on = preload("res://models/Gold.material")
 var light_red = preload("res://models/Lampe_red.material")
-var light_green = preload("res://models/Lampe_green.material")
+var light_green = preload("res://models/flame.material")
 	
 var jingle_lose = preload("res://audio/sfx/booth_fail_short.wav")
 var jingle_solve = preload("res://audio/sfx/booth_solve.wav")
@@ -95,15 +95,14 @@ func _ready():
 				
 	match Audio.size():
 		2:
-			$boothmodel/Base/Buttons_3.queue_free()
-			$boothmodel/Base/Buttons_4/Button2.visible=false
-			$boothmodel/Base/Buttons_4/Button2/StaticBody/CollisionShape.disabled=true
-			$boothmodel/Base/Buttons_4/Button3.visible=false
-			$boothmodel/Base/Buttons_4/Button3/StaticBody/CollisionShape.disabled=true
+			$booth_v2/Cube/Device_v2/Buttons_3.queue_free()
+			$booth_v2/Cube/Device_v2/Buttons_4.queue_free()
 		3:
-			$boothmodel/Base/Buttons_4.queue_free()
+			$booth_v2/Cube/Device_v2/Buttons_2.queue_free()
+			$booth_v2/Cube/Device_v2/Buttons_4.queue_free()
 		4:
-			$boothmodel/Base/Buttons_3.queue_free()
+			$booth_v2/Cube/Device_v2/Buttons_2.queue_free()
+			$booth_v2/Cube/Device_v2/Buttons_3.queue_free()
 		_:
 			print(Audio.size())
 			print(get_parent().name)
@@ -112,45 +111,49 @@ func _ready():
 	
 	match Solution.size():
 		4:
-			lights.push_back($boothmodel/Base/Lights4/Light0)
-			lights.push_back($boothmodel/Base/Lights4/Light1)
-			lights.push_back($boothmodel/Base/Lights4/Light2)
-			lights.push_back($boothmodel/Base/Lights4/Light3)
-			$boothmodel/Base/Lights5.free()
-			$boothmodel/Base/Lights6.free()
-			$boothmodel/Base/Lights7.free()
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_1/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_2/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_3/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_4/Flame)
+			
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_5.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_6.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_7.free()
 		5:
-			$boothmodel/Base/Lights4.free()
-			lights.push_back($boothmodel/Base/Lights5/Light0)
-			lights.push_back($boothmodel/Base/Lights5/Light1)
-			lights.push_back($boothmodel/Base/Lights5/Light2)
-			lights.push_back($boothmodel/Base/Lights5/Light3)
-			lights.push_back($boothmodel/Base/Lights5/Light4)
-			$boothmodel/Base/Lights6.free()
-			$boothmodel/Base/Lights7.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_4.free()
+			
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_1/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_2/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_3/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_4/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_5/Flame)
+			
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_6.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_7.free()
 		6:
-			$boothmodel/Base/Lights4.free()
-			$boothmodel/Base/Lights5.free()
-			lights.push_back($boothmodel/Base/Lights6/Light0)
-			lights.push_back($boothmodel/Base/Lights6/Light1)
-			lights.push_back($boothmodel/Base/Lights6/Light2)
-			lights.push_back($boothmodel/Base/Lights6/Light3)
-			lights.push_back($boothmodel/Base/Lights6/Light4)
-			lights.push_back($boothmodel/Base/Lights6/Light5)
-			$boothmodel/Base/Lights7.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_4.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_5.free()
+						
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_1/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_2/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_3/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_4/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_5/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_6/Flame)
+			
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_7.free()
 		7:
-			$boothmodel/Base/Lights4.free()
-			$boothmodel/Base/Lights5.free()
-			$boothmodel/Base/Lights6.free()
-			lights.push_back($boothmodel/Base/Lights7/Light0)
-			lights.push_back($boothmodel/Base/Lights7/Light1)
-			lights.push_back($boothmodel/Base/Lights7/Light2)
-			lights.push_back($boothmodel/Base/Lights7/Light3)
-			lights.push_back($boothmodel/Base/Lights7/Light4)
-			lights.push_back($boothmodel/Base/Lights7/Light5)
-			lights.push_back($boothmodel/Base/Lights7/Light6)
-	
-
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_4.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_5.free()
+			$booth_v2/Cube/Device_v2/HeadHolder/Flames_6.free()
+			
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_1/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_2/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_3/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_4/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_5/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_6/Flame)
+			lights.push_back($booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_7/Flame)
 	
 	for n in lights.size():
 		set_light(n,0)
@@ -237,10 +240,13 @@ func on_pressed(n_i):
 
 
 func set_light(n,col):
+	print(lights.size(),n,lights[n])	
+	print(lights)
 	var light : MeshInstance = lights[n] as MeshInstance
-	light.material_override = lightmats[col]
+	if light != null:
+		light.material_override = lightmats[col]
 	
-func do_play():
+func do_play(caller:Node):
 	if playing:
 		return
 		
@@ -275,6 +281,8 @@ func do_play():
 		
 	for n in Solution.size():
 		set_light(n,basecolour)
+	
+	caller.emit_signal("on_done")
 		
 		
 		
