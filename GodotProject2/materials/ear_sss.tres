@@ -1,0 +1,77 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[sub_resource type="Shader" id=201]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.4.3.stable's SpatialMaterial.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_disabled,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+uniform float specular;
+uniform float metallic;
+uniform float roughness : hint_range(0,1);
+uniform float point_size : hint_range(0,128);
+uniform float subsurface_scattering_strength : hint_range(0,1);
+uniform sampler2D texture_subsurface_scattering : hint_white;
+uniform sampler2D texture_colour_ramp : hint_white;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+
+
+void light(){
+	DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * ALBEDO;
+	
+	float brightness = (DIFFUSE_LIGHT.r+DIFFUSE_LIGHT.g+DIFFUSE_LIGHT.b)/3.0;
+    DIFFUSE_LIGHT *= texture(texture_colour_ramp,vec2(brightness,brightness)).rgb;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	albedo_tex *= COLOR;
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	METALLIC = metallic;
+	ROUGHNESS = roughness;
+	SPECULAR = specular;
+	float sss_tex = texture(texture_subsurface_scattering,base_uv).r;
+	SSS_STRENGTH=subsurface_scattering_strength*sss_tex;
+}
+"
+
+[sub_resource type="Gradient" id=204]
+offsets = PoolRealArray( 0, 0.00167785, 0.0318792, 0.196309, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 0.699219, 0.2267, 0.2267, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=203]
+gradient = SubResource( 204 )
+width = 128
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[resource]
+resource_name = "EarMat"
+shader = SubResource( 201 )
+shader_param/albedo = Color( 0.871105, 0.590253, 0.461722, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 0.911
+shader_param/point_size = 1.0
+shader_param/subsurface_scattering_strength = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_subsurface_scattering = SubResource( 2 )
+shader_param/texture_colour_ramp = SubResource( 203 )
