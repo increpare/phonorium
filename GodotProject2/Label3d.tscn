@@ -35,5 +35,5 @@ align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-modulate = Color( 0, 0, 0, 0.462745 )
+modulate = Color( 0, 0, 0, 0.619608 )
 texture = SubResource( 4 )

@@ -13,6 +13,7 @@ bump_strength = 9.8
 noise = SubResource( 1 )
 
 [resource]
+albedo_color = Color( 0.564706, 0.552941, 0.552941, 1 )
 albedo_texture = ExtResource( 1 )
 normal_enabled = true
 normal_scale = 7.81
