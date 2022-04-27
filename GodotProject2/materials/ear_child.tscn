@@ -6,4 +6,5 @@
 [node name="ear2" instance=ExtResource( 1 )]
 
 [node name="Ear" parent="." index="0"]
+layers = 2
 material/0 = ExtResource( 2 )

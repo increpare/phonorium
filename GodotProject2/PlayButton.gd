@@ -36,7 +36,7 @@ func interact():
 	var oldpos_water = water_level.translation
 	
 	parent.translate_object_local(-Vector3.UP*0.165)
-	water_level.translate_object_local(Vector3.UP*0.085)
+	water_level.translate_object_local(Vector3.UP*0.07)
 	
 	yield(get_tree().create_timer(0.2), "timeout")
 	water_spout.visible=true
