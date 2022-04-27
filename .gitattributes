@@ -115,3 +115,5 @@
 /GodotProject2/textures/MARBLE[[:space:]]SET-3-FREE-2/BLACK[[:space:]]SILK[[:space:]]-[[:space:]]POLISHED[[:space:]]-[[:space:]]QUARTZITE/BLACK[[:space:]]SILK[[:space:]]-[[:space:]]POLISHED[[:space:]]-[[:space:]]QUARTZITE-normal.jpg filter=lfs diff=lfs merge=lfs -text
 /GodotProject2/textures/MARBLE[[:space:]]SET-3-FREE-2/BLACK[[:space:]]SILK[[:space:]]-[[:space:]]POLISHED[[:space:]]-[[:space:]]QUARTZITE/BLACK[[:space:]]SILK[[:space:]]-[[:space:]]POLISHED[[:space:]]-[[:space:]]QUARTZITE-specular.jpg filter=lfs diff=lfs merge=lfs -text
 /new/wav_files/batch2/ant_lab_vel.wav filter=lfs diff=lfs merge=lfs -text
+/GodotProject2/models/theater.blend filter=lfs diff=lfs merge=lfs -text
+/GodotProject2/models/theater.blend1 filter=lfs diff=lfs merge=lfs -text
