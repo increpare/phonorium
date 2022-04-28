@@ -10,6 +10,27 @@ export(Array,NodePath) var lights:Array
 var _elevators:Array
 var _lights:Array
 
+#land, air
+var env_cols:Array = [
+	[ Color("#c0db72"),Color("#ececec") ],#1
+	[ Color("#45891a"),Color("#84c0db") ],#2
+	[ Color("#ad9d33"),Color("#7aaddd") ],#3
+	[ Color("#64aadb"),Color("#64aadb") ],#4
+	[ Color("#115e33"),Color("#4294be") ],#5
+	[ Color("#732930"),Color("#89c1da") ],#6
+	[ Color("#fab40b"),Color("#bceaff") ],#7
+	[ Color("#a3ce27"),Color("#31a2f2") ],#8
+	[ Color("#524f40"),Color("#cbdae0") ],#9
+	[ Color("#40632b"),Color("#6eadda") ],#10
+	[ Color("#f4b990"),Color("#b2dcef") ],#11
+	[ Color("#bea5a5"),Color("#bea5a5") ],#12
+	[ Color("#524f40"),Color("#bea5a5") ],#13
+	[ Color("#44891a"),Color("#dfdf59") ],#14
+	[ Color("#cccccc"),Color("#cccccc") ],#15
+	[ Color("#ad9d33"),Color("#a7b4d3") ],#16
+	[ Color("#44891a"),Color("#86b4c9") ],#17
+]
+
 func findByClass(node: Node, classPath : String, result : Array) -> void:
 	var script : Reference = node.get_script()
 	if script!=null:
