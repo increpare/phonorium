@@ -1,154 +1,183 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://VisionScene.gd" type="Script" id=1]
-[ext_resource path="res://Trees/tree1.png" type="Texture" id=2]
+[ext_resource path="res://materials/tree1.tres" type="Material" id=2]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 1000, 1000 )
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_unshaded = true
-albedo_color = Color( 1, 0, 0, 1 )
+[sub_resource type="QuadMesh" id=1]
 
 [node name="VisionScene" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 26.4614, 20.3224, 24.3107 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.0268 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 36.5786, 20.3224, -29.9618 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6213, 0, 5.04896 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -19.0486, 20.3224, -55.3417 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8606, 0, -8.01556 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -64.941, 20.3224, -27.1804 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42235, 0, -14.7776 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -76.4141, 20.3224, 23.2317 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D5" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5283, 0, -13.0219 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -26.3497, 20.3224, 34.3572 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D6" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0017, 0, -5.41519 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 54.6575, 20.3224, 64.6045 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D7" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6852, 0, 5.69879 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance11" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 107.503, 20.3224, 12.454 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D8" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5677, 0, 15.3145 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance12" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 93.2489, 20.3224, -51.865 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D9" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7084, 0, 0.954741 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance13" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 38.317, 20.3224, -105.754 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D10" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5287, 0, -13.4771 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance14" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -33.9984, 20.3224, -104.363 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D11" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10835, 0, -23.0373 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance15" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -89.2779, 20.3224, -54.994 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D12" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2792, 0, -18.4194 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance16" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -97.9697, 20.3224, 2.37154 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D13" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.58, 0, 1.14972 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance17" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -79.7367, 20.3224, 90.7008 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D14" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3599, 0, 17.1983 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance30" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 97.7649, 20.3224, 106.551 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D15" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76921, 0, 27.3597 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance32" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -1.26855, 20.3224, 151.283 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D16" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29616, 0, 24.6197 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance31" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 97.7649, 20.3224, 106.551 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
 
-[node name="Sprite3D17" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2705, 0, 27.9335 )
-centered = false
-offset = Vector2( -256, 0 )
-pixel_size = 0.02
-billboard = 2
-texture = ExtResource( 2 )
+[node name="MeshInstance18" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -80.3841, 20.3224, 59.7182 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance19" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -20.6479, 20.3224, 88.5572 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance20" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 30.8933, 20.3224, 107.35 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance21" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 126.605, 20.3224, 54.8113 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance22" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 162.614, 20.3224, -28.8927 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance23" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 118.445, 20.3224, -111.055 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance24" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 30.0375, 20.3224, -190.378 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance25" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -57.8284, 20.3224, -169.414 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance26" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -108.015, 20.3224, -128.642 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance27" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -148.9, 20.3224, -71.3279 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance28" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -143.095, 20.3224, -22.1212 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance29" type="MeshInstance" parent="."]
+transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -133.718, 20.3224, 25.0975 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )

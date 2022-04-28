@@ -1,8 +1,5 @@
 extends Node
 
-var mat_button_flash : Material = load("res://models/Play_Flash.material")
-var mat_button : Material = load("res://models/Play.material")
-
 var root_parent:Spatial
 
 signal on_done

@@ -1,9 +1,5 @@
 extends Node
 
-
-var mat_button_flash : Material = load("res://models/Button_Flash.material")
-var mat_button : Material = load("res://models/Button.material")
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -38,8 +34,6 @@ func interact():
 	
 	parent.translate_object_local(-Vector3.UP*0.035)
 
-	#parent.set_surface_material(0, mat_button_flash);
 	yield(get_tree().create_timer(0.2), "timeout")
-	#parent.set_surface_material(0, mat_button);
 	parent.translation = oldpos
 	looping=false
