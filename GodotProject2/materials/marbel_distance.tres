@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://textures/MARBLE SET-3-FREE-2/BIANCO LASA_POLISHED_MARBLE/BIANCO LASA_POLISHED_MARBLE-diffuse.jpg" type="Texture" id=1]
+[ext_resource path="res://materials/distance_fade.gdshader" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/tint = Color( 0.654902, 0.654902, 0.654902, 1 )
+shader_param/mindist = 20.0
+shader_param/maxdist = 40.0
+shader_param/center = Vector3( 0, 0, 0 )
+shader_param/metallic = 0.0
+shader_param/texturemap = ExtResource( 1 )

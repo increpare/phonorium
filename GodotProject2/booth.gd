@@ -4,10 +4,10 @@ export(Array, int) var Solution : Array = [ 1,0,1,1,0 ]
 export(Array, AudioStream) var Audio : Array = []
 export var equally_spaced:bool = true
 
-var light_off = preload("res://models/castiron.material")
-var light_on = preload("res://models/Gold.material")
+var light_off = preload("res://models/castiron_distance.tres")
+var light_on = preload("res://models/Gold_distance.tres")
 var light_red = preload("res://models/Lampe_red.material")
-var light_green = preload("res://models/flame.material")
+var light_green = preload("res://models/flame_distance.tres")
 	
 var jingle_lose = preload("res://audio/sfx/booth_fail_short.wav")
 var jingle_solve = preload("res://audio/sfx/booth_solve.wav")
@@ -240,8 +240,6 @@ func on_pressed(n_i):
 
 
 func set_light(n,col):
-	print(lights.size(),n,lights[n])	
-	print(lights)
 	var light : MeshInstance = lights[n] as MeshInstance
 	if light != null:
 		light.material_override = lightmats[col]

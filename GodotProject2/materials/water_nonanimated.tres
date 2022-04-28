@@ -4,6 +4,10 @@
 [ext_resource path="res://materials/water_pool.gdshader" type="Shader" id=2]
 
 [resource]
+render_priority = 2
 shader = ExtResource( 2 )
+shader_param/mindist = 20.0
+shader_param/maxdist = 40.0
+shader_param/center = Vector3( 0, 0, 0 )
 shader_param/animspeed = 0.0
 shader_param/tex_albedo = ExtResource( 1 )

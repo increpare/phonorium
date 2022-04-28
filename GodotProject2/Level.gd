@@ -147,7 +147,19 @@ func _ready():
 	#enable/disable tongue bits
 
 		
+var zonetarget:Vector3
+var zone_index:int=-1
 
+const zone_min_range_unzoomed:float=100.0
+const zone_max_range_unzoomed:float=100.0
+
+const zone_min_range_zoomed:float=1.0
+const zone_max_range_zoomed:float=1.0
+
+func setZone(pos:Vector3,i:int):
+	if i==-1:
+		pass
+	pass
 	
 func solvedgroup_by_name(group:String):	
 	var groupsolved=true

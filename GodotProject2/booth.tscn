@@ -1,10 +1,10 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://models/Gold.material" type="Material" id=1]
 [ext_resource path="res://models/Marble.material" type="Material" id=2]
-[ext_resource path="res://models/castiron.material" type="Material" id=3]
+[ext_resource path="res://models/flame_distance.tres" type="Material" id=3]
 [ext_resource path="res://models/flame.material" type="Material" id=4]
-[ext_resource path="res://materials/marbel.tres" type="Material" id=5]
+[ext_resource path="res://materials/marbel_distance.tres" type="Material" id=5]
 [ext_resource path="res://Label3d.tscn" type="PackedScene" id=6]
 [ext_resource path="res://AudioButton.gd" type="Script" id=7]
 [ext_resource path="res://booth.gd" type="Script" id=8]
@@ -15,6 +15,8 @@
 [ext_resource path="res://PlayButton.gd" type="Script" id=13]
 [ext_resource path="res://materials/water_animated.tres" type="Material" id=14]
 [ext_resource path="res://materials/water_nonanimated.tres" type="Material" id=16]
+[ext_resource path="res://models/Gold_distance.tres" type="Material" id=17]
+[ext_resource path="res://models/castiron_distance.tres" type="Material" id=18]
 
 [sub_resource type="ArrayMesh" id=17]
 resource_name = "booth_v2_Cube013"
@@ -69,7 +71,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 558,
-"material": ExtResource( 1 ),
+"material": ExtResource( 17 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 538
@@ -156,7 +158,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 7770,
-"material": ExtResource( 1 ),
+"material": ExtResource( 17 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1922
@@ -334,18 +336,19 @@ mesh = SubResource( 18 )
 material/0 = ExtResource( 5 )
 
 [node name="WaterLevel" type="MeshInstance" parent="booth_v2/Cube/Device_v2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.868589, 0.168263, 0.131026, -0.00750361 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.868589, 0.168263, 0.136289, -0.00750361 )
 mesh = SubResource( 39 )
 skeleton = NodePath("")
 material/0 = null
 
 [node name="Buttons_2" type="Spatial" parent="booth_v2/Cube/Device_v2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Shield001" type="MeshInstance" parent="booth_v2/Cube/Device_v2/Buttons_2"]
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.493151, 0.118707, -0.329406 )
 mesh = SubResource( 54 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_2/Shield001"]
 script = ExtResource( 7 )
@@ -357,7 +360,7 @@ shape = SubResource( 41 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.49315, 0.118706, 0.319649 )
 mesh = SubResource( 35 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_2/Shield002"]
 script = ExtResource( 7 )
@@ -372,7 +375,7 @@ shape = SubResource( 42 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.571746, 0.0724833, 0.00171963 )
 mesh = SubResource( 54 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_3/Shield001"]
 script = ExtResource( 7 )
@@ -384,7 +387,7 @@ shape = SubResource( 43 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.363324, 0.19998, 0.501034 )
 mesh = SubResource( 36 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_3/Shield002"]
 script = ExtResource( 7 )
@@ -397,7 +400,7 @@ shape = SubResource( 44 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.363324, 0.19998, -0.503311 )
 mesh = SubResource( 37 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_3/Shield003"]
 script = ExtResource( 7 )
@@ -412,7 +415,7 @@ shape = SubResource( 45 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.550235, 0.0851343, -0.263181 )
 mesh = SubResource( 54 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_4/Shield001"]
 script = ExtResource( 7 )
@@ -424,7 +427,7 @@ shape = SubResource( 46 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.550235, 0.0851339, 0.253424 )
 mesh = SubResource( 35 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_4/Shield002"]
 script = ExtResource( 7 )
@@ -437,7 +440,7 @@ shape = SubResource( 47 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.249155, 0.267125, 0.633484 )
 mesh = SubResource( 36 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_4/Shield003"]
 script = ExtResource( 7 )
@@ -450,7 +453,7 @@ shape = SubResource( 48 )
 transform = Transform( 0.861979, -0.506945, 0, 0.506945, 0.861979, 0, 0, 0, 1, -0.249155, 0.267125, -0.635761 )
 mesh = SubResource( 37 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2/Buttons_4/Shield004"]
 script = ExtResource( 7 )
@@ -462,7 +465,7 @@ shape = SubResource( 49 )
 [node name="HeadHolder" type="Spatial" parent="booth_v2/Cube/Device_v2"]
 
 [node name="Mball005" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234191, 0.83777, -0.000351431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234191, 0.83777, -0.000351429 )
 mesh = SubResource( 20 )
 skeleton = NodePath("../..")
 material/0 = null
@@ -486,49 +489,49 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, -0.425457 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_1"]
 transform = Transform( -1.35691e-07, 0.999998, 2.14576e-06, -0.999996, -3.02667e-05, -3.6045e-06, -5.96748e-08, -2.14576e-06, 0.999998, -0.0412449, 0.214815, 0.00296807 )
 mesh = SubResource( 22 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_2" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.12394, -0.291313 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_2"]
 transform = Transform( -1.35691e-07, 0.999997, 2.14576e-06, -0.999995, -3.02667e-05, -3.6045e-06, -5.96747e-08, -2.14576e-06, 0.999997, -0.0412448, 0.20983, 0.00243473 )
 mesh = SubResource( 24 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_3" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.12394, 0.257676 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_3"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.212686, 0.00243473 )
 mesh = SubResource( 30 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_4" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, 0.42557 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_4/Arm_4"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.222107, 0.00296807 )
 mesh = SubResource( 32 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Flames_5" type="Spatial" parent="booth_v2/Cube/Device_v2/HeadHolder"]
 
@@ -536,61 +539,61 @@ material/0 = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, -0.425457 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_1"]
 transform = Transform( -1.35691e-07, 0.999998, 2.14576e-06, -0.999996, -3.02667e-05, -3.6045e-06, -5.96748e-08, -2.14576e-06, 0.999998, -0.0412449, 0.214815, 0.00296807 )
 mesh = SubResource( 22 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_2" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.08114, -0.357538 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_2"]
 transform = Transform( -1.35691e-07, 0.999997, 2.14576e-06, -0.999995, -3.02667e-05, -3.6045e-06, -5.96747e-08, -2.14576e-06, 0.999997, -0.0412448, 0.20983, 0.00243473 )
 mesh = SubResource( 24 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_3" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233298, 1.13354, -0.0192886 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_3"]
 transform = Transform( 0, 0.999999, -9.69883e-08, -2.12762e-05, 2.16339e-05, 1, 0.999999, -7.73687e-12, -2.6064e-07, -0.0412448, 0.203176, 0.0029905 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_4" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.08114, 0.323901 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_4"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.212686, 0.00243473 )
 mesh = SubResource( 30 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_5" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, 0.42557 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_5/Arm_5"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.222107, 0.00296807 )
 mesh = SubResource( 32 )
 skeleton = NodePath("")
-material/0 = null
+material/0 = ExtResource( 3 )
 
 [node name="Flames_6" type="Spatial" parent="booth_v2/Cube/Device_v2/HeadHolder"]
 
@@ -598,73 +601,73 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, -0.425457 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_1"]
 transform = Transform( -1.35691e-07, 0.999998, 2.14576e-06, -0.999996, -3.02667e-05, -3.6045e-06, -5.96748e-08, -2.14576e-06, 0.999998, -0.0412449, 0.214815, 0.00296807 )
 mesh = SubResource( 22 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_2" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.03573, -0.357538 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_2"]
 transform = Transform( -1.35691e-07, 0.999997, 2.14576e-06, -0.999995, -3.02667e-05, -3.6045e-06, -5.96747e-08, -2.14576e-06, 0.999997, -0.0412448, 0.20983, 0.00243473 )
 mesh = SubResource( 24 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_3" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233298, 1.13354, -0.205845 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_3"]
 transform = Transform( 0, 0.999999, -9.69883e-08, -2.12762e-05, 2.16339e-05, 1, 0.999999, -7.73687e-12, -2.6064e-07, -0.0412448, 0.203176, 0.0029905 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_4" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233298, 1.13354, 0.214509 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_4"]
 transform = Transform( 0, 0.999998, -6.71859e-08, -1.46286e-05, 1.49863e-05, 0.999998, 0.999998, -5.3595e-12, -2.90441e-07, -0.0653391, 0.203176, -0.000776812 )
 mesh = SubResource( 28 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_5" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 1.03573, 0.323901 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_5"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.212686, 0.00243473 )
 mesh = SubResource( 30 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_6" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, 0.42557 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_6/Arm_6"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.222107, 0.00296807 )
 mesh = SubResource( 32 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Flames_7" type="Spatial" parent="booth_v2/Cube/Device_v2/HeadHolder"]
 
@@ -672,85 +675,85 @@ material/0 = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, -0.425457 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_1"]
 transform = Transform( -1.35691e-07, 0.999998, 2.14576e-06, -0.999996, -3.02667e-05, -3.6045e-06, -5.96748e-08, -2.14576e-06, 0.999998, -0.0412449, 0.214815, 0.00296807 )
 mesh = SubResource( 22 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_2" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.948695, -0.357538 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_2"]
 transform = Transform( -1.35691e-07, 0.999997, 2.14576e-06, -0.999995, -3.02667e-05, -3.6045e-06, -5.96747e-08, -2.14576e-06, 0.999997, -0.0412448, 0.20983, 0.00243473 )
 mesh = SubResource( 24 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_3" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1.00222, 0, 0, 0, -3.1267e-08, -1.00222, 0, 0.715305, -4.38083e-08, 0.0353505, 1.33222, -0.198592 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_3"]
 transform = Transform( 7.38971e-06, 0.997788, -2.02843e-05, 1.39801, -1.03532e-05, 2.96002e-05, 2.1146e-05, -2.02844e-05, -0.997789, -0.0531477, -0.212884, 0.00671458 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_4" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233298, 1.26599, -0.0192886 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_4"]
 transform = Transform( 0, 0.999999, -9.69883e-08, -2.12762e-05, 2.16339e-05, 1, 0.999999, -7.73687e-12, -2.6064e-07, -0.0412448, 0.203176, 0.0029905 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_5" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1.00222, 0, 0, 0, -3.1267e-08, -1.00222, 0, 0.715305, -4.38083e-08, 0.0353505, 1.33222, 0.173172 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_5"]
 transform = Transform( -7.31188e-06, 0.997788, -2.03099e-05, 1.39801, 1.02453e-05, 2.96554e-05, 2.1146e-05, -2.03097e-05, -0.997789, -0.0531477, 0.202348, 0.00875592 )
 mesh = SubResource( 26 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_6" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.948695, 0.323901 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_6"]
 transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.212686, 0.00243449 )
 mesh = SubResource( 30 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="Arm_7" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7"]
 transform = Transform( 1, 0, 0, 0, -4.37115e-08, 1, 0, -1, -4.37115e-08, 0.0233298, 0.563063, 0.42557 )
 mesh = SubResource( 40 )
 skeleton = NodePath("../../Mball005")
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 18 )
 
 [node name="Flame" type="MeshInstance" parent="booth_v2/Cube/Device_v2/HeadHolder/Flames_7/Arm_7"]
-transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, -0.0412449, -0.222107, 0.00296807 )
+transform = Transform( -1.22978e-08, 0.0906309, 1.94473e-07, -0.0906308, -2.7431e-06, -3.2668e-07, -5.40839e-09, -1.94473e-07, 0.0906309, 0, -0.222, 0.003 )
 mesh = SubResource( 32 )
 skeleton = NodePath("")
-material/0 = ExtResource( 4 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Device_v2"]
 
@@ -775,6 +778,7 @@ material/0 = ExtResource( 5 )
 [node name="StaticBody" type="StaticBody" parent="booth_v2/Cube/Pillar001"]
 
 [node name="CollisionShape" type="CollisionShape" parent="booth_v2/Cube/Pillar001/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 53 )
 
 [node name="Label" parent="booth_v2/Cube" instance=ExtResource( 6 )]

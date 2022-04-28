@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://materials/distance_fade.gdshader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/tint = Color( 0, 0, 0, 1 )
+shader_param/mindist = 20.0
+shader_param/maxdist = 40.0
+shader_param/center = Vector3( 0, 0, 0 )
+shader_param/metallic = 0.0
