@@ -14,13 +14,19 @@ sun_longitude = 22.94
 sun_energy = 16.0
 
 [resource]
-background_mode = 2
+background_mode = 1
 background_sky = SubResource( 1 )
+background_color = Color( 0.227451, 0.647059, 0.745098, 1 )
+background_energy = 0.2
 ambient_light_color = Color( 0.239216, 0.239216, 0.239216, 1 )
 ambient_light_energy = 0.97
+ambient_light_sky_contribution = 0.5
+fog_enabled = true
 fog_color = Color( 0.188235, 0.317647, 0.388235, 1 )
 fog_sun_amount = 0.24
-fog_depth_end = 500.0
+fog_depth_begin = 0.0
+fog_depth_end = 122.2
 fog_height_min = 0.0
 fog_height_max = 100.0
+tonemap_mode = 1
 ssao_quality = 0

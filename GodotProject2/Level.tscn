@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=2]
+[gd_scene load_steps=166 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://booth.tscn" type="PackedScene" id=2]
@@ -69,6 +69,7 @@
 [ext_resource path="res://audio/groups/liquids/Retroflex_approximant.mp3" type="AudioStream" id=67]
 [ext_resource path="res://audio/groups/liquids/Retroflex_lateral_approximant.mp3" type="AudioStream" id=68]
 [ext_resource path="res://audio/groups/liquids/Alveolar_lateral_approximant.mp3" type="AudioStream" id=69]
+[ext_resource path="res://models/Gold_distance_head.tres" type="Material" id=70]
 [ext_resource path="res://materials/temple_material.tres" type="Material" id=71]
 [ext_resource path="res://materials/ear_sss.tres" type="Material" id=72]
 [ext_resource path="res://materials/ear_child.tscn" type="PackedScene" id=73]
@@ -177,7 +178,7 @@ extents = Vector3( 5.49485, 7.02161, 6.23838 )
 [sub_resource type="BoxShape" id=213]
 extents = Vector3( 6.74032, 6.40755, 11.7046 )
 
-[sub_resource type="BoxShape" id=49]
+[sub_resource type="BoxShape" id=224]
 extents = Vector3( 300, 1, 300 )
 
 [sub_resource type="BoxShape" id=191]
@@ -253,7 +254,7 @@ spotlightMat = ExtResource( 3 )
 elevators = [ NodePath(""), NodePath(""), NodePath(""), NodePath("") ]
 lights = [ NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("") ]
 tree_textures = [ ExtResource( 105 ), ExtResource( 104 ), ExtResource( 137 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ) ]
-distance_materials = [ ExtResource( 71 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 139 ), ExtResource( 138 ), ExtResource( 72 ), ExtResource( 144 ), ExtResource( 143 ) ]
+distance_materials = [ ExtResource( 71 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 139 ), ExtResource( 138 ), ExtResource( 72 ), ExtResource( 144 ), ExtResource( 143 ), ExtResource( 70 ) ]
 
 [node name="GlobalKeyShortcuts" parent="." instance=ExtResource( 117 )]
 
@@ -264,6 +265,7 @@ transform = Transform( -0.999671, 0, 0.0256362, 0, 1, 0, -0.0256362, 0, -0.99967
 transform = Transform( 1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 0, 1.80555, 0 )
 light_energy = 0.5
 light_bake_mode = 0
+omni_range = 10.0
 
 [node name="world" type="Node" parent="."]
 
@@ -277,17 +279,17 @@ maxr = 300.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
 environment = ExtResource( 51 )
 
+[node name="DirectionalLight_Metal" type="DirectionalLight" parent="world"]
+transform = Transform( -0.984837, 0.173318, -0.00759613, -0.00759614, -0.0868242, -0.996195, -0.173318, -0.981031, 0.0868242, 32.0529, 3.52842, 11.4863 )
+layers = 0
+light_color = Color( 0.423529, 0.513726, 0.756863, 1 )
+light_cull_mask = 4293918724
+
 [node name="DirectionalLight" type="DirectionalLight" parent="world"]
 transform = Transform( -0.176571, -0.967137, -0.182947, 0.36185, -0.236632, 0.901704, -0.915362, 0.093015, 0.391741, 32.0529, 3.52842, 11.4863 )
 light_bake_mode = 0
 shadow_enabled = true
 shadow_color = Color( 0.0470588, 0.0235294, 0.188235, 1 )
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="world"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8283, -16.6124, 8.7605 )
-visible = false
-extents = Vector3( 55.4588, 22.6425, 50.3622 )
-cull_mask = 1048573
 
 [node name="Booths" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.570969, 0 )
@@ -865,7 +867,7 @@ script = ExtResource( 96 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Killbox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.903, 0 )
-shape = SubResource( 49 )
+shape = SubResource( 224 )
 
 [node name="KillAudioStreamPlayer" type="AudioStreamPlayer" parent="Killbox"]
 
@@ -874,7 +876,7 @@ transform = Transform( -1.0186e-06, 0, -23.3029, 0, 23.3029, 0, 23.3029, 0, -1.0
 visible = false
 frames = ExtResource( 4 )
 animation = "portal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="EndBox" type="Area" parent="EndingPortal"]

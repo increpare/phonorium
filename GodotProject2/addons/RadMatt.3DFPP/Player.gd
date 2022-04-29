@@ -48,11 +48,6 @@ const DEACCEL = 0.8
 
 const JUMP_STR = 15
 
-# Ladder
-var on_ladder = false
-const LADDER_SPEED = 8
-const LADDER_ACCEL = 2
-
 #slope variables
 const MAX_SLOPE_ANGLE = 60
 
@@ -107,11 +102,8 @@ func _process(d):
 	look_vector = dir
 
 
-func _physics_process(delta): #IS PLAYER MOVING NORMALLY OR ON LADDER?
-	if on_ladder:
-		_process_on_ladder(delta)
-	else:
-		_process_movements(delta)
+func _physics_process(delta):
+	_process_movements(delta)
 
 #######################################################################################################
 # NORMAL MOVEMENT
@@ -173,14 +165,13 @@ func _process_movements(delta):
 		if posture_state == STAND:
 			movement_state = RUN
 			move_speed = run_speed
-			if !on_ladder:
-				if up or right or left: # IS MOVING FORWARDS?
-					if sprint:
-						movement_state = SPRINT
-						move_speed = sprint_speed
-					elif walk:
-						movement_state = WALK
-						move_speed = walk_speed
+			if up or right or left: # IS MOVING FORWARDS?
+				if sprint:
+					movement_state = SPRINT
+					move_speed = sprint_speed
+				elif walk:
+					movement_state = WALK
+					move_speed = walk_speed
 		else:
 			movement_state = WALK
 			move_speed = walk_speed
@@ -242,53 +233,6 @@ func _process_movements(delta):
 	velocity.z = hvel.z
 
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-
-	throwing(delta)
-
-#######################################################################################################
-# MOVEMENT ON LADDER
-#######################################################################################################
-
-func _process_on_ladder(delta):
-
-	var up = Input.is_action_pressed("ui_up")
-	var down = Input.is_action_pressed("ui_down")
-	var left = Input.is_action_pressed("ui_left")
-	var right = Input.is_action_pressed("ui_right")
-
-	var jump = Input.is_action_pressed("jump")
-
-	var sprint = Input.is_action_pressed("sprint")
-	var walk = Input.is_action_pressed("walk")
-
-	#read camera basis (rotation)
-	var aim = $Yaw/Camera.get_camera_transform().basis
-
-	#calculate direction where the player wants to move
-	direction = Vector3()
-
-	if up:
-		direction -= aim[2]
-	if down:
-		direction += aim[2]
-	if left:
-		direction -= aim[0]
-	if right:
-		direction += aim[0]
-
-	direction = direction.normalized()
-
-	# where would the player go at max speed
-	var target = direction * LADDER_SPEED
-
-	# calculate a portion of the distance to go
-	velocity = velocity.linear_interpolate(target, LADDER_ACCEL * delta)
-
-	if jump:
-		velocity += look_vector * Vector3(5, 5, 5)
-
-	# move
-	move_and_slide(velocity)
 
 	throwing(delta)
 
