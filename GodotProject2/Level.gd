@@ -2,6 +2,7 @@ extends Node
 
 export var treesmat:SpatialMaterial
 export var floormat:SpatialMaterial
+export var spotlightMat:ShaderMaterial;
 
 var sky:ProceduralSky
 
@@ -55,16 +56,19 @@ var target_min_range:float=100
 var target_sky_colour:Color=sky_color_unzoomed
 var target_ground_colour:Color=ground_color_unzoomed
 var target_tree_alpha:float=0
+var target_beam_alpha:float=1;
 
 var cur_max_range:float=100
 var cur_min_range:float=100
 var cur_sky_color:Color=target_sky_colour
 var cur_ground_color:Color=target_ground_colour
 var cur_tree_alpha:float=0
+var cur_beam_alpha:float=1;
 
 var lerpspeed_range=2
 var lerpspeed_colour=1
 var lerpspeed_alpha=10
+var lerpspeed_beam=3
 
 func setZone(n:String,pos:Vector3):		
 	print("setZone")
@@ -93,6 +97,7 @@ func setZone(n:String,pos:Vector3):
 	print("target ground color",target_sky_colour)
 	
 	target_tree_alpha=1
+	target_beam_alpha=0
 	
 	for mat in distance_materials:
 		mat.set_shader_param("center",pos)
@@ -120,6 +125,7 @@ func unsetZone():
 	target_sky_colour=sky_color_unzoomed
 	target_ground_colour=ground_color_unzoomed
 	target_tree_alpha=0
+	target_beam_alpha=1
 	#$world/VisionScene.visible=false
 	
 	
@@ -127,6 +133,7 @@ func _physics_process(delta):
 	cur_min_range = lerp(cur_min_range,target_min_range,delta*lerpspeed_range)
 	cur_max_range = lerp(cur_max_range,target_max_range,delta*lerpspeed_range)
 	cur_tree_alpha = lerp(cur_tree_alpha,target_tree_alpha,delta*lerpspeed_alpha)
+	cur_beam_alpha = lerp(cur_beam_alpha,target_beam_alpha,delta*lerpspeed_beam)
 	cur_ground_color = cur_ground_color.linear_interpolate(target_ground_colour,delta*lerpspeed_colour)
 	cur_sky_color = cur_sky_color.linear_interpolate(target_sky_colour,delta*lerpspeed_colour)
 	sky.ground_bottom_color=cur_ground_color
@@ -134,6 +141,8 @@ func _physics_process(delta):
 	sky.sky_horizon_color=cur_sky_color
 	sky.sky_top_color=cur_sky_color
 	
+
+	spotlightMat.set_shader_param("albedo",Color(0.67451, 0.658824, 0.658824,cur_beam_alpha))
 	treesmat.albedo_color=Color(1,1,1,cur_tree_alpha)
 	floormat.albedo_color=Color(cur_ground_color.r,cur_ground_color.g,cur_ground_color.b,cur_tree_alpha)
 	
@@ -185,7 +194,7 @@ func load_level():
 func setRegionVisibility():
 	var solvedcount:int = 0
 	for n in flames.size():
-		var flame : AnimatedSprite3D  = flames[n]
+		var flame : MeshInstance  = flames[n]
 		var groupname = flame.get_parent().name
 		var solved = solvedgroup_by_name(groupname)
 
@@ -217,7 +226,8 @@ func setRegionVisibility():
 			if groupname=="MN":
 				if is_instance_valid($Particles):
 					$Particles.queue_free()
-		
+	print("solvedcount",solvedcount)
+	print("flames.size",flames.size())
 	if solvedcount==flames.size():
 		$EndingPortal.visible=true
 		$EndingPortal/EndBox/CollisionShape.disabled=false
@@ -257,9 +267,9 @@ func _ready():
 	load_level()
 	#find all area codes
 
-	for n in flames.size():
-		var flame:AnimatedSprite3D = flames[n] 
-		var groupname = flame.get_parent().name
+	#for n in flames.size():
+#		var flame:AnimatedSprite3D = flames[n] 
+#		var groupname = flame.get_parent().name
 
 
 	setRegionVisibility()

@@ -46,13 +46,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68097, 0 )
 [node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_newgame/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -1.67078, 0 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_newgame/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -1.67078, 0 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="option_continue" type="Sprite3D" parent="Camera2/Menu"]
@@ -65,13 +64,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.11925, 0 )
 [node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_continue/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_continue/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="option_credits" type="Sprite3D" parent="Camera2/Menu"]
@@ -84,13 +83,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13428, 0 )
 [node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/option_credits/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/option_credits/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="options_quit" type="Sprite3D" parent="Camera2/Menu"]
@@ -103,11 +102,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.18836, 0 )
 [node name="star_l" type="AnimatedSprite3D" parent="Camera2/Menu/options_quit/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, -1.82533, -4.15172, 0 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="star_l2" type="AnimatedSprite3D" parent="Camera2/Menu/options_quit/Spatial"]
 transform = Transform( 1.00394, 0, 0, 0, 1.00394, 0, 0, 0, 0.121, 1.8067, -4.15172, 0 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]

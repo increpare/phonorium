@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+[gd_resource type="ShaderMaterial" load_steps=8 format=2]
 
 [sub_resource type="Shader" id=201]
 code = "// NOTE: Shader automatically converted from Godot Engine 3.4.3.stable's SpatialMaterial.
@@ -7,6 +7,7 @@ shader_type spatial;
 render_mode blend_mix,depth_draw_opaque,diffuse_burley,specular_schlick_ggx,depth_draw_always,cull_back, world_vertex_coords;
 uniform vec4 albedo : hint_color;
 uniform sampler2D texture_albedo : hint_albedo;
+uniform sampler2D texture_offset: hint_normal;
 uniform float specular;
 uniform float metallic;
 uniform float roughness : hint_range(0,1);
@@ -36,6 +37,10 @@ void vertex() {
   dist=1.0-clamp(r,0.0,1.0);
 
 	UV=UV*uv1_scale.xy+uv1_offset.xy;
+	
+	vec2 coord =  vec2(VERTEX.x*0.4123+TIME*0.00932732,VERTEX.y*0.1323+TIME*0.01+VERTEX.z);
+	VERTEX += 1.0*(texture(texture_offset,coord).xyz-vec3(0.5,0.5,1.0));
+
 }
 
 
@@ -71,6 +76,17 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 0.699219, 0.2267, 0.2267, 1, 1,
 gradient = SubResource( 204 )
 width = 128
 
+[sub_resource type="OpenSimplexNoise" id=205]
+octaves = 9
+period = 224.5
+persistence = 0.58
+lacunarity = 2.64
+
+[sub_resource type="NoiseTexture" id=206]
+seamless = true
+as_normalmap = true
+noise = SubResource( 205 )
+
 [sub_resource type="OpenSimplexNoise" id=1]
 
 [sub_resource type="NoiseTexture" id=2]
@@ -93,5 +109,6 @@ shader_param/uv2_offset = Vector3( 0, 0, 0 )
 shader_param/mindist = 100.0
 shader_param/maxdist = 200.0
 shader_param/center = Vector3( 0, 0, 0 )
+shader_param/texture_offset = SubResource( 206 )
 shader_param/texture_subsurface_scattering = SubResource( 2 )
 shader_param/texture_colour_ramp = SubResource( 203 )
