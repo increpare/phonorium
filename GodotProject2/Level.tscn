@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=2]
+[gd_scene load_steps=161 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://booth.tscn" type="PackedScene" id=2]
@@ -97,6 +97,7 @@
 [ext_resource path="res://audio/groups/tones/Peaking.mp3" type="AudioStream" id=95]
 [ext_resource path="res://KillBox.gd" type="Script" id=96]
 [ext_resource path="res://audio/groups/tones/Rising.mp3" type="AudioStream" id=97]
+[ext_resource path="res://materials/minimal.tres" type="Material" id=98]
 [ext_resource path="res://TempleFader.gd" type="Script" id=99]
 [ext_resource path="res://audio/groups/tones/Low.mp3" type="AudioStream" id=100]
 [ext_resource path="res://audio/groups/tones/Mid.mp3" type="AudioStream" id=101]
@@ -141,6 +142,8 @@
 [ext_resource path="res://materials/marbel_distance.tres" type="Material" id=140]
 [ext_resource path="res://models/castiron_distance.tres" type="Material" id=141]
 [ext_resource path="res://materials/traum_floormat.tres" type="Material" id=142]
+[ext_resource path="res://materials/water_nonanimated.tres" type="Material" id=143]
+[ext_resource path="res://materials/water_animated.tres" type="Material" id=144]
 
 [sub_resource type="BoxShape" id=212]
 extents = Vector3( 7.81259, 11.4722, 4.25646 )
@@ -231,7 +234,7 @@ floormat = ExtResource( 142 )
 elevators = [ NodePath(""), NodePath(""), NodePath(""), NodePath("") ]
 lights = [ NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("") ]
 tree_textures = [ ExtResource( 105 ), ExtResource( 104 ), ExtResource( 137 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ) ]
-distance_materials = [ ExtResource( 71 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 139 ), ExtResource( 138 ), ExtResource( 72 ) ]
+distance_materials = [ ExtResource( 71 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 139 ), ExtResource( 138 ), ExtResource( 72 ), ExtResource( 144 ), ExtResource( 143 ) ]
 
 [node name="GlobalKeyShortcuts" parent="." instance=ExtResource( 117 )]
 
@@ -263,6 +266,7 @@ shadow_color = Color( 0.0470588, 0.0235294, 0.188235, 1 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="world"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8283, -16.6124, 8.7605 )
+visible = false
 extents = Vector3( 55.4588, 22.6425, 50.3622 )
 cull_mask = 1048573
 
@@ -291,7 +295,6 @@ Audio = [ ExtResource( 7 ), ExtResource( 14 ) ]
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 3.8681, -2.1776 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -345,6 +348,7 @@ shape = SubResource( 214 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 5.50053, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -389,6 +393,7 @@ shape = SubResource( 214 )
 transform = Transform( 6.59395, 0, 1.42109e-14, 0, 6.59395, 0, -1.42109e-14, 0, 6.59383, 2.59038, 4.84314, -1.5229 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -438,7 +443,6 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 5.17854, -0.0568695 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -478,7 +482,6 @@ shape = SubResource( 215 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 6.74338, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -523,7 +526,6 @@ shape = SubResource( 215 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 2.79138, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -554,6 +556,7 @@ Audio = [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 49 ) ]
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 3.62132, -2.17155 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -602,6 +605,7 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, -2.38419e-07, 0, 6.59395, 0, 2.38419e-07, 0, 6.59383, 1.83514, 4.40567, -0.792187 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -641,6 +645,7 @@ shape = SubResource( 216 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, -3.99965, 3.3273, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -690,6 +695,7 @@ shape = SubResource( 214 )
 transform = Transform( 6.59395, 0, -7.15256e-07, 0, 6.59395, 0, 9.53674e-07, 0, 6.59383, 2.33094, 3.34231, -1.826 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -739,7 +745,6 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 6.74338, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -779,7 +784,6 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.25868, 2.95038, -0.356968 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -819,7 +823,6 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 9.53674e-07, 0, 6.59395, 0, -9.53674e-07, 0, 6.59383, 0.204697, 5.57573, -0.467206 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -869,6 +872,7 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 3.84328, 4.44666, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -908,7 +912,6 @@ shape = SubResource( 210 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 4.57107, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -963,7 +966,6 @@ shape = SubResource( 213 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 2.59038, 4.92721, 2.13857 )
 billboard = 2
 frames = ExtResource( 4 )
-frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -1013,6 +1015,7 @@ shape = SubResource( 214 )
 transform = Transform( 6.59395, 0, 0, 0, 6.59395, 0, 0, 0, 6.59383, 1.97607, 4.17165, -0.647731 )
 billboard = 2
 frames = ExtResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 12 )
 
@@ -1035,7 +1038,7 @@ transform = Transform( -1.0186e-06, 0, -23.3029, 0, 23.3029, 0, 23.3029, 0, -1.0
 visible = false
 frames = ExtResource( 4 )
 animation = "portal"
-frame = 1
+frame = 2
 playing = true
 
 [node name="EndBox" type="Area" parent="EndingPortal"]
@@ -1203,7 +1206,7 @@ transform = Transform( 15.0452, 0, 7.24659e-07, 0, 11.2839, 0, -7.24659e-07, 0, 
 transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 0, 0, 0 )
 mesh = SubResource( 207 )
 skeleton = NodePath("../../theater2")
-material/0 = null
+material/0 = ExtResource( 71 )
 script = ExtResource( 99 )
 
 [node name="StaticBody" type="StaticBody" parent="theater2/Temple"]
@@ -1212,12 +1215,11 @@ script = ExtResource( 99 )
 shape = SubResource( 208 )
 
 [node name="Temple2" type="MeshInstance" parent="theater2/Temple"]
-visible = false
 material_override = SubResource( 211 )
 cast_shadow = 3
 mesh = SubResource( 207 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 98 )
 script = ExtResource( 99 )
 
 [node name="altar" type="MeshInstance" parent="."]

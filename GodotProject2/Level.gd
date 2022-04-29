@@ -24,7 +24,7 @@ var env_cols = {
 	"alv_obstr":[0, Color("#c0db72"),Color("#ececec"), 40 , 10 , 12],#1
 	"alv_v_ret":[1, Color("#45891a"),Color("#84c0db"), 40 , 10 , 12],#2
 	"cor_affr":[2, Color("#ad9d33"),Color("#7aaddd"), 40, 10  , 12],#3
-	"cor_fric":[3, Color("#64aadb"),Color("#64aadb"), 40, 10 , 12 ],#4
+	"cor_fric":[3, Color("#45891a"),Color("#64aadb"), 40, 10 , 12 ],#4
 	"dors":[4, Color("#115e33"),Color("#4294be"), 40 , 10 , 12],#5
 	"dors_glot_fric":[5, Color("#732930"),Color("#89c1da"), 40 , 10, 12 ],#6
 	"dors_stops":[6, Color("#fab40b"),Color("#bceaff"), 40 , 10 , 12],#7
