@@ -6,8 +6,8 @@
 [resource]
 shader = ExtResource( 2 )
 shader_param/tint = Color( 0.654902, 0.654902, 0.654902, 1 )
-shader_param/mindist = 20.0
-shader_param/maxdist = 40.0
+shader_param/mindist = 80.0
+shader_param/maxdist = 80.0
 shader_param/center = Vector3( 0, 0, 0 )
 shader_param/metallic = 0.0
 shader_param/texturemap = ExtResource( 1 )

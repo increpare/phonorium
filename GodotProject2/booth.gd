@@ -26,6 +26,12 @@ var level;
 var group:String
 var solved:bool
 
+func hideLabel():
+	$booth_v2/Cube/Label.visible=false
+
+func showLabel():
+	$booth_v2/Cube/Label.visible=true
+	
 func setsolved():
 	solved=true
 	for n in lights.size():		
