@@ -12,8 +12,9 @@ varying float dist;
 
 void vertex() {
   float x = VERTEX.x-center.x;
+  float y = VERTEX.y-center.y;
   float z = VERTEX.z-center.z;
-  float d = sqrt(x*x+z*z);
+  float d = sqrt(x*x+z*z+2.0*y*y);
   float r = (d-mindist)/(maxdist-mindist);
   dist=1.0-clamp(r,0.0,1.0);
 

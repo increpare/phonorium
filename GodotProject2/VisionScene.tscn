@@ -1,183 +1,310 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://VisionScene.gd" type="Script" id=1]
 [ext_resource path="res://materials/tree1.tres" type="Material" id=2]
+[ext_resource path="res://materials/traum_floormat.tres" type="Material" id=3]
 
 [sub_resource type="QuadMesh" id=1]
+material = ExtResource( 2 )
+center_offset = Vector3( 0, 0.5, 0 )
+
+[sub_resource type="QuadMesh" id=2]
+material = ExtResource( 3 )
+size = Vector2( 400, 400 )
+center_offset = Vector3( 0, 0.5, 0 )
 
 [node name="VisionScene" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 26.4614, 20.3224, 24.3107 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 26.4614, 0, 24.3107 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 36.5786, 20.3224, -29.9618 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 36.5786, 0, -29.9618 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance6" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -19.0486, 20.3224, -55.3417 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -19.0486, 0, -55.3417 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -64.941, 20.3224, -27.1804 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -64.941, 0, -27.1804 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance8" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -76.4141, 20.3224, 23.2317 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -76.4141, 0, 23.2317 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance9" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -26.3497, 20.3224, 34.3572 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -26.35, 0, 34.357 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance10" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 54.6575, 20.3224, 64.6045 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 54.6575, 0, 64.6045 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance11" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 107.503, 20.3224, 12.454 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 107.503, 0, 12.454 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance12" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 93.2489, 20.3224, -51.865 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 93.2489, 0, -51.865 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance13" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 38.317, 20.3224, -105.754 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 38.317, 0, -105.754 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance14" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -33.9984, 20.3224, -104.363 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -33.9984, 0, -104.363 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance15" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -89.2779, 20.3224, -54.994 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -89.2779, 0, -54.994 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance16" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -97.9697, 20.3224, 2.37154 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -97.9697, 0, 2.37154 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance17" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -79.7367, 20.3224, 90.7008 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -79.7367, 0, 90.7008 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance30" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 97.7649, 20.3224, 106.551 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 97.7649, 0, 106.551 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance32" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -1.26855, 20.3224, 151.283 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -1.26855, 0, 151.283 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance31" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 97.7649, 20.3224, 106.551 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 97.7649, 0, 106.551 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance18" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -80.3841, 20.3224, 59.7182 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -80.3841, 0, 59.7182 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance19" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -20.6479, 20.3224, 88.5572 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -20.6479, 0, 88.5572 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance20" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 30.8933, 20.3224, 107.35 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 30.8933, 0, 107.35 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance21" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 126.605, 20.3224, 54.8113 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 126.605, 0, 54.8113 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance22" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 162.614, 20.3224, -28.8927 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 162.614, 0, -28.8927 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance23" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 118.445, 20.3224, -111.055 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 118.445, 0, -111.055 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance33" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 106.124, 0, -181.435 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance34" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 195.47, 0, 15.8151 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance35" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 192.481, 0, -125.632 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance36" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 142.075, 0, 126.102 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance37" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 52.1386, 0, 184.496 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance38" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -79.0933, 0, 169.699 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance39" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -158.682, 0, 108.397 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance40" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -220.814, 0, 20.0148 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance41" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -215.182, 0, 95.1663 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance42" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -222.686, 0, -69.7624 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance43" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -177.927, 0, -154.699 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance44" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -110.068, 0, -233.842 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance45" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -36.7789, 0, -252.851 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance46" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 250.083, 0, -66.2225 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance47" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 201.389, 0, 91.1646 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance48" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 102.756, 0, 228.895 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance49" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -36.7455, 0, 238.919 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance50" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -158.145, 0, 187.855 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance51" type="MeshInstance" parent="."]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -227.698, 0, 167.163 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance24" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, 30.0375, 20.3224, -190.378 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 30.0375, 0, -190.378 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance25" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -57.8284, 20.3224, -169.414 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -57.8284, 0, -169.414 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance26" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -108.015, 20.3224, -128.642 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -108.015, 0, -128.642 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance27" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -148.9, 20.3224, -71.3279 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -148.9, 0, -71.3279 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance28" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -143.095, 20.3224, -22.1212 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -143.095, 0, -22.1212 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance29" type="MeshInstance" parent="."]
-transform = Transform( 41.8382, 0, 0, 0, 41.8382, 0, 0, 0, 3.87413, -133.718, 20.3224, 25.0975 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, -133.718, 0, 25.0975 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 2 )
+
+[node name="groundquad" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 3 )
