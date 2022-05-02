@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://audio/music_tracks/track4.mp3" type="AudioStream" id=1]
 [ext_resource path="res://textures/title/selection_star1.png" type="Texture" id=3]
 [ext_resource path="res://textures/title/selection_star2.png" type="Texture" id=4]
 [ext_resource path="res://textures/title/selection_star4.png" type="Texture" id=5]
@@ -10,7 +11,6 @@
 [ext_resource path="res://textures/title/option_quit.png" type="Texture" id=10]
 [ext_resource path="res://titlescreen.gd" type="Script" id=11]
 [ext_resource path="res://GlobalKeyShortcuts.tscn" type="PackedScene" id=13]
-[ext_resource path="res://audio/sfx/titlemusic.mp3" type="AudioStream" id=14]
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
@@ -111,8 +111,7 @@ frame = 3
 playing = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
-volume_db = -17.256
+stream = ExtResource( 1 )
 autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

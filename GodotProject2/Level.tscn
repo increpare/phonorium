@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=2]
+[gd_scene load_steps=218 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://booth.tscn" type="PackedScene" id=2]
@@ -144,6 +144,58 @@
 [ext_resource path="res://materials/traum_floormat.tres" type="Material" id=142]
 [ext_resource path="res://materials/water_nonanimated.tres" type="Material" id=143]
 [ext_resource path="res://materials/water_animated.tres" type="Material" id=144]
+[ext_resource path="res://audio/snips/2b.mp3" type="AudioStream" id=145]
+[ext_resource path="res://audio/snips/8b.mp3" type="AudioStream" id=146]
+[ext_resource path="res://audio/snips/14b.mp3" type="AudioStream" id=147]
+[ext_resource path="res://audio/snips/17b.mp3" type="AudioStream" id=148]
+[ext_resource path="res://audio/snips/1a.mp3" type="AudioStream" id=149]
+[ext_resource path="res://audio/snips/15a.mp3" type="AudioStream" id=150]
+[ext_resource path="res://audio/snips/12a.mp3" type="AudioStream" id=151]
+[ext_resource path="res://audio/snips/16b.mp3" type="AudioStream" id=152]
+[ext_resource path="res://audio/snips/3b.mp3" type="AudioStream" id=153]
+[ext_resource path="res://audio/snips/6a.mp3" type="AudioStream" id=154]
+[ext_resource path="res://audio/snips/7b.mp3" type="AudioStream" id=155]
+[ext_resource path="res://audio/snips/9b.mp3" type="AudioStream" id=156]
+[ext_resource path="res://audio/snips/5a.mp3" type="AudioStream" id=157]
+[ext_resource path="res://audio/snips/16a.mp3" type="AudioStream" id=158]
+[ext_resource path="res://audio/snips/4a.mp3" type="AudioStream" id=159]
+[ext_resource path="res://audio/snips/6b.mp3" type="AudioStream" id=160]
+[ext_resource path="res://audio/snips/11a.mp3" type="AudioStream" id=161]
+[ext_resource path="res://audio/snips/10b.mp3" type="AudioStream" id=162]
+[ext_resource path="res://audio/snips/7a.mp3" type="AudioStream" id=163]
+[ext_resource path="res://audio/snips/9a.mp3" type="AudioStream" id=164]
+[ext_resource path="res://audio/snips/10a.mp3" type="AudioStream" id=165]
+[ext_resource path="res://audio/snips/12b.mp3" type="AudioStream" id=166]
+[ext_resource path="res://audio/snips/13a.mp3" type="AudioStream" id=167]
+[ext_resource path="res://audio/snips/15b.mp3" type="AudioStream" id=168]
+[ext_resource path="res://audio/snips/5b.mp3" type="AudioStream" id=169]
+[ext_resource path="res://audio/snips/4b.mp3" type="AudioStream" id=170]
+[ext_resource path="res://audio/snips/17a.mp3" type="AudioStream" id=171]
+[ext_resource path="res://audio/snips/3a.mp3" type="AudioStream" id=172]
+[ext_resource path="res://audio/snips/2a.mp3" type="AudioStream" id=173]
+[ext_resource path="res://audio/snips/13b.mp3" type="AudioStream" id=174]
+[ext_resource path="res://audio/snips/8a.mp3" type="AudioStream" id=175]
+[ext_resource path="res://audio/snips/1b.mp3" type="AudioStream" id=176]
+[ext_resource path="res://audio/snips/11b.mp3" type="AudioStream" id=177]
+[ext_resource path="res://audio/snips/14a.mp3" type="AudioStream" id=178]
+[ext_resource path="res://rivers_mat.tres" type="Material" id=179]
+[ext_resource path="res://textures/10001010.png" type="Texture" id=180]
+[ext_resource path="res://textures/10111010.png" type="Texture" id=181]
+[ext_resource path="res://textures/01011110.png" type="Texture" id=182]
+[ext_resource path="res://textures/00101011.png" type="Texture" id=183]
+[ext_resource path="res://textures/00011100.png" type="Texture" id=184]
+[ext_resource path="res://textures/01010101.png" type="Texture" id=185]
+[ext_resource path="res://textures/01011000.png" type="Texture" id=186]
+[ext_resource path="res://textures/00101010.png" type="Texture" id=187]
+[ext_resource path="res://textures/00110110.png" type="Texture" id=188]
+[ext_resource path="res://textures/10100001.png" type="Texture" id=189]
+[ext_resource path="res://textures/00111110.png" type="Texture" id=190]
+[ext_resource path="res://textures/11011101.png" type="Texture" id=191]
+[ext_resource path="res://textures/11001011.png" type="Texture" id=192]
+[ext_resource path="res://textures/01110000.png" type="Texture" id=193]
+[ext_resource path="res://textures/00101001.png" type="Texture" id=194]
+[ext_resource path="res://textures/01110110.png" type="Texture" id=195]
+[ext_resource path="res://textures/00000111.png" type="Texture" id=196]
 
 [sub_resource type="BoxShape" id=212]
 extents = Vector3( 7.81259, 11.4722, 4.25646 )
@@ -316,10 +368,19 @@ Audio = [ ExtResource( 7 ), ExtResource( 14 ) ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78537, 0, 0.214165 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00000111"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 196 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/alv_obstr/Zone"]
 transform = Transform( 1.23374, 0, -7.59917e-08, 0, 1, 0, -7.59917e-08, 0, 1.81324, 4.76837e-07, -0.354469, -3.02995 )
 shape = SubResource( 212 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/alv_obstr/Zone"]
+stream = ExtResource( 149 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/alv_obstr/Zone"]
+stream = ExtResource( 176 )
 
 [node name="alv_v_ret" type="Spatial" parent="Booths"]
 transform = Transform( -1.07285e-07, 0, 1, 0, 1, 0, -1, 0, -1.07285e-07, 18.9562, -24.8737, 29.2399 )
@@ -328,26 +389,33 @@ transform = Transform( -1.07285e-07, 0, 1, 0, 1, 0, -1, 0, -1.07285e-07, 18.9562
 transform = Transform( -0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, 1.54574, 0, -7.32252 )
 Solution = [ 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 8 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 21 ) ]
+gott_name = "ΠΗΝΕΙΟΣ"
 
 [node name="Booth4" parent="Booths/alv_v_ret" instance=ExtResource( 2 )]
 transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -5.0378, 0, -0.0868454 )
 Solution = [ 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 8 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 21 ) ]
+gott_name = "ΆΜΦΡΥΣΟΣ"
 
 [node name="Booth2" parent="Booths/alv_v_ret" instance=ExtResource( 2 )]
 transform = Transform( 0.957168, 0, 0.289533, 0, 1, 0, -0.289533, 0, 0.957168, 7.97846, 0, -0.488171 )
 Solution = [ 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 8 ), ExtResource( 15 ) ]
+gott_name = "ΆΝΑΥΡΟΣ"
 
 [node name="Booth3" parent="Booths/alv_v_ret" instance=ExtResource( 2 )]
 transform = Transform( -3.15901e-07, -2.97404e-07, -1, -2.38419e-07, 1, -2.97404e-07, 1, 2.38419e-07, -3.15901e-07, 2.94067, -0.149359, 5.96089 )
 Solution = [ 0, 0, 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 8 ), ExtResource( 15 ), ExtResource( 21 ) ]
+gott_name = "ΑΠΙΔΑΝΟΣ"
 
 [node name="Zone" type="Area" parent="Booths/alv_v_ret"]
 transform = Transform( -0.746789, 0, -0.665061, 0, 1, 0, 0.665061, 0, -0.746789, 2.35898, -0.622475, -1.30956 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00101011"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 183 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/alv_v_ret/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332813, 0.0837147, -0.000358836, -0.99649, 0.998537, 1.06758, 0.163055 )
@@ -360,6 +428,12 @@ shape = SubResource( 218 )
 [node name="CollisionShape3" type="CollisionShape" parent="Booths/alv_v_ret/Zone"]
 transform = Transform( -0.963196, 0.000402313, 0.2688, 0.000324807, 1, -0.000332813, -0.2688, -0.000233256, -0.963196, -1.47029, 1.06758, 1.76151 )
 shape = SubResource( 218 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/alv_v_ret/Zone"]
+stream = ExtResource( 173 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/alv_v_ret/Zone"]
+stream = ExtResource( 145 )
 
 [node name="cor_affr" type="Spatial" parent="Booths"]
 transform = Transform( -1.49012e-08, 0, -1, 0, 1, 0, 1, 0, -1.49012e-08, 53.5928, -24.8679, 0.567771 )
@@ -388,10 +462,19 @@ Audio = [ ExtResource( 23 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 
 transform = Transform( 0.0848682, -0.0016011, 0.996392, -0.00128984, 0.999998, 0.00171676, -0.996392, -0.00143088, 0.0848662, 2.38981, -0.581902, -1.13855 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "01010101"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 185 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/cor_affr/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324808, 1, -0.000332812, 0.0837147, -0.000358836, -0.99649, 0.998539, -0.354469, 0.163057 )
 shape = SubResource( 214 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/cor_affr/Zone"]
+stream = ExtResource( 172 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/cor_affr/Zone"]
+stream = ExtResource( 153 )
 
 [node name="cor_fric" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.09832, -17.9777, 7.20496 )
@@ -425,10 +508,19 @@ Audio = [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 
 transform = Transform( -0.998951, 0, 0.045799, 0, 1, 0, -0.045799, 0, -0.998951, 2.82086, 0.0163002, -0.926568 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "01110110"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 195 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/cor_fric/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
 shape = SubResource( 220 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/cor_fric/Zone"]
+stream = ExtResource( 159 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/cor_fric/Zone"]
+stream = ExtResource( 170 )
 
 [node name="dors" type="Spatial" parent="Booths"]
 transform = Transform( 1, 0, 6.35736e-08, 0, 1, 0, -6.35736e-08, 0, 1, 6.34587, -24.8495, -14.9778 )
@@ -452,10 +544,19 @@ Audio = [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 38 ) ]
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 3.92475, -0.535351, 2.8076 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00101010"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 187 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332812, 0.0837147, -0.000358835, -0.99649, -0.0638142, 0.00120354, -0.749205 )
 shape = SubResource( 221 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/dors/Zone"]
+stream = ExtResource( 157 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/dors/Zone"]
+stream = ExtResource( 169 )
 
 [node name="dors_glot_fric" type="Spatial" parent="Booths"]
 transform = Transform( 1, 0, 6.35736e-08, 0, 1, 0, -6.35736e-08, 0, 1, 54.0041, -24.8495, -13.1908 )
@@ -484,10 +585,19 @@ Audio = [ ExtResource( 40 ), ExtResource( 39 ), ExtResource( 45 ) ]
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 1.45452, -0.534819, 1.02059 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00110110"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 188 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors_glot_fric/Zone"]
 transform = Transform( -0.996489, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332811, 0.0837147, -0.000358835, -0.996489, -0.000389099, 0.304001, 0.00052166 )
 shape = SubResource( 222 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/dors_glot_fric/Zone"]
+stream = ExtResource( 154 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/dors_glot_fric/Zone"]
+stream = ExtResource( 160 )
 
 [node name="dors_stops" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.74268, -24.8737, 1.07193 )
@@ -508,12 +618,21 @@ Solution = [ 0, 0, 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 49 ) ]
 
 [node name="Zone" type="Area" parent="Booths/dors_stops"]
-transform = Transform( 0.996519, 0, -0.0833649, 0, 1, 0, 0.0833649, 0, 0.996519, 0.630786, -0.549442, -1.8852 )
+transform = Transform( 0.996519, 0, -0.0833649, 0, 1, 0, 0.0833649, 0, 0.996519, 1.84004, -0.549442, -3.95219 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "01110000"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 193 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/dors_stops/Zone"]
+stream = ExtResource( 163 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/dors_stops/Zone"]
+stream = ExtResource( 155 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors_stops/Zone"]
-transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199027 )
+transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, -0.405306, -0.354469, 1.96158 )
 shape = SubResource( 210 )
 
 [node name="ejectives" type="Spatial" parent="Booths"]
@@ -538,6 +657,9 @@ Audio = [ ExtResource( 53 ), ExtResource( 55 ) ]
 transform = Transform( 0.865965, 0, 0.500106, 0, 1, 0, -0.500106, 0, 0.865965, 3.5406, 0.00810051, -1.84825 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "10100001"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 189 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/ejectives/Zone"]
 transform = Transform( 0.578456, 0, -0.815714, 0, 1, 0, 0.815714, 0, 0.578456, 0, -0.354469, 0 )
@@ -546,6 +668,12 @@ shape = SubResource( 210 )
 [node name="CollisionShape2" type="CollisionShape" parent="Booths/ejectives/Zone"]
 transform = Transform( 0.167148, 0, -0.985933, 0, 1, 0, 0.985933, 0, 0.167148, -1.24972, -0.354469, 3.03081 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/ejectives/Zone"]
+stream = ExtResource( 175 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/ejectives/Zone"]
+stream = ExtResource( 146 )
 
 [node name="epiglot" type="Spatial" parent="Booths"]
 transform = Transform( 1, 0, 6.35736e-08, 0, 1, 0, -6.35736e-08, 0, 1, 31.9401, -24.8495, -28.1449 )
@@ -565,14 +693,23 @@ transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -4.04006,
 Solution = [ 0, 0, 0, 0, 0, 0, 0 ]
 Audio = [ ExtResource( 57 ), ExtResource( 58 ) ]
 
-[node name="Zone2" type="Area" parent="Booths/epiglot"]
+[node name="Zone" type="Area" parent="Booths/epiglot"]
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 0.716091, -0.524605, 0.632193 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00011100"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 184 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Booths/epiglot/Zone2"]
+[node name="CollisionShape" type="CollisionShape" parent="Booths/epiglot/Zone"]
 transform = Transform( -0.996489, 0.000295805, -0.0837148, 0.000324807, 0.999999, -0.00033281, 0.0837147, -0.000358834, -0.996489, 0, 0, 0 )
 shape = SubResource( 216 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/epiglot/Zone"]
+stream = ExtResource( 164 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/epiglot/Zone"]
+stream = ExtResource( 156 )
 
 [node name="liquids" type="Spatial" parent="Booths"]
 transform = Transform( 0.802088, 0, 0.597205, 0, 1, 0, -0.597205, 0, 0.802088, 45.5565, -24.8618, 30.6726 )
@@ -606,6 +743,9 @@ Audio = [ ExtResource( 66 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 
 transform = Transform( -0.0645401, 0.00162994, -0.997915, -0.00128984, 0.999998, 0.00171676, 0.997916, 0.00139795, -0.0645382, 3.56931, -0.614758, -1.89905 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "10111010"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 181 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/liquids/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332812, 0.0837147, -0.000358835, -0.99649, 0.999126, -0.810942, 0.162268 )
@@ -618,6 +758,12 @@ shape = SubResource( 219 )
 [node name="CollisionShape3" type="CollisionShape" parent="Booths/liquids/Zone"]
 transform = Transform( -0.59241, 0.00130852, 0.805637, 0.00237281, 0.999999, 0.000120601, -0.805634, 0.00198307, -0.592411, 1.42703, -3.52928, -3.80293 )
 shape = SubResource( 219 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/liquids/Zone"]
+stream = ExtResource( 165 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/liquids/Zone"]
+stream = ExtResource( 162 )
 
 [node name="nasals" type="Spatial" parent="Booths"]
 transform = Transform( -0.505974, 0, -0.862549, 0, 1, 0, 0.862549, 0, -0.505974, 20.5562, -17.991, 40.4398 )
@@ -651,6 +797,9 @@ Audio = [ ExtResource( 79 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 
 transform = Transform( 0.0862338, 0, 0.996275, 0, 1, 0, -0.996275, 0, 0.0862338, 5.58904, 0.0296001, 1.72854 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "11001011"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 192 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/nasals/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
@@ -659,6 +808,12 @@ shape = SubResource( 210 )
 [node name="CollisionShape2" type="CollisionShape" parent="Booths/nasals/Zone"]
 transform = Transform( -0.832641, 0, -0.553813, 0, 1, 0, 0.553813, 0, -0.832641, 4.55973, -0.354469, -0.0977497 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/nasals/Zone"]
+stream = ExtResource( 161 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/nasals/Zone"]
+stream = ExtResource( 177 )
 
 [node name="pal" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.5073, -17.9683, 30.8458 )
@@ -682,10 +837,19 @@ Audio = [ ExtResource( 81 ), ExtResource( 82 ) ]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.56752, 0.00690079, -1.18159 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "10001010"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 180 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/pal/Zone"]
 transform = Transform( 0.999325, 0, 0.0367483, 0, 1, 0, -0.0367483, 0, 0.999325, 0, -0.354469, 0 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/pal/Zone"]
+stream = ExtResource( 151 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/pal/Zone"]
+stream = ExtResource( 166 )
 
 [node name="plos_phonation" type="Spatial" parent="Booths"]
 transform = Transform( -0.575747, 0, 0.817628, 0, 1, 0, -0.817628, 0, -0.575747, 4.40078, -18.0967, 30.5404 )
@@ -709,6 +873,9 @@ Audio = [ ExtResource( 88 ), ExtResource( 89 ), ExtResource( 85 ) ]
 transform = Transform( -0.997256, 0, 0.0740382, 0, 1, 0, -0.0740382, 0, -0.997256, -2.59556, 0.135302, -2.67666 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "01011000"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 186 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/plos_phonation/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
@@ -717,6 +884,12 @@ shape = SubResource( 210 )
 [node name="CollisionShape2" type="CollisionShape" parent="Booths/plos_phonation/Zone"]
 transform = Transform( -0.991072, 0, 0.133329, 0, 1, 0, -0.133329, 0, -0.991072, -2.72208, -0.354469, 1.37458 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/plos_phonation/Zone"]
+stream = ExtResource( 167 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/plos_phonation/Zone"]
+stream = ExtResource( 174 )
 
 [node name="tones" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55.7936, -17.9575, -15.8044 )
@@ -750,10 +923,19 @@ Audio = [ ExtResource( 91 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 
 transform = Transform( 0.998951, 0, -0.0457989, 0, 1, 0, 0.0457989, 0, 0.998951, 2.45363, -0.00389862, 0.528778 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "01011110"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 182 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/tones/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, 5.58026, -0.19902 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/tones/Zone"]
+stream = ExtResource( 178 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/tones/Zone"]
+stream = ExtResource( 147 )
 
 [node name="vowel_phonation" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.3727, -17.9647, -18.6177 )
@@ -777,10 +959,19 @@ Audio = [ ExtResource( 118 ), ExtResource( 121 ), ExtResource( 107 ), ExtResourc
 transform = Transform( 0.998951, 0, -0.0457989, 0, 1, 0, 0.0457989, 0, 0.998951, 5.26693, -0.48097, 1.30284 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00101001"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 194 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/vowel_phonation/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, 5.58026, -0.19903 )
 shape = SubResource( 210 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/vowel_phonation/Zone"]
+stream = ExtResource( 150 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/vowel_phonation/Zone"]
+stream = ExtResource( 168 )
 
 [node name="vowels" type="Spatial" parent="Booths"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.7347, -17.9255, -26.0841 )
@@ -819,10 +1010,19 @@ Audio = [ ExtResource( 110 ), ExtResource( 115 ), ExtResource( 111 ) ]
 transform = Transform( -0.998951, 0, 0.045799, 0, 1, 0, -0.045799, 0, -0.998951, 2.52204, -0.628843, 0.682928 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "11011101"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 191 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/vowels/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627422, 6.28803, -0.199001 )
 shape = SubResource( 213 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/vowels/Zone"]
+stream = ExtResource( 158 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/vowels/Zone"]
+stream = ExtResource( 152 )
 
 [node name="ant_lab_vel" type="Spatial" parent="Booths"]
 transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 34.0462, -24.8737, -9.16204 )
@@ -856,10 +1056,19 @@ Audio = [ ExtResource( 61 ), ExtResource( 22 ), ExtResource( 64 ), ExtResource( 
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848682, -0.0016011, 0.996392, -1.26887, -0.512602, 1.29761 )
 monitorable = false
 script = ExtResource( 102 )
+riverpattern = "00111110"
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 190 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/ant_lab_vel/Zone"]
 transform = Transform( -0.996489, 0.000295805, -0.0837148, 0.000324807, 0.999999, -0.00033281, 0.0837147, -0.000358835, -0.996489, -0.38462, 0.00725555, -4.51559 )
 shape = SubResource( 214 )
+
+[node name="AudioStreamPlayer_Come" type="AudioStreamPlayer" parent="Booths/ant_lab_vel/Zone"]
+stream = ExtResource( 171 )
+
+[node name="AudioStreamPlayer_Go" type="AudioStreamPlayer" parent="Booths/ant_lab_vel/Zone"]
+stream = ExtResource( 148 )
 
 [node name="Killbox" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -39.031, 0 )
@@ -876,7 +1085,6 @@ transform = Transform( -1.0186e-06, 0, -23.3029, 0, 23.3029, 0, 23.3029, 0, -1.0
 visible = false
 frames = ExtResource( 4 )
 animation = "portal"
-frame = 2
 playing = true
 
 [node name="EndBox" type="Area" parent="EndingPortal"]

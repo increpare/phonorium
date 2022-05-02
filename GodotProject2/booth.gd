@@ -4,6 +4,8 @@ export(Array, int) var Solution : Array = [ 1,0,1,1,0 ]
 export(Array, AudioStream) var Audio : Array = []
 export var equally_spaced:bool = true
 
+export var gott_name:String = "ΟΝΙΩΜΑ"
+
 var light_off = preload("res://models/castiron_distance.tres")
 var light_on = preload("res://models/Gold_distance.tres")
 var light_red = preload("res://models/Lampe_red.material")
@@ -46,6 +48,7 @@ func _ready():
 	group = get_parent().name
 	level = self.get_parent().get_parent().get_parent()
 	
+	$booth_v2/Cube/Label.setText(gott_name)
 	var solutionLength = 5;
 	randomize()
 	#if randi()%2==0:
