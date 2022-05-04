@@ -2,7 +2,7 @@ extends Area
 
 var scene_base:Node
 onready var asp_come:AudioStreamPlayer = get_node("AudioStreamPlayer_Come")
-onready var asp_go:AudioStreamPlayer = get_node("AudioStreamPlayer_Go")
+
 export var riverpattern:String = "00000000"
 
 export var rivers_mat:SpatialMaterial
@@ -25,9 +25,6 @@ func player_entered(player):
 
 func player_exited(player):
 	if player.name!="Player":
-		return
-		
-	if asp_go.playing==false:
-		asp_go.play()
+		return		
 	
 	scene_base.call("unsetZone")

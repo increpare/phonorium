@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://audio/music_tracks/track4.mp3" type="AudioStream" id=1]
+[ext_resource path="res://audio/music_tracks/track6.mp3" type="AudioStream" id=1]
 [ext_resource path="res://textures/title/selection_star1.png" type="Texture" id=3]
 [ext_resource path="res://textures/title/selection_star2.png" type="Texture" id=4]
 [ext_resource path="res://textures/title/selection_star4.png" type="Texture" id=5]
