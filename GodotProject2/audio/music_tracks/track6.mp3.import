@@ -2,11 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-valid=false
+path="res://.import/track6.mp3-5ad229799304d3ca09be9ddefb2ba600.mp3str"
 
 [deps]
 
 source_file="res://audio/music_tracks/track6.mp3"
+dest_files=[ "res://.import/track6.mp3-5ad229799304d3ca09be9ddefb2ba600.mp3str" ]
+
 [params]
 
 loop=false

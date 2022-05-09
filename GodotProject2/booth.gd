@@ -3,6 +3,7 @@ extends Spatial
 export(Array, int) var Solution : Array = [ 1,0,1,1,0 ]
 export(Array, AudioStream) var Audio : Array = []
 export var equally_spaced:bool = true
+export var god_name:String
 
 var light_off = preload("res://models/castiron_distance.tres")
 var light_on = preload("res://models/Gold_distance.tres")
@@ -41,6 +42,7 @@ var timestamp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$booth_v2/Cube/Label.setText(god_name)
 	timestamp=0
 	solved=false
 	group = get_parent().name

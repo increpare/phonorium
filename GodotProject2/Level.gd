@@ -11,6 +11,7 @@ var areaBooths : Dictionary
 var flames : Array
 var Player:Node
 
+var nameLabels:Array
 
 export(Array,NodePath) var elevators:Array
 export(Array,NodePath) var lights:Array
@@ -21,6 +22,8 @@ export(Array,Texture) var tree_textures:Array=[]
 export(Array,ShaderMaterial) var distance_materials:Array=[]
 
 var heardsounds:Array=[]
+
+export(Array,AudioStream) var zoneenter_streams:Array
 
 func hear(sample:AudioStream):
 	print("hear "+sample.to_string())
@@ -63,19 +66,39 @@ var target_min_range:float=100
 var target_sky_colour:Color=sky_color_unzoomed
 var target_ground_colour:Color=ground_color_unzoomed
 var target_tree_alpha:float=0
-var target_beam_alpha:float=1;
+var target_beam_alpha:float=1
 
 var cur_max_range:float=100
 var cur_min_range:float=100
 var cur_sky_color:Color=target_sky_colour
 var cur_ground_color:Color=target_ground_colour
 var cur_tree_alpha:float=0
-var cur_beam_alpha:float=1;
+var cur_beam_alpha:float=1
 
 var lerpspeed_range=2
 var lerpspeed_colour=1
 var lerpspeed_alpha=10
 var lerpspeed_beam=3
+
+var group_names:Array = [
+	"vowels",
+	"ant_lab_vel",
+	"epiglot",
+	"dors_stops",
+	"alv_v_ret",
+	"liquids",
+	"cor_affr",
+	"alv_obstr",
+	"pal",
+	"ejectives",
+	"nasals",
+	"plos_phonation",
+	"cor_fric",
+	"vowel_phonation",
+	"tones",
+	"dors_glot_fric",
+	"dors"
+]
 
 func setZone(n:String,pos:Vector3):		
 	print("setZone")
@@ -110,20 +133,30 @@ func setZone(n:String,pos:Vector3):
 		mat.set_shader_param("center",pos)
 		
 	
-	for b in booths:
-		if b.get_parent().name==n:
-			b.call("showLabel")
-		else:
-			b.call("hideLabel")
-			
+	#for b in booths:
+	#	if (b==null) or (!is_instance_valid(b)):
+	#		continue
+	#	if b.get_parent().name==n:
+	#		b.call("showLabel")
+	#	else:
+	#		b.call("hideLabel")
+		
+	var group_index = group_names.find(n)
+	var targetstream = zoneenter_streams[group_index]
+	if (not $world/AudioStreamPlayer.playing==false) || ($world/AudioStreamPlayer.stream!=targetstream):
+		$world/AudioStreamPlayer.stream =  targetstream
+		$world/AudioStreamPlayer.play()
+	
 	#for f in flames:
 	#	f.visible = f.get_parent().name==n
 
 	
 func unsetZone():
 	
-	for b in booths:
-		b.call("showLabel")
+	#for b in booths:		
+	#	if (b==null) or (!is_instance_valid(b)):
+	#		continue
+	#	b.call("showLabel")
 		
 	print("unsetZone")
 	zonetarget_name=""
@@ -147,12 +180,14 @@ func _physics_process(delta):
 	sky.ground_horizon_color=cur_ground_color
 	sky.sky_horizon_color=cur_sky_color
 	sky.sky_top_color=cur_sky_color
-	
 
 	spotlightMat.set_shader_param("albedo",Color(0.67451, 0.658824, 0.658824,cur_beam_alpha))
 	treesmat.albedo_color=Color(1,1,1,cur_tree_alpha)
 	floormat.albedo_color=Color(cur_ground_color.r,cur_ground_color.g,cur_ground_color.b,cur_tree_alpha)
 	
+	for nl in nameLabels:
+		nl.opacity = cur_beam_alpha
+		
 	for mat in distance_materials:
 		mat.set_shader_param("mindist",cur_min_range)
 		mat.set_shader_param("maxdist",cur_max_range)
@@ -258,6 +293,9 @@ func _on_Timer_timeout():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	nameLabels=[]
+
+			
 	babbleTimer = Timer.new()
 	add_child(babbleTimer)
 
@@ -285,6 +323,24 @@ func _ready():
 	booths=[]
 	findByClass(self,"res://booth.gd",booths);
 	
+	
+	for b in booths:		
+		if (b==null) or (!is_instance_valid(b)):
+			continue		
+		var c:Spatial = b
+		print(c.name)
+		print(c.get_child(1).name)
+		print(c.get_child(1).get_child(0).name)
+		print(c.get_child(1).get_child(0).get_child(3).name)
+		var label:Spatial = c.get_child(1).get_child(0).get_child(3)
+		print("label")
+		print(label.name)
+		print(label.get_child(1).name)
+		var sprite:Sprite3D = label.get_child(1)
+		nameLabels.append(sprite)
+		print("appending "+sprite.to_string())
+		
+		
 	areaBooths = {}
 	
 	for b in booths:
@@ -336,8 +392,8 @@ func onsolve(b:Node):
 	var groupsolved=solvedgroup(b)
 	if groupsolved:
 		for n in flames.size():
-			var flame : AnimatedSprite3D = flames[n] as AnimatedSprite3D	
-			if flame.get_parent().name==group:
+			var flame : Spatial = flames[n] as Spatial	
+			if flame.name==group:
 				flame.visible=false
 	save_level()
 	setRegionVisibility()

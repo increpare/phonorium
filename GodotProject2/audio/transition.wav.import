@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/transition.wav-7a11af907553ffd4acb6c1051cb63d21.sample"
 
 [deps]
 
 source_file="res://audio/transition.wav"
+dest_files=[ "res://.import/transition.wav-7a11af907553ffd4acb6c1051cb63d21.sample" ]
+
 [params]
 
 force/8_bit=false

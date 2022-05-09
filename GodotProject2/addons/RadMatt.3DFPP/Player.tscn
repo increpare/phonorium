@@ -23,7 +23,7 @@ flags_unshaded = true
 flags_no_depth_test = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
-albedo_color = Color( 0.74902, 0.356863, 0.678431, 1 )
+albedo_color = Color( 0.45098, 0.647059, 0.713726, 1 )
 
 [sub_resource type="Animation" id=5]
 length = 0.5
