@@ -20,6 +20,13 @@ var _lights:Array
 export(Array,Texture) var tree_textures:Array=[]
 export(Array,ShaderMaterial) var distance_materials:Array=[]
 
+var heardsounds:Array=[]
+
+func hear(sample:AudioStream):
+	print("hear "+sample.to_string())
+	if not heardsounds.has(sample):
+		heardsounds.append(sample)
+
 #land, air
 var env_cols = {
 	"alv_obstr":[0, Color("#c0db72"),Color("#ececec"), 40 , 10 , 12],#1
@@ -109,8 +116,8 @@ func setZone(n:String,pos:Vector3):
 		else:
 			b.call("hideLabel")
 			
-	for f in flames:
-		f.visible = f.get_parent().name==n
+	#for f in flames:
+	#	f.visible = f.get_parent().name==n
 
 	
 func unsetZone():
@@ -194,8 +201,8 @@ func load_level():
 func setRegionVisibility():
 	var solvedcount:int = 0
 	for n in flames.size():
-		var flame : MeshInstance  = flames[n]
-		var groupname = flame.get_parent().name
+		var flame : Spatial  = flames[n]
+		var groupname = flame.name
 		var solved = solvedgroup_by_name(groupname)
 
 		
@@ -233,10 +240,32 @@ func setRegionVisibility():
 		$EndingPortal/EndBox/CollisionShape.disabled=false
 		$EndingPortal/AudioStreamPlayer3D.play()
 	
-	
+var babbleTimer:Timer = null
+
+
+
+func _on_Timer_timeout():
+	if heardsounds.size()==0:	
+		return
+	print("timeout")
+	var stream_index=randi()%heardsounds.size()
+	var stream = heardsounds[stream_index]
+	if $baby2/Body/Babble.playing:
+		return
+	$baby2/Body/Babble.stream = stream
+	$baby2/Body/Babble.play()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	babbleTimer = Timer.new()
+	add_child(babbleTimer)
+
+	babbleTimer.connect("timeout", self, "_on_Timer_timeout")
+	babbleTimer.set_wait_time(2.0)
+	babbleTimer.set_one_shot(false) # Make sure it loops
+	babbleTimer.start()
+	
 	var we:WorldEnvironment = $world/WorldEnvironment
 	sky = we.environment.background_sky
 	Player = $Player
@@ -293,6 +322,7 @@ func solvedgroup(b:Node):
 	var groupsolved=true
 	for n in booths.size():
 		var booth = booths[n]
+		print(booth)
 		if !is_instance_valid(booth):
 			continue
 		if booth.group==group:

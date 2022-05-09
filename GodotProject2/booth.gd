@@ -175,6 +175,7 @@ func on_pressed(n_i):
 		
 	$AudioStreamPlayer3D.stream = Audio[n_i] 
 	$AudioStreamPlayer3D.play()
+	level.hear(Audio[n_i])
 	print("onpressed"+str(n_i))
 	
 	if solved:
@@ -213,14 +214,14 @@ func on_pressed(n_i):
 			var groupsolved = level.solvedgroup(self)
 			if groupsolved:
 				audiostreamplayer.stream = jingle_solve_area
-				audiostreamplayer.play()		
+				audiostreamplayer.play()					
 				level.Player.doflash()
 			else:
 				$AudioStreamPlayer3D.stream = jingle_solve
-				$AudioStreamPlayer3D.play()		
+				$AudioStreamPlayer3D.play()				
 		else:			
 			$AudioStreamPlayer3D.stream = jingle_lose
-			$AudioStreamPlayer3D.play()			
+			$AudioStreamPlayer3D.play()				
 			
 		var mm=6
 		if won:
@@ -274,6 +275,7 @@ func do_play(caller:Node):
 		var sound : AudioStream = Audio[sound_index]
 		$AudioStreamPlayer3D.stream = sound
 		$AudioStreamPlayer3D.play()		
+		level.hear(sound)
 		var delay = sound.get_length()
 		if equally_spaced:
 			delay = spacing

@@ -10,16 +10,24 @@ uniform vec4 albedo : hint_color;
 
 varying float height;
 
+uniform float mindist = 0.9;
+uniform float maxdist = 1.7;
+varying float one_minus_dist;
+
+uniform vec3 center = vec3(0,0,0);
 
 void vertex() {
-	height  = VERTEX.y;
+	height  = VERTEX.y;	
+	float x = VERTEX.x-center.x;
+	float y = VERTEX.y-center.y;
+	float z = VERTEX.z-center.z;
+	float r = sqrt(x*x+z*z+2.0*y*y);	
+	one_minus_dist=clamp(r,0.0,1.0);
 }
-
-
 
 void fragment() {
 	ALBEDO = albedo.rgb;
-	ALPHA = albedo.a*(height+0.75)/2.0;
+	ALPHA = one_minus_dist*albedo.a*(height+0.75)/2.0;
 }
 "
 
@@ -27,3 +35,6 @@ void fragment() {
 render_priority = 26
 shader = SubResource( 218 )
 shader_param/albedo = Color( 0.67451, 0.658824, 0.658824, 1 )
+shader_param/mindist = 0.9
+shader_param/maxdist = 1.7
+shader_param/center = Vector3( 0, 0, 0 )
