@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/22b.mp3-9aea743e9a7f440987c7e21ae0ce6187.mp3str"
+
+[deps]
+
+source_file="res://audio/snips/22b.mp3"
+dest_files=[ "res://.import/22b.mp3-9aea743e9a7f440987c7e21ae0ce6187.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

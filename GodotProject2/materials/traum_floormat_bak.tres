@@ -1,0 +1,30 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 3
+octaves = 5
+
+[sub_resource type="NoiseTexture" id=2]
+flags = 15
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+octaves = 5
+
+[sub_resource type="NoiseTexture" id=4]
+flags = 15
+as_normalmap = true
+noise = SubResource( 3 )
+
+[resource]
+render_priority = -8
+flags_transparent = true
+flags_do_not_receive_shadows = true
+params_depth_draw_mode = 2
+albedo_color = Color( 0.439216, 0.596078, 0.262745, 1 )
+albedo_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 4 )
+uv1_scale = Vector3( 50, 50, 50 )
