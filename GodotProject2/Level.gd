@@ -115,6 +115,10 @@ func setZone(n:String,pos:Vector3):
 	var t_range_max:float = t_dat[5]
 	
 	
+	var floortext:Spatial = $theater2/FloorText
+	for i in floortext.get_child_count():
+		var child = floortext.get_child(i)
+		child.visible=child.name==n
 
 	treesmat.albedo_texture = tree_textures[t_index]
 	$world/VisionScene.call("setScale",t_scale)
@@ -170,6 +174,11 @@ func unsetZone():
 	target_tree_alpha=0
 	target_beam_alpha=1
 	#$world/VisionScene.visible=false
+	
+	var floortext:Spatial = $theater2/FloorText
+	for i in floortext.get_child_count():
+		var child = floortext.get_child(i)
+		child.visible=true
 	
 	
 func _physics_process(delta):

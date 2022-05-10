@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=2]
+[gd_scene load_steps=218 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://booth.tscn" type="PackedScene" id=2]
@@ -161,6 +161,41 @@
 [ext_resource path="res://audio/snips/3a.mp3" type="AudioStream" id=159]
 [ext_resource path="res://audio/snips/2a.mp3" type="AudioStream" id=160]
 [ext_resource path="res://textures/chinese/剧场.svg" type="Texture" id=161]
+[ext_resource path="res://textures/chinese/fluesse/乌江.svg" type="Texture" id=162]
+[ext_resource path="res://textures/chinese/fluesse/澜沧江.svg" type="Texture" id=163]
+[ext_resource path="res://textures/chinese/fluesse/沅江.svg" type="Texture" id=164]
+[ext_resource path="res://textures/chinese/fluesse/郁江.svg" type="Texture" id=165]
+[ext_resource path="res://textures/chinese/fluesse/辽河.svg" type="Texture" id=166]
+[ext_resource path="res://textures/chinese/fluesse/大渡河.svg" type="Texture" id=167]
+[ext_resource path="res://textures/chinese/fluesse/珠江.svg" type="Texture" id=168]
+[ext_resource path="res://textures/chinese/fluesse/长江.svg" type="Texture" id=169]
+[ext_resource path="res://textures/chinese/fluesse/黑龙江.svg" type="Texture" id=170]
+[ext_resource path="res://textures/chinese/fluesse/海河.svg" type="Texture" id=171]
+[ext_resource path="res://textures/chinese/fluesse/汉江.svg" type="Texture" id=172]
+[ext_resource path="res://textures/chinese/fluesse/淮河.svg" type="Texture" id=173]
+[ext_resource path="res://textures/chinese/fluesse/松花江.svg" type="Texture" id=174]
+[ext_resource path="res://textures/chinese/fluesse/黄河.svg" type="Texture" id=175]
+[ext_resource path="res://textures/chinese/fluesse/雅砻江.svg" type="Texture" id=176]
+[ext_resource path="res://textures/chinese/fluesse/怒江.svg" type="Texture" id=177]
+[ext_resource path="res://textures/chinese/fluesse/和田河.svg" type="Texture" id=178]
+[ext_resource path="res://rivers_mat.tres" type="Material" id=179]
+[ext_resource path="res://textures/10001010.png" type="Texture" id=180]
+[ext_resource path="res://textures/10111010.png" type="Texture" id=181]
+[ext_resource path="res://textures/01011110.png" type="Texture" id=182]
+[ext_resource path="res://textures/00101011.png" type="Texture" id=183]
+[ext_resource path="res://textures/00011100.png" type="Texture" id=184]
+[ext_resource path="res://textures/01010101.png" type="Texture" id=185]
+[ext_resource path="res://textures/01011000.png" type="Texture" id=186]
+[ext_resource path="res://textures/00101010.png" type="Texture" id=187]
+[ext_resource path="res://textures/00110110.png" type="Texture" id=188]
+[ext_resource path="res://textures/10100001.png" type="Texture" id=189]
+[ext_resource path="res://textures/00111110.png" type="Texture" id=190]
+[ext_resource path="res://textures/11011101.png" type="Texture" id=191]
+[ext_resource path="res://textures/11001011.png" type="Texture" id=192]
+[ext_resource path="res://textures/01110000.png" type="Texture" id=193]
+[ext_resource path="res://textures/00101001.png" type="Texture" id=194]
+[ext_resource path="res://textures/01110110.png" type="Texture" id=195]
+[ext_resource path="res://textures/00000111.png" type="Texture" id=196]
 
 [sub_resource type="BoxShape" id=212]
 extents = Vector3( 7.81259, 11.4722, 4.25646 )
@@ -340,6 +375,8 @@ god_name = "ΚΗΦΙΣΟΣ"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78537, 0, 0.214165 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 196 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/alv_obstr/Zone"]
 transform = Transform( 1.23374, 0, -7.59917e-08, 0, 1, 0, -7.59917e-08, 0, 1.81324, 4.76837e-07, -0.354469, -3.02995 )
@@ -376,6 +413,8 @@ god_name = "ΑΠΙΔΑΝΟΣ"
 transform = Transform( -0.746789, 0, -0.665061, 0, 1, 0, 0.665061, 0, -0.746789, 2.35898, -0.622475, -1.30956 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 183 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/alv_v_ret/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332813, 0.0837147, -0.000358836, -0.99649, 0.998537, 1.06758, 0.163055 )
@@ -420,6 +459,8 @@ god_name = "ΣΕΛΕΜΝΟΣ"
 transform = Transform( 0.0848682, -0.0016011, 0.996392, -0.00128984, 0.999998, 0.00171676, -0.996392, -0.00143088, 0.0848662, 2.38981, -0.581902, -1.13855 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 185 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/cor_affr/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324808, 1, -0.000332812, 0.0837147, -0.000358836, -0.99649, 0.998539, -0.354469, 0.163057 )
@@ -462,6 +503,8 @@ god_name = "ΕΡΥΜΑΝΘΟΣ"
 transform = Transform( -0.998951, 0, 0.045799, 0, 1, 0, -0.045799, 0, -0.998951, 2.82086, 0.0163002, -0.926568 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 195 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/cor_fric/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
@@ -492,6 +535,8 @@ god_name = "ΠΑΚΤΩΛΟΣ"
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 3.92475, -0.535351, 2.8076 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 187 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332812, 0.0837147, -0.000358835, -0.99649, -0.0638142, 0.00120354, -0.749205 )
@@ -528,6 +573,8 @@ god_name = "ΣΙΜΟΕΙΣ"
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 1.45452, -0.534819, 1.02059 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 188 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors_glot_fric/Zone"]
 transform = Transform( -0.996489, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332811, 0.0837147, -0.000358835, -0.996489, -0.000389099, 0.304001, 0.00052166 )
@@ -558,6 +605,8 @@ god_name = "ΤΙΓΡΗΣ"
 transform = Transform( 0.996519, 0, -0.0833649, 0, 1, 0, 0.0833649, 0, 0.996519, 0.630786, -0.549442, -1.8852 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 193 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/dors_stops/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199027 )
@@ -588,6 +637,8 @@ god_name = "ΣΥΜΑΙΘΟΣ"
 transform = Transform( 0.865965, 0, 0.500106, 0, 1, 0, -0.500106, 0, 0.865965, 3.5406, 0.00810051, -1.84825 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 189 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/ejectives/Zone"]
 transform = Transform( 0.578456, 0, -0.815714, 0, 1, 0, 0.815714, 0, 0.578456, 0, -0.354469, 0 )
@@ -622,6 +673,8 @@ god_name = "ΡΗΣΟΣ"
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848684, -0.0016011, 0.996392, 0.716091, -0.524605, 0.632193 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 184 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/epiglot/Zone2"]
 transform = Transform( -0.996489, 0.000295805, -0.0837148, 0.000324807, 0.999999, -0.00033281, 0.0837147, -0.000358834, -0.996489, 0, 0, 0 )
@@ -664,6 +717,8 @@ god_name = "ΑΝΑΠΟΣ"
 transform = Transform( -0.0645401, 0.00162994, -0.997915, -0.00128984, 0.999998, 0.00171676, 0.997916, 0.00139795, -0.0645382, 3.56931, -0.614758, -1.89905 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 181 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/liquids/Zone"]
 transform = Transform( -0.99649, 0.000295806, -0.0837148, 0.000324807, 1, -0.000332812, 0.0837147, -0.000358835, -0.99649, 0.999126, -0.810942, 0.162268 )
@@ -714,6 +769,8 @@ god_name = "ΜΙΝΚΙΟΣ"
 transform = Transform( 0.0862338, 0, 0.996275, 0, 1, 0, -0.996275, 0, 0.0862338, 5.58904, 0.0296001, 1.72854 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 192 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/nasals/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
@@ -748,6 +805,8 @@ god_name = "ΤΙΤΑΡΗΣΙΟΣ"
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.56752, 0.00690079, -1.18159 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 180 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/pal/Zone"]
 transform = Transform( 0.999325, 0, 0.0367483, 0, 1, 0, -0.0367483, 0, 0.999325, 0, -0.354469, 0 )
@@ -778,6 +837,8 @@ god_name = "ΚΩΚΥΤΟΣ"
 transform = Transform( -0.997256, 0, 0.0740382, 0, 1, 0, -0.0740382, 0, -0.997256, -2.59556, 0.135302, -2.67666 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 186 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/plos_phonation/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, -0.354469, -0.199028 )
@@ -824,6 +885,8 @@ god_name = "ΜΑΙΑΝΔΡΟΣ"
 transform = Transform( 0.998951, 0, -0.0457989, 0, 1, 0, 0.0457989, 0, 0.998951, 2.45363, -0.00389862, 0.528778 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 182 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/tones/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, 5.58026, -0.19902 )
@@ -854,6 +917,8 @@ god_name = "ΓΡΑΝΙΚΟΣ"
 transform = Transform( 0.998951, 0, -0.0457989, 0, 1, 0, 0.0457989, 0, 0.998951, 5.26693, -0.48097, 1.30284 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 194 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/vowel_phonation/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627426, 5.58026, -0.19903 )
@@ -902,6 +967,8 @@ god_name = "ΚΑΙΚΟΣ"
 transform = Transform( -0.998951, 0, 0.045799, 0, 1, 0, -0.045799, 0, -0.998951, 2.52204, -0.628843, 0.682928 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 191 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/vowels/Zone"]
 transform = Transform( -0.996973, 0, -0.0777457, 0, 1, 0, 0.0777457, 0, -0.996973, 0.627422, 6.28803, -0.199001 )
@@ -944,6 +1011,8 @@ god_name = "ΑΡΔΗΣΚΟΣ"
 transform = Transform( 2.50643, 0.0035994, -0.213482, -0.00128984, 0.999998, 0.00171676, 0.0848682, -0.0016011, 0.996392, -1.26887, -0.512602, 1.29761 )
 monitorable = false
 script = ExtResource( 102 )
+rivers_mat = ExtResource( 179 )
+rivers_tex = ExtResource( 190 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Booths/ant_lab_vel/Zone"]
 transform = Transform( -0.996489, 0.000295805, -0.0837148, 0.000324807, 0.999999, -0.00033281, 0.0837147, -0.000358835, -0.996489, -0.38462, 0.00725555, -4.51559 )
@@ -964,6 +1033,7 @@ transform = Transform( -1.0186e-06, 0, -23.3029, 0, 23.3029, 0, 23.3029, 0, -1.0
 visible = false
 frames = ExtResource( 4 )
 animation = "portal"
+frame = 2
 playing = true
 
 [node name="EndBox" type="Area" parent="EndingPortal"]
@@ -1327,6 +1397,93 @@ texture = ExtResource( 161 )
 transform = Transform( 0.339105, 0, 3.90799e-14, 0, 0.339104, 0, -3.90799e-14, 0, 0.339105, -1.48651, 2.0316, -0.995633 )
 modulate = Color( 1, 1, 1, 0.811765 )
 texture = ExtResource( 161 )
+
+[node name="FloorText" type="Spatial" parent="theater2"]
+
+[node name="cor_fric" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -3.21267e-08, 0.219756, -3.51627e-09, 0, -9.60586e-09, -0.0804428, 0.165, 4.27882e-08, -6.84642e-16, -2.52715, 1.20145, -0.32782 )
+opacity = 0.58
+texture = ExtResource( 162 )
+
+[node name="plos_phonation" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.0996074, 0.175196, -2.80326e-09, 0, -9.60586e-09, -0.0804428, 0.131542, -0.132663, 2.1227e-09, -2.02591, 1.20145, 1.53577 )
+opacity = 0.58
+texture = ExtResource( 178 )
+
+[node name="nasals" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.154321, 0.0777754, -1.24446e-09, 0, -9.60587e-09, -0.0804428, 0.0583961, -0.205533, 3.28868e-09, -0.774953, 1.20145, 2.35404 )
+opacity = 0.58
+texture = ExtResource( 167 )
+
+[node name="ejectives" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.151222, -0.0879125, 1.40666e-09, 0, -9.60587e-09, -0.0804428, -0.0660074, -0.201406, 3.22264e-09, 0.865862, 1.20145, 2.41402 )
+opacity = 0.58
+texture = ExtResource( 177 )
+
+[node name="pal" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.101827, -0.172918, 2.76681e-09, 0, -9.60587e-09, -0.0804428, -0.129832, -0.135619, 2.17e-09, 2.00544, 1.20145, 1.55719 )
+opacity = 0.58
+texture = ExtResource( 174 )
+
+[node name="alv_obstr" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.00545045, -0.219637, 3.51435e-09, 0, -9.60587e-09, -0.0804428, -0.16491, 0.00725923, -1.16153e-10, 2.54094, 1.20145, -0.362772 )
+opacity = 0.58
+texture = ExtResource( 170 )
+
+[node name="cor_affr" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.00545045, -0.219637, 3.51435e-09, 0, -9.60587e-09, -0.0804428, -0.16491, 0.00725923, -1.16153e-10, 1.50519, 0.590104, -0.445547 )
+opacity = 0.58
+texture = ExtResource( 164 )
+
+[node name="liquids" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.125669, -0.142405, 2.27859e-09, 0, -9.60587e-09, -0.0804428, -0.106922, -0.167373, 2.67809e-09, 0.915266, 0.590104, 1.17416 )
+opacity = 0.58
+texture = ExtResource( 171 )
+
+[node name="alv_v_ret" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.12753, 0.139439, -2.23112e-09, 0, -9.60587e-09, -0.0804428, 0.104695, -0.169852, 2.71776e-09, -0.983881, 0.590105, 1.16899 )
+opacity = 0.58
+texture = ExtResource( 173 )
+
+[node name="dors_stops" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( 0.00319642, 0.219716, -3.51561e-09, 0, -9.60588e-09, -0.0804428, 0.164969, -0.00425718, 6.8118e-11, -1.58227, 0.590106, -0.445115 )
+opacity = 0.58
+texture = ExtResource( 163 )
+
+[node name="ant_lab_vel" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.81178e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, -0.144812, 0.590106, -1.53544 )
+opacity = 0.58
+texture = ExtResource( 168 )
+
+[node name="epiglot" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.81179e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, -0.300345, 0.590106, -2.56445 )
+opacity = 0.58
+texture = ExtResource( 166 )
+
+[node name="dors" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.8118e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, -1.51754, 0.590106, -1.7357 )
+opacity = 0.58
+texture = ExtResource( 165 )
+
+[node name="dors_glot_fric" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.8118e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, 1.47527, 0.590106, -1.79369 )
+opacity = 0.58
+texture = ExtResource( 169 )
+
+[node name="vowels" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.81179e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, -0.300348, 1.2023, -2.56463 )
+opacity = 0.58
+texture = ExtResource( 176 )
+
+[node name="vowel_phonation" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.8118e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, -1.51754, 1.2023, -1.7357 )
+opacity = 0.58
+texture = ExtResource( 175 )
+
+[node name="tones" type="Sprite3D" parent="theater2/FloorText"]
+transform = Transform( -0.164969, 0.00425718, 6.8118e-11, 0, 9.60588e-09, -0.0804428, 0.00319642, 0.219716, 3.51561e-09, 1.47527, 1.2023, -1.79369 )
+opacity = 0.58
+texture = ExtResource( 172 )
 
 [node name="altar" type="MeshInstance" parent="."]
 transform = Transform( -7.21238e-08, 0, -3.3, 0, 1.65, 0, 1.65, 0, -1.44248e-07, 33.6274, -32.5967, 10.7304 )
