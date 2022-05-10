@@ -2,8 +2,11 @@ extends Spatial
 
 export(Array, int) var Solution : Array = [ 1,0,1,1,0 ]
 export(Array, AudioStream) var Audio : Array = []
+
 export var equally_spaced:bool = true
 export var god_name:String
+
+var players:Array=[]
 
 var light_off = preload("res://models/castiron_distance.tres")
 var light_on = preload("res://models/Gold_distance.tres")
@@ -40,6 +43,19 @@ func setsolved():
 		
 var timestamp
 
+var player_index:int=0
+
+
+func playSnd(snd:AudioStream, force:bool=false):	
+	var player : AudioStreamPlayer3D = players[player_index]
+	player.global_transform.origin = $booth_v2/Cube2/SpeakerPoint.transform.origin
+	player.stop()
+	player.stream=snd
+	player.play()
+	
+	player_index=(player_index+1)%players.size()
+	return true
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$booth_v2/Cube/Label.setText(god_name)
@@ -175,8 +191,7 @@ func on_pressed(n_i):
 		
 	timestamp = timestamp+1
 		
-	$AudioStreamPlayer3D.stream = Audio[n_i] 
-	$AudioStreamPlayer3D.play()
+	playSnd(Audio[n_i])
 	level.hear(Audio[n_i])
 	print("onpressed"+str(n_i))
 	
@@ -215,15 +230,12 @@ func on_pressed(n_i):
 			solved=true
 			var groupsolved = level.solvedgroup(self)
 			if groupsolved:
-				audiostreamplayer.stream = jingle_solve_area
-				audiostreamplayer.play()					
+				playSnd(jingle_solve_area)				
 				level.Player.doflash()
 			else:
-				$AudioStreamPlayer3D.stream = jingle_solve
-				$AudioStreamPlayer3D.play()				
+				playSnd(jingle_solve)				
 		else:			
-			$AudioStreamPlayer3D.stream = jingle_lose
-			$AudioStreamPlayer3D.play()				
+			playSnd(jingle_lose)				
 			
 		var mm=6
 		if won:
@@ -274,9 +286,8 @@ func do_play(caller:Node):
 			set_light(n-1,basecolour)
 		set_light(n,1)
 		var sound_index : int = Solution[n]
-		var sound : AudioStream = Audio[sound_index]
-		$AudioStreamPlayer3D.stream = sound
-		$AudioStreamPlayer3D.play()		
+		var sound : AudioStream = Audio[sound_index]	
+		playSnd(sound,true)	
 		level.hear(sound)
 		var delay = sound.get_length()
 		if equally_spaced:

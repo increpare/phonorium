@@ -12,6 +12,7 @@ var flames : Array
 var Player:Node
 
 var nameLabels:Array
+var nameLabels_groups:Array
 
 export(Array,NodePath) var elevators:Array
 export(Array,NodePath) var lights:Array
@@ -53,6 +54,7 @@ var env_cols = {
 
 
 var zonetarget_pos:Vector3
+var lastzonetarget_name:String=""
 var zonetarget_name:String=""
 
 const zone_min_range_unzoomed:float=100.0
@@ -104,7 +106,8 @@ func setZone(n:String,pos:Vector3):
 	print("setZone")
 	print(pos)
 	print(n)
-	
+	lastzonetarget_name=n
+	zonetarget_name=n
 	var t_dat:Array = env_cols[n]
 	var t_index:int=t_dat[0]
 	var t_scale:float=t_dat[3]
@@ -185,8 +188,12 @@ func _physics_process(delta):
 	treesmat.albedo_color=Color(1,1,1,cur_tree_alpha)
 	floormat.albedo_color=Color(cur_ground_color.r,cur_ground_color.g,cur_ground_color.b,cur_tree_alpha)
 	
-	for nl in nameLabels:
-		nl.opacity = cur_beam_alpha
+	for nli in nameLabels.size():		
+		var nl = nameLabels[nli]
+		if lastzonetarget_name==nameLabels_groups[nli]:
+			nl.opacity = 1.0
+		else:
+			nl.opacity = cur_beam_alpha
 		
 	for mat in distance_materials:
 		mat.set_shader_param("mindist",cur_min_range)
@@ -203,6 +210,7 @@ func findByClass(node: Node, classPath : String, result : Array) -> void:
 		findByClass(child, classPath, result)
 
 func save_level():	
+	print("saving level")
 	var solvedarray = []
 	for n in booths.size():
 		var booth = booths[n]
@@ -213,6 +221,18 @@ func save_level():
 	var save_file = File.new()
 	save_file.open("user://savegame.save", File.WRITE)
 	save_file.store_line(JSON.print(solvedarray))
+	var sound_paths = []
+	print("saaving HEARDSOUNDS")
+	for s in heardsounds:
+		var t:AudioStreamMP3 = s
+		print(t.resource_path)
+		
+		sound_paths.append(t.resource_path)
+	
+	print("saved")
+	print("sound_paths")
+	print(sound_paths)
+	save_file.store_line(JSON.print(sound_paths))
 	save_file.close()
 		
 func load_level():
@@ -222,7 +242,19 @@ func load_level():
 		
 	save_file.open("user://savegame.save", File.READ)
 	print(save_file.get_as_text())
-	var solved_data = JSON.parse(save_file.get_as_text()).result
+	var solved_data = JSON.parse(save_file.get_line()).result
+	if save_file.eof_reached()==false:
+		print("SECOND LINE")
+		var second_line = save_file.get_line()
+		print(second_line)
+		var streampaths = JSON.parse(second_line).result
+	
+		var sounds_resources = []
+		for as_path in streampaths:
+			print(as_path)
+			sounds_resources.append(load(as_path))
+		heardsounds = sounds_resources
+		print("loaded HEARDSOUNDS")
 	print("solved_data "+str(solved_data))
 	save_file.close()
 	
@@ -247,27 +279,27 @@ func setRegionVisibility():
 		else:
 			pass
 
-		if solved:
-			for m in booths.size():
-				var booth:Node = booths[m]
-				if !is_instance_valid(booth):
-					continue
-				if booth.group==groupname:
-					booth.queue_free()
-					
-			for k in _elevators.size():
-				var e : Spatial = _elevators[k]
-				if is_instance_valid(e) and e.group==groupname:
-					e.queue_free()
-					
-			for k in _lights.size():
-				var e : Spatial = _lights[k]
-				if is_instance_valid(e) and e.group==groupname:
-					e.queue_free()
-				
-			if groupname=="MN":
-				if is_instance_valid($Particles):
-					$Particles.queue_free()
+		#if solved:
+		#	for m in booths.size():
+		#		var booth:Node = booths[m]
+		#		if !is_instance_valid(booth):
+		#			continue
+		#		if booth.group==groupname:
+		#			booth.queue_free()
+		#			
+		#	for k in _elevators.size():
+		#		var e : Spatial = _elevators[k]
+		#		if is_instance_valid(e) and e.group==groupname:
+		#			e.queue_free()
+		#			
+		#	for k in _lights.size():
+		#		var e : Spatial = _lights[k]
+		#		if is_instance_valid(e) and e.group==groupname:
+		#			e.queue_free()
+		#		
+		#	if groupname=="MN":
+		#		if is_instance_valid($Particles):
+		#			$Particles.queue_free()
 	print("solvedcount",solvedcount)
 	print("flames.size",flames.size())
 	if solvedcount==flames.size():
@@ -280,9 +312,13 @@ var babbleTimer:Timer = null
 
 
 func _on_Timer_timeout():
+	if zonetarget_name!="":
+		return
 	if heardsounds.size()==0:	
 		return
 	print("timeout")
+	
+	babbleTimer.set_wait_time(2.0-heardsounds.size()/100.0)
 	var stream_index=randi()%heardsounds.size()
 	var stream = heardsounds[stream_index]
 	if $baby2/Body/Babble.playing:
@@ -293,7 +329,6 @@ func _on_Timer_timeout():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	nameLabels=[]
 
 			
 	babbleTimer = Timer.new()
@@ -323,22 +358,32 @@ func _ready():
 	booths=[]
 	findByClass(self,"res://booth.gd",booths);
 	
+	var audioplayers :Array = []
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D1)
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D2)
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D3)
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D4)
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D5)
+	audioplayers.append($LocalAudioPool/AudioStreamPlayer3D6)
+	
+	nameLabels=[]
+	nameLabels_groups=[]
+	
+	nameLabels.append($theater2/Spatial/Sprite3D)
+	nameLabels_groups.append("THEATRE_NAME")
+	
+	nameLabels.append($theater2/Spatial/Sprite3D2)
+	nameLabels_groups.append("THEATRE_NAME")
 	
 	for b in booths:		
 		if (b==null) or (!is_instance_valid(b)):
 			continue		
 		var c:Spatial = b
-		print(c.name)
-		print(c.get_child(1).name)
-		print(c.get_child(1).get_child(0).name)
-		print(c.get_child(1).get_child(0).get_child(3).name)
-		var label:Spatial = c.get_child(1).get_child(0).get_child(3)
-		print("label")
-		print(label.name)
-		print(label.get_child(1).name)
+		var label:Spatial = c.get_child(0).get_child(0).get_child(3)
 		var sprite:Sprite3D = label.get_child(1)
 		nameLabels.append(sprite)
-		print("appending "+sprite.to_string())
+		nameLabels_groups.append(c.get_parent().name)
+		b.players=audioplayers
 		
 		
 	areaBooths = {}

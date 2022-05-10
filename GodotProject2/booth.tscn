@@ -329,11 +329,6 @@ shader = SubResource( 57 )
 script = ExtResource( 8 )
 Audio = [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 11 ) ]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 0 )
-attenuation_model = 3
-unit_db = 2.689
-
 [node name="booth_v2" type="Spatial" parent="."]
 transform = Transform( 1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, -0.0742364, 1.95699, -6.01961 )
 
@@ -837,3 +832,6 @@ material_override = SubResource( 56 )
 cast_shadow = 3
 mesh = SubResource( 55 )
 material/0 = ExtResource( 19 )
+
+[node name="SpeakerPoint" type="Spatial" parent="booth_v2/Cube2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06203, 0 )

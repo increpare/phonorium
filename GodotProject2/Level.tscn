@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=2]
+[gd_scene load_steps=183 format=2]
 
 [ext_resource path="res://addons/RadMatt.3DFPP/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://booth.tscn" type="PackedScene" id=2]
@@ -160,6 +160,7 @@
 [ext_resource path="res://audio/snips/6a.mp3" type="AudioStream" id=158]
 [ext_resource path="res://audio/snips/3a.mp3" type="AudioStream" id=159]
 [ext_resource path="res://audio/snips/2a.mp3" type="AudioStream" id=160]
+[ext_resource path="res://textures/chinese/剧场.svg" type="Texture" id=161]
 
 [sub_resource type="BoxShape" id=212]
 extents = Vector3( 7.81259, 11.4722, 4.25646 )
@@ -963,7 +964,6 @@ transform = Transform( -1.0186e-06, 0, -23.3029, 0, 23.3029, 0, 23.3029, 0, -1.0
 visible = false
 frames = ExtResource( 4 )
 animation = "portal"
-frame = 2
 playing = true
 
 [node name="EndBox" type="Area" parent="EndingPortal"]
@@ -1001,6 +1001,7 @@ skeleton = NodePath("../..")
 material/0 = ExtResource( 98 )
 
 [node name="Babble" type="AudioStreamPlayer3D" parent="baby2/Body"]
+unit_db = 2.689
 pitch_scale = 2.0
 
 [node name="vowels" type="Spatial" parent="baby2"]
@@ -1315,6 +1316,18 @@ skeleton = NodePath("../..")
 material/0 = ExtResource( 98 )
 script = ExtResource( 99 )
 
+[node name="Spatial" type="Spatial" parent="theater2"]
+
+[node name="Sprite3D" type="Sprite3D" parent="theater2/Spatial"]
+transform = Transform( 0.339105, 0, 3.19744e-14, 0, 0.339104, 0, -3.19744e-14, 0, 0.339105, 1.51646, 2.0316, -0.995633 )
+modulate = Color( 1, 1, 1, 0.811765 )
+texture = ExtResource( 161 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="theater2/Spatial"]
+transform = Transform( 0.339105, 0, 3.90799e-14, 0, 0.339104, 0, -3.90799e-14, 0, 0.339105, -1.48651, 2.0316, -0.995633 )
+modulate = Color( 1, 1, 1, 0.811765 )
+texture = ExtResource( 161 )
+
 [node name="altar" type="MeshInstance" parent="."]
 transform = Transform( -7.21238e-08, 0, -3.3, 0, 1.65, 0, 1.65, 0, -1.44248e-07, 33.6274, -32.5967, 10.7304 )
 mesh = SubResource( 200 )
@@ -1325,5 +1338,38 @@ material/0 = ExtResource( 71 )
 
 [node name="CollisionShape" type="CollisionShape" parent="altar/StaticBody"]
 shape = SubResource( 203 )
+
+[node name="LocalAudioPool" type="Spatial" parent="."]
+transform = Transform( 15.0452, 0, 7.24659e-07, 0, 11.2839, 0, -7.24659e-07, 0, 15.0452, 32.9648, -32.5412, 9.93473 )
+
+[node name="AudioStreamPlayer3D1" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
+
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="LocalAudioPool"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514805, 2.66423, 4.76837e-07 )
+attenuation_model = 3
+unit_db = 2.689
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

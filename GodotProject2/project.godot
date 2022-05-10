@@ -15,6 +15,10 @@ config/description="silly joke game"
 run/main_scene="res://titlescreen.tscn"
 config/icon="res://textures/icon.png"
 
+[audio]
+
+output_latency=30
+
 [display]
 
 window/size/width=1600
@@ -29,6 +33,7 @@ enabled=PoolStringArray(  )
 import=false
 audio=false
 loop=false
+modus=false
 
 [importer_defaults]
 
